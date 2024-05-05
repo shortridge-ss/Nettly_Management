@@ -10,11 +10,17 @@ using System.Windows.Forms;
 
 namespace NettlyManagement
 {
-    public partial class Form6 : Form
+    public partial class Add_Booking : Form
     {
-        public Form6()
+        public Add_Booking()
         {
             InitializeComponent();
+        }
+
+        private void PbHome_Click(object sender, EventArgs e)
+        {
+            var homePage = new Landing_Page();
+            homePage.Show();
         }
     }
 }

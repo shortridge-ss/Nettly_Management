@@ -10,11 +10,17 @@ using System.Windows.Forms;
 
 namespace NettlyManagement
 {
-    public partial class Form5 : Form
+    public partial class Login_page : Form
     {
-        public Form5()
+        public Login_page()
         {
             InitializeComponent();
+        }
+
+        private void lLbSingIn_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            var signUp = new SignUp_Page();
+            signUp.ShowDialog();
         }
     }
 }

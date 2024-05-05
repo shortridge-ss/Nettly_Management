@@ -10,11 +10,17 @@ using System.Windows.Forms;
 
 namespace NettlyManagement
 {
-    public partial class Form2 : Form
+    public partial class Admin_Page : Form
     {
-        public Form2()
+        public Admin_Page()
         {
             InitializeComponent();
+        }
+
+        private void PbHome_Click(object sender, EventArgs e)
+        {
+            var homePage = new Landing_Page();
+            homePage.Show();
         }
     }
 }

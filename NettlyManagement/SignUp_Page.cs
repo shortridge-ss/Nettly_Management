@@ -10,11 +10,13 @@ using System.Windows.Forms;
 
 namespace NettlyManagement
 {
-    public partial class Form4 : Form
+    public partial class SignUp_Page : Form
     {
-        public Form4()
+        public SignUp_Page()
         {
             InitializeComponent();
         }
+
+  
     }
 }
