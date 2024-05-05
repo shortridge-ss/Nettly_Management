@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Admin_Page));
             this.LbHeading = new System.Windows.Forms.Label();
-            this.listBox1 = new System.Windows.Forms.ListBox();
             this.PanAllViews = new System.Windows.Forms.Panel();
             this.BtTnAllFeedback = new System.Windows.Forms.Button();
             this.BtTnAllCredentials = new System.Windows.Forms.Button();
@@ -47,6 +47,9 @@
             this.PbNettlyLogo = new System.Windows.Forms.PictureBox();
             this.PbSettings = new System.Windows.Forms.PictureBox();
             this.PbNavBar = new System.Windows.Forms.PictureBox();
+            this.GvAdminPage = new System.Windows.Forms.DataGridView();
+            this.nettlyBookingDbDataSet = new NettlyManagement.NettlyBookingDbDataSet();
+            this.nettlyBookingDbDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.PanAllViews.SuspendLayout();
             this.PanAllEdit.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PbSearch)).BeginInit();
@@ -54,6 +57,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.PbNettlyLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PbSettings)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PbNavBar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GvAdminPage)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nettlyBookingDbDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nettlyBookingDbDataSetBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // LbHeading
@@ -67,15 +73,6 @@
             this.LbHeading.Size = new System.Drawing.Size(373, 38);
             this.LbHeading.TabIndex = 0;
             this.LbHeading.Text = "Administration View";
-            // 
-            // listBox1
-            // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 16;
-            this.listBox1.Location = new System.Drawing.Point(308, 170);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(304, 276);
-            this.listBox1.TabIndex = 1;
             // 
             // PanAllViews
             // 
@@ -255,6 +252,28 @@
             this.PbNavBar.TabIndex = 44;
             this.PbNavBar.TabStop = false;
             // 
+            // GvAdminPage
+            // 
+            this.GvAdminPage.AutoGenerateColumns = false;
+            this.GvAdminPage.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.GvAdminPage.DataSource = this.nettlyBookingDbDataSetBindingSource;
+            this.GvAdminPage.Location = new System.Drawing.Point(273, 139);
+            this.GvAdminPage.Name = "GvAdminPage";
+            this.GvAdminPage.RowHeadersWidth = 51;
+            this.GvAdminPage.RowTemplate.Height = 24;
+            this.GvAdminPage.Size = new System.Drawing.Size(366, 307);
+            this.GvAdminPage.TabIndex = 50;
+            // 
+            // nettlyBookingDbDataSet
+            // 
+            this.nettlyBookingDbDataSet.DataSetName = "NettlyBookingDbDataSet";
+            this.nettlyBookingDbDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // nettlyBookingDbDataSetBindingSource
+            // 
+            this.nettlyBookingDbDataSetBindingSource.DataSource = this.nettlyBookingDbDataSet;
+            this.nettlyBookingDbDataSetBindingSource.Position = 0;
+            // 
             // Admin_Page
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -262,6 +281,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(949, 532);
+            this.Controls.Add(this.GvAdminPage);
             this.Controls.Add(this.PbSearch);
             this.Controls.Add(this.TbSearch);
             this.Controls.Add(this.PbHome);
@@ -270,11 +290,11 @@
             this.Controls.Add(this.PbNavBar);
             this.Controls.Add(this.PanAllEdit);
             this.Controls.Add(this.PanAllViews);
-            this.Controls.Add(this.listBox1);
             this.Controls.Add(this.LbHeading);
             this.DoubleBuffered = true;
             this.Name = "Admin_Page";
             this.Text = "Admin Main";
+            this.Load += new System.EventHandler(this.Admin_Page_Load);
             this.PanAllViews.ResumeLayout(false);
             this.PanAllEdit.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.PbSearch)).EndInit();
@@ -282,6 +302,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.PbNettlyLogo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PbSettings)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PbNavBar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GvAdminPage)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nettlyBookingDbDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nettlyBookingDbDataSetBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -290,7 +313,6 @@
         #endregion
 
         private System.Windows.Forms.Label LbHeading;
-        private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.Panel PanAllViews;
         private System.Windows.Forms.Panel PanAllEdit;
         private System.Windows.Forms.Button BtTnAllUsers;
@@ -307,5 +329,8 @@
         private System.Windows.Forms.PictureBox PbNettlyLogo;
         private System.Windows.Forms.PictureBox PbSettings;
         private System.Windows.Forms.PictureBox PbNavBar;
+        private System.Windows.Forms.DataGridView GvAdminPage;
+        private System.Windows.Forms.BindingSource nettlyBookingDbDataSetBindingSource;
+        private NettlyBookingDbDataSet nettlyBookingDbDataSet;
     }
 }

@@ -33,8 +33,17 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -46,6 +55,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Appointment.cs">
+      <DependentUpon>NettlyDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Availability.cs">
+      <DependentUpon>NettlyDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Feedback.cs">
+      <DependentUpon>NettlyDb.tt</DependentUpon>
+    </Compile>
     <Compile Include="Home_Page.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -57,6 +75,26 @@
     </Compile>
     <Compile Include="Login_Page.Designer.cs">
       <DependentUpon>Login_Page.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NettlyBookingDbDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NettlyBookingDbDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="NettlyDb.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NettlyDb.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NettlyDb.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NettlyDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NettlyDb.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NettlyDb.edmx</DependentUpon>
     </Compile>
     <Compile Include="SignUp_Page.cs">
       <SubType>Form</SubType>
@@ -82,6 +120,12 @@
     <Compile Include="AddFeedback_Page.Designer.cs">
       <DependentUpon>AddFeedback_Page.cs</DependentUpon>
     </Compile>
+    <Compile Include="Task.cs">
+      <DependentUpon>NettlyDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="User.cs">
+      <DependentUpon>NettlyDb.tt</DependentUpon>
+    </Compile>
     <Compile Include="UserDashboard_Page.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -96,6 +140,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserProfile.cs">
+      <DependentUpon>NettlyDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WaitingList.cs">
+      <DependentUpon>NettlyDb.tt</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Home_Page.resx">
       <DependentUpon>Home_Page.cs</DependentUpon>
     </EmbeddedResource>
@@ -129,6 +179,25 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EntityDeploy Include="NettlyDb.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>NettlyDb.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="NettlyBookingDbDataSet.xsc">
+      <DependentUpon>NettlyBookingDbDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="NettlyBookingDbDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>NettlyBookingDbDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="NettlyBookingDbDataSet.xss">
+      <DependentUpon>NettlyBookingDbDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="NettlyDb.edmx.diagram">
+      <DependentUpon>NettlyDb.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -141,6 +210,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="NettlyDb.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>NettlyDb.Context.cs</LastGenOutput>
+      <DependentUpon>NettlyDb.edmx</DependentUpon>
+    </Content>
+    <Content Include="NettlyDb.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>NettlyDb.edmx</DependentUpon>
+      <LastGenOutput>NettlyDb.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

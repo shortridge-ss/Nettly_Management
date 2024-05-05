@@ -12,9 +12,12 @@ namespace NettlyManagement
 {
     public partial class Landing_Page : Form
     {
+        private readonly NettlyBookingDbEntities nettlyDbEntities;
         public Landing_Page()
         {
             InitializeComponent();
+
+            nettlyDbEntities = new NettlyBookingDbEntities();
         }
 
         private void BtTnSignUp_Click(object sender, EventArgs e)
