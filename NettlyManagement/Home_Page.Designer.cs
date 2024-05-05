@@ -49,6 +49,7 @@
             this.adminSignUpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.logOutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.adminHomeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.PbNettlyLogo)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -180,14 +181,14 @@
             // giveFeedbackToolStripMenuItem
             // 
             this.giveFeedbackToolStripMenuItem.Name = "giveFeedbackToolStripMenuItem";
-            this.giveFeedbackToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.giveFeedbackToolStripMenuItem.Size = new System.Drawing.Size(191, 26);
             this.giveFeedbackToolStripMenuItem.Text = "Give Feedback";
             this.giveFeedbackToolStripMenuItem.Click += new System.EventHandler(this.giveFeedbackToolStripMenuItem_Click);
             // 
             // viewFeedbackToolStripMenuItem
             // 
             this.viewFeedbackToolStripMenuItem.Name = "viewFeedbackToolStripMenuItem";
-            this.viewFeedbackToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.viewFeedbackToolStripMenuItem.Size = new System.Drawing.Size(191, 26);
             this.viewFeedbackToolStripMenuItem.Text = "View Feedback";
             this.viewFeedbackToolStripMenuItem.Click += new System.EventHandler(this.viewFeedbackToolStripMenuItem_Click);
             // 
@@ -201,7 +202,8 @@
             // 
             this.administrationManagementToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.adminLoginToolStripMenuItem,
-            this.adminSignUpToolStripMenuItem});
+            this.adminSignUpToolStripMenuItem,
+            this.adminHomeToolStripMenuItem});
             this.administrationManagementToolStripMenuItem1.Name = "administrationManagementToolStripMenuItem1";
             this.administrationManagementToolStripMenuItem1.Size = new System.Drawing.Size(213, 24);
             this.administrationManagementToolStripMenuItem1.Text = "Administration Management";
@@ -209,13 +211,13 @@
             // adminLoginToolStripMenuItem
             // 
             this.adminLoginToolStripMenuItem.Name = "adminLoginToolStripMenuItem";
-            this.adminLoginToolStripMenuItem.Size = new System.Drawing.Size(192, 26);
+            this.adminLoginToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.adminLoginToolStripMenuItem.Text = "Admin Login";
             // 
             // adminSignUpToolStripMenuItem
             // 
             this.adminSignUpToolStripMenuItem.Name = "adminSignUpToolStripMenuItem";
-            this.adminSignUpToolStripMenuItem.Size = new System.Drawing.Size(192, 26);
+            this.adminSignUpToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.adminSignUpToolStripMenuItem.Text = "Admin Sign Up";
             // 
             // exitToolStripMenuItem
@@ -231,6 +233,13 @@
             this.logOutToolStripMenuItem.Name = "logOutToolStripMenuItem";
             this.logOutToolStripMenuItem.Size = new System.Drawing.Size(145, 26);
             this.logOutToolStripMenuItem.Text = "Log Out";
+            // 
+            // adminHomeToolStripMenuItem
+            // 
+            this.adminHomeToolStripMenuItem.Name = "adminHomeToolStripMenuItem";
+            this.adminHomeToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.adminHomeToolStripMenuItem.Text = "Admin Home";
+            this.adminHomeToolStripMenuItem.Click += new System.EventHandler(this.adminHomeToolStripMenuItem_Click);
             // 
             // Landing_Page
             // 
@@ -280,6 +289,7 @@
         private System.Windows.Forms.ToolStripMenuItem adminLoginToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem adminSignUpToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem logOutToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem adminHomeToolStripMenuItem;
     }
 }
 

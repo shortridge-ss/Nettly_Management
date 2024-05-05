@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="adb2664d4fd84df4b5cf45b8670172bf" Name="Diagram1">
+      <Diagram DiagramId="6bcadf6a6bb34929be9285e801aa609e" Name="Diagram1">
         <EntityTypeShape EntityType="NettlyBookingDbModel.Appointment" Width="1.5" PointX="3" PointY="1.375" IsExpanded="true" />
         <EntityTypeShape EntityType="NettlyBookingDbModel.Availability" Width="1.5" PointX="3" PointY="5.125" IsExpanded="true" />
         <EntityTypeShape EntityType="NettlyBookingDbModel.Feedback" Width="1.5" PointX="5.25" PointY="4" IsExpanded="true" />

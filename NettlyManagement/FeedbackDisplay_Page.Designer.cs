@@ -31,7 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Feedback_List));
             this.LbHeading = new System.Windows.Forms.Label();
             this.LbSubHeading = new System.Windows.Forms.Label();
-            this.listBox1 = new System.Windows.Forms.ListBox();
             this.BtTnBack = new System.Windows.Forms.Button();
             this.BtTnSkip = new System.Windows.Forms.Button();
             this.BtTnCreateFeedback = new System.Windows.Forms.Button();
@@ -41,11 +40,13 @@
             this.PbNettlyLogo = new System.Windows.Forms.PictureBox();
             this.PbSettings = new System.Windows.Forms.PictureBox();
             this.PbNavBar = new System.Windows.Forms.PictureBox();
+            this.GvFeedback = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.PbSearch)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PbHome)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PbNettlyLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PbSettings)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PbNavBar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GvFeedback)).BeginInit();
             this.SuspendLayout();
             // 
             // LbHeading
@@ -71,15 +72,6 @@
             this.LbSubHeading.Size = new System.Drawing.Size(513, 34);
             this.LbSubHeading.TabIndex = 17;
             this.LbSubHeading.Text = "What our customers are saying";
-            // 
-            // listBox1
-            // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 16;
-            this.listBox1.Location = new System.Drawing.Point(340, 207);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(498, 196);
-            this.listBox1.TabIndex = 18;
             // 
             // BtTnBack
             // 
@@ -178,6 +170,16 @@
             this.PbNavBar.TabIndex = 44;
             this.PbNavBar.TabStop = false;
             // 
+            // GvFeedback
+            // 
+            this.GvFeedback.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.GvFeedback.Location = new System.Drawing.Point(314, 205);
+            this.GvFeedback.Name = "GvFeedback";
+            this.GvFeedback.RowHeadersWidth = 51;
+            this.GvFeedback.RowTemplate.Height = 24;
+            this.GvFeedback.Size = new System.Drawing.Size(511, 233);
+            this.GvFeedback.TabIndex = 50;
+            // 
             // Feedback_List
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -185,6 +187,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(948, 527);
+            this.Controls.Add(this.GvFeedback);
             this.Controls.Add(this.PbSearch);
             this.Controls.Add(this.TbSearch);
             this.Controls.Add(this.PbHome);
@@ -194,17 +197,18 @@
             this.Controls.Add(this.BtTnCreateFeedback);
             this.Controls.Add(this.BtTnSkip);
             this.Controls.Add(this.BtTnBack);
-            this.Controls.Add(this.listBox1);
             this.Controls.Add(this.LbSubHeading);
             this.Controls.Add(this.LbHeading);
             this.DoubleBuffered = true;
             this.Name = "Feedback_List";
             this.Text = "Feedback";
+            this.Load += new System.EventHandler(this.Feedback_List_Load);
             ((System.ComponentModel.ISupportInitialize)(this.PbSearch)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PbHome)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PbNettlyLogo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PbSettings)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PbNavBar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GvFeedback)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -213,7 +217,6 @@
         #endregion
         private System.Windows.Forms.Label LbHeading;
         private System.Windows.Forms.Label LbSubHeading;
-        private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.Button BtTnBack;
         private System.Windows.Forms.Button BtTnSkip;
         private System.Windows.Forms.Button BtTnCreateFeedback;
@@ -223,5 +226,6 @@
         private System.Windows.Forms.PictureBox PbNettlyLogo;
         private System.Windows.Forms.PictureBox PbSettings;
         private System.Windows.Forms.PictureBox PbNavBar;
+        private System.Windows.Forms.DataGridView GvFeedback;
     }
 }

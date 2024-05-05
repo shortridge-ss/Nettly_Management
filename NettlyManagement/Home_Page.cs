@@ -12,12 +12,10 @@ namespace NettlyManagement
 {
     public partial class Landing_Page : Form
     {
-        private readonly NettlyBookingDbEntities nettlyDbEntities;
         public Landing_Page()
         {
             InitializeComponent();
 
-            nettlyDbEntities = new NettlyBookingDbEntities();
         }
 
         private void BtTnSignUp_Click(object sender, EventArgs e)
@@ -54,6 +52,12 @@ namespace NettlyManagement
         {
             var DisplayFeedback = new Feedback_List();
             DisplayFeedback.Show();
+        }
+
+        private void adminHomeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var adminHome = new Admin_Page();
+            adminHome.Show();
         }
     }
 }

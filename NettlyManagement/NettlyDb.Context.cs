@@ -13,10 +13,10 @@ namespace NettlyManagement
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class NettlyBookingDbEntities : DbContext
+    public partial class NettlyBookingDbEntities1 : DbContext
     {
-        public NettlyBookingDbEntities()
-            : base("name=NettlyBookingDbEntities")
+        public NettlyBookingDbEntities1()
+            : base("name=NettlyBookingDbEntities1")
         {
         }
     

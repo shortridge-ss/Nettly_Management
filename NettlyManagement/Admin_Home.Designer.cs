@@ -47,9 +47,17 @@
             this.PbNettlyLogo = new System.Windows.Forms.PictureBox();
             this.PbSettings = new System.Windows.Forms.PictureBox();
             this.PbNavBar = new System.Windows.Forms.PictureBox();
-            this.GvAdminPage = new System.Windows.Forms.DataGridView();
             this.nettlyBookingDbDataSet = new NettlyManagement.NettlyBookingDbDataSet();
-            this.nettlyBookingDbDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.feedbackBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.feedbackTableAdapter = new NettlyManagement.NettlyBookingDbDataSetTableAdapters.FeedbackTableAdapter();
+            this.userProfilesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.userProfilesTableAdapter = new NettlyManagement.NettlyBookingDbDataSetTableAdapters.UserProfilesTableAdapter();
+            this.userProfilesBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.appointmentsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.appointmentsTableAdapter = new NettlyManagement.NettlyBookingDbDataSetTableAdapters.AppointmentsTableAdapter();
+            this.feedbackBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.GvAdminPage = new System.Windows.Forms.DataGridView();
             this.PanAllViews.SuspendLayout();
             this.PanAllEdit.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PbSearch)).BeginInit();
@@ -57,9 +65,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.PbNettlyLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PbSettings)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PbNavBar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.GvAdminPage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nettlyBookingDbDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nettlyBookingDbDataSetBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.feedbackBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.userProfilesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.userProfilesBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.appointmentsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.feedbackBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GvAdminPage)).BeginInit();
             this.SuspendLayout();
             // 
             // LbHeading
@@ -83,7 +96,7 @@
             this.PanAllViews.Controls.Add(this.BtTnAllCredentials);
             this.PanAllViews.Controls.Add(this.BtTnAllBookings);
             this.PanAllViews.Controls.Add(this.BtTnAllUsers);
-            this.PanAllViews.Location = new System.Drawing.Point(29, 108);
+            this.PanAllViews.Location = new System.Drawing.Point(12, 107);
             this.PanAllViews.Name = "PanAllViews";
             this.PanAllViews.Size = new System.Drawing.Size(203, 338);
             this.PanAllViews.TabIndex = 2;
@@ -140,7 +153,7 @@
             this.PanAllEdit.Controls.Add(this.BtTnDeleteEntry);
             this.PanAllEdit.Controls.Add(this.BtTnEditEntry);
             this.PanAllEdit.Controls.Add(this.BtTnAddEntry);
-            this.PanAllEdit.Location = new System.Drawing.Point(674, 108);
+            this.PanAllEdit.Location = new System.Drawing.Point(717, 97);
             this.PanAllEdit.Name = "PanAllEdit";
             this.PanAllEdit.Size = new System.Drawing.Size(220, 338);
             this.PanAllEdit.TabIndex = 3;
@@ -252,27 +265,62 @@
             this.PbNavBar.TabIndex = 44;
             this.PbNavBar.TabStop = false;
             // 
-            // GvAdminPage
-            // 
-            this.GvAdminPage.AutoGenerateColumns = false;
-            this.GvAdminPage.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.GvAdminPage.DataSource = this.nettlyBookingDbDataSetBindingSource;
-            this.GvAdminPage.Location = new System.Drawing.Point(273, 139);
-            this.GvAdminPage.Name = "GvAdminPage";
-            this.GvAdminPage.RowHeadersWidth = 51;
-            this.GvAdminPage.RowTemplate.Height = 24;
-            this.GvAdminPage.Size = new System.Drawing.Size(366, 307);
-            this.GvAdminPage.TabIndex = 50;
-            // 
             // nettlyBookingDbDataSet
             // 
             this.nettlyBookingDbDataSet.DataSetName = "NettlyBookingDbDataSet";
             this.nettlyBookingDbDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // nettlyBookingDbDataSetBindingSource
+            // bindingSource1
             // 
-            this.nettlyBookingDbDataSetBindingSource.DataSource = this.nettlyBookingDbDataSet;
-            this.nettlyBookingDbDataSetBindingSource.Position = 0;
+            this.bindingSource1.DataSource = this.nettlyBookingDbDataSet;
+            this.bindingSource1.Position = 0;
+            // 
+            // feedbackBindingSource
+            // 
+            this.feedbackBindingSource.DataMember = "Feedback";
+            this.feedbackBindingSource.DataSource = this.bindingSource1;
+            // 
+            // feedbackTableAdapter
+            // 
+            this.feedbackTableAdapter.ClearBeforeFill = true;
+            // 
+            // userProfilesBindingSource
+            // 
+            this.userProfilesBindingSource.DataMember = "UserProfiles";
+            this.userProfilesBindingSource.DataSource = this.bindingSource1;
+            // 
+            // userProfilesTableAdapter
+            // 
+            this.userProfilesTableAdapter.ClearBeforeFill = true;
+            // 
+            // userProfilesBindingSource1
+            // 
+            this.userProfilesBindingSource1.DataMember = "UserProfiles";
+            this.userProfilesBindingSource1.DataSource = this.bindingSource1;
+            // 
+            // appointmentsBindingSource
+            // 
+            this.appointmentsBindingSource.DataMember = "Appointments";
+            this.appointmentsBindingSource.DataSource = this.bindingSource1;
+            // 
+            // appointmentsTableAdapter
+            // 
+            this.appointmentsTableAdapter.ClearBeforeFill = true;
+            // 
+            // feedbackBindingSource1
+            // 
+            this.feedbackBindingSource1.DataMember = "Feedback";
+            this.feedbackBindingSource1.DataSource = this.bindingSource1;
+            // 
+            // GvAdminPage
+            // 
+            this.GvAdminPage.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.GvAdminPage.Location = new System.Drawing.Point(221, 138);
+            this.GvAdminPage.Name = "GvAdminPage";
+            this.GvAdminPage.RowHeadersWidth = 51;
+            this.GvAdminPage.RowTemplate.Height = 24;
+            this.GvAdminPage.Size = new System.Drawing.Size(490, 326);
+            this.GvAdminPage.TabIndex = 50;
             // 
             // Admin_Page
             // 
@@ -302,9 +350,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.PbNettlyLogo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PbSettings)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PbNavBar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.GvAdminPage)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nettlyBookingDbDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nettlyBookingDbDataSetBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.feedbackBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.userProfilesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.userProfilesBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.appointmentsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.feedbackBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GvAdminPage)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -329,8 +382,17 @@
         private System.Windows.Forms.PictureBox PbNettlyLogo;
         private System.Windows.Forms.PictureBox PbSettings;
         private System.Windows.Forms.PictureBox PbNavBar;
-        private System.Windows.Forms.DataGridView GvAdminPage;
         private System.Windows.Forms.BindingSource nettlyBookingDbDataSetBindingSource;
+        private System.Windows.Forms.BindingSource bindingSource1;
         private NettlyBookingDbDataSet nettlyBookingDbDataSet;
+        private System.Windows.Forms.BindingSource feedbackBindingSource;
+        private NettlyBookingDbDataSetTableAdapters.FeedbackTableAdapter feedbackTableAdapter;
+        private System.Windows.Forms.BindingSource userProfilesBindingSource;
+        private NettlyBookingDbDataSetTableAdapters.UserProfilesTableAdapter userProfilesTableAdapter;
+        private System.Windows.Forms.BindingSource userProfilesBindingSource1;
+        private System.Windows.Forms.BindingSource appointmentsBindingSource;
+        private NettlyBookingDbDataSetTableAdapters.AppointmentsTableAdapter appointmentsTableAdapter;
+        private System.Windows.Forms.BindingSource feedbackBindingSource1;
+        private System.Windows.Forms.DataGridView GvAdminPage;
     }
 }
