@@ -67,7 +67,7 @@
             this.LbSubHeading.BackColor = System.Drawing.Color.Transparent;
             this.LbSubHeading.Font = new System.Drawing.Font("Verdana", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LbSubHeading.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.LbSubHeading.Location = new System.Drawing.Point(265, 149);
+            this.LbSubHeading.Location = new System.Drawing.Point(331, 148);
             this.LbSubHeading.Name = "LbSubHeading";
             this.LbSubHeading.Size = new System.Drawing.Size(513, 34);
             this.LbSubHeading.TabIndex = 17;
@@ -77,7 +77,7 @@
             // 
             this.BtTnBack.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtTnBack.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.BtTnBack.Location = new System.Drawing.Point(787, 81);
+            this.BtTnBack.Location = new System.Drawing.Point(1060, 84);
             this.BtTnBack.Name = "BtTnBack";
             this.BtTnBack.Size = new System.Drawing.Size(94, 29);
             this.BtTnBack.TabIndex = 19;
@@ -88,7 +88,7 @@
             // 
             this.BtTnSkip.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtTnSkip.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.BtTnSkip.Location = new System.Drawing.Point(654, 463);
+            this.BtTnSkip.Location = new System.Drawing.Point(861, 561);
             this.BtTnSkip.Name = "BtTnSkip";
             this.BtTnSkip.Size = new System.Drawing.Size(94, 29);
             this.BtTnSkip.TabIndex = 20;
@@ -99,7 +99,7 @@
             // 
             this.BtTnCreateFeedback.Font = new System.Drawing.Font("Verdana", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtTnCreateFeedback.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.BtTnCreateFeedback.Location = new System.Drawing.Point(767, 464);
+            this.BtTnCreateFeedback.Location = new System.Drawing.Point(989, 561);
             this.BtTnCreateFeedback.Name = "BtTnCreateFeedback";
             this.BtTnCreateFeedback.Size = new System.Drawing.Size(149, 29);
             this.BtTnCreateFeedback.TabIndex = 21;
@@ -154,7 +154,7 @@
             this.PbSettings.BackColor = System.Drawing.Color.Transparent;
             this.PbSettings.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("PbSettings.BackgroundImage")));
             this.PbSettings.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.PbSettings.Location = new System.Drawing.Point(903, 13);
+            this.PbSettings.Location = new System.Drawing.Point(1182, 13);
             this.PbSettings.Name = "PbSettings";
             this.PbSettings.Size = new System.Drawing.Size(25, 28);
             this.PbSettings.TabIndex = 45;
@@ -164,20 +164,20 @@
             // 
             this.PbNavBar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("PbNavBar.BackgroundImage")));
             this.PbNavBar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.PbNavBar.Location = new System.Drawing.Point(-5, 2);
+            this.PbNavBar.Location = new System.Drawing.Point(-11, 2);
             this.PbNavBar.Name = "PbNavBar";
-            this.PbNavBar.Size = new System.Drawing.Size(960, 50);
+            this.PbNavBar.Size = new System.Drawing.Size(1264, 50);
             this.PbNavBar.TabIndex = 44;
             this.PbNavBar.TabStop = false;
             // 
             // GvFeedback
             // 
             this.GvFeedback.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.GvFeedback.Location = new System.Drawing.Point(314, 205);
+            this.GvFeedback.Location = new System.Drawing.Point(424, 198);
             this.GvFeedback.Name = "GvFeedback";
             this.GvFeedback.RowHeadersWidth = 51;
             this.GvFeedback.RowTemplate.Height = 24;
-            this.GvFeedback.Size = new System.Drawing.Size(511, 233);
+            this.GvFeedback.Size = new System.Drawing.Size(730, 293);
             this.GvFeedback.TabIndex = 50;
             // 
             // Feedback_List
@@ -186,7 +186,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(948, 527);
+            this.ClientSize = new System.Drawing.Size(1248, 651);
             this.Controls.Add(this.GvFeedback);
             this.Controls.Add(this.PbSearch);
             this.Controls.Add(this.TbSearch);

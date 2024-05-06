@@ -39,9 +39,7 @@ namespace NettlyManagement
                 .Select( F => new { Comments = F.Comments, Ratings = F.Rating, DateSubmitted = F.DateSubmitted } )
                 .ToList();
             GvFeedback.DataSource = feedback;
-            //GvFeedback.Columns[5].HeaderText = "Comments";
-            //GvFeedback.Columns[4].HeaderText = "Ratings";
-            //GvFeedback.Columns[5].HeaderText = "Date Submitted";
+            GvFeedback.Columns[2].HeaderText = "Date Submitted";
         }
     }
 }

@@ -55,6 +55,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddEdit_Window.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddEdit_Window.Designer.cs">
+      <DependentUpon>AddEdit_Window.cs</DependentUpon>
+    </Compile>
     <Compile Include="Appointment.cs">
       <DependentUpon>NettlyDb.tt</DependentUpon>
     </Compile>
@@ -146,6 +152,9 @@
     <Compile Include="WaitingList.cs">
       <DependentUpon>NettlyDb.tt</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AddEdit_Window.resx">
+      <DependentUpon>AddEdit_Window.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Home_Page.resx">
       <DependentUpon>Home_Page.cs</DependentUpon>
     </EmbeddedResource>

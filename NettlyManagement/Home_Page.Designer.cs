@@ -57,7 +57,7 @@
             // BtTnSignIn
             // 
             this.BtTnSignIn.Font = new System.Drawing.Font("Verdana", 16F, System.Drawing.FontStyle.Bold);
-            this.BtTnSignIn.Location = new System.Drawing.Point(51, 322);
+            this.BtTnSignIn.Location = new System.Drawing.Point(281, 379);
             this.BtTnSignIn.Name = "BtTnSignIn";
             this.BtTnSignIn.Size = new System.Drawing.Size(232, 55);
             this.BtTnSignIn.TabIndex = 0;
@@ -68,7 +68,7 @@
             // BtTnSignUp
             // 
             this.BtTnSignUp.Font = new System.Drawing.Font("Verdana", 16F, System.Drawing.FontStyle.Bold);
-            this.BtTnSignUp.Location = new System.Drawing.Point(343, 322);
+            this.BtTnSignUp.Location = new System.Drawing.Point(671, 379);
             this.BtTnSignUp.Name = "BtTnSignUp";
             this.BtTnSignUp.Size = new System.Drawing.Size(232, 55);
             this.BtTnSignUp.TabIndex = 1;
@@ -82,7 +82,7 @@
             this.LbHeading.BackColor = System.Drawing.Color.Transparent;
             this.LbHeading.Font = new System.Drawing.Font("Verdana", 32F, System.Drawing.FontStyle.Bold);
             this.LbHeading.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.LbHeading.Location = new System.Drawing.Point(40, 51);
+            this.LbHeading.Location = new System.Drawing.Point(234, 55);
             this.LbHeading.MaximumSize = new System.Drawing.Size(650, 1800);
             this.LbHeading.Name = "LbHeading";
             this.LbHeading.Size = new System.Drawing.Size(580, 195);
@@ -95,7 +95,7 @@
             this.LbSignIn.BackColor = System.Drawing.Color.Transparent;
             this.LbSignIn.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Italic);
             this.LbSignIn.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.LbSignIn.Location = new System.Drawing.Point(53, 283);
+            this.LbSignIn.Location = new System.Drawing.Point(283, 340);
             this.LbSignIn.Name = "LbSignIn";
             this.LbSignIn.Size = new System.Drawing.Size(230, 20);
             this.LbSignIn.TabIndex = 3;
@@ -107,7 +107,7 @@
             this.LbSignUp.BackColor = System.Drawing.Color.Transparent;
             this.LbSignUp.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Italic);
             this.LbSignUp.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.LbSignUp.Location = new System.Drawing.Point(389, 283);
+            this.LbSignUp.Location = new System.Drawing.Point(717, 340);
             this.LbSignUp.Name = "LbSignUp";
             this.LbSignUp.Size = new System.Drawing.Size(150, 20);
             this.LbSignUp.TabIndex = 4;
@@ -118,7 +118,7 @@
             this.PbNettlyLogo.BackColor = System.Drawing.Color.Transparent;
             this.PbNettlyLogo.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("PbNettlyLogo.BackgroundImage")));
             this.PbNettlyLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.PbNettlyLogo.Location = new System.Drawing.Point(639, 67);
+            this.PbNettlyLogo.Location = new System.Drawing.Point(1056, 67);
             this.PbNettlyLogo.Name = "PbNettlyLogo";
             this.PbNettlyLogo.Size = new System.Drawing.Size(149, 109);
             this.PbNettlyLogo.TabIndex = 5;
@@ -135,7 +135,7 @@
             this.exitToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(904, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(1244, 28);
             this.menuStrip1.TabIndex = 6;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -152,20 +152,20 @@
             // addBookingsToolStripMenuItem
             // 
             this.addBookingsToolStripMenuItem.Name = "addBookingsToolStripMenuItem";
-            this.addBookingsToolStripMenuItem.Size = new System.Drawing.Size(189, 26);
+            this.addBookingsToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.addBookingsToolStripMenuItem.Text = "Add Bookings";
             this.addBookingsToolStripMenuItem.Click += new System.EventHandler(this.AddBookingsToolStripMenuItem_Click);
             // 
             // editBookingsToolStripMenuItem
             // 
             this.editBookingsToolStripMenuItem.Name = "editBookingsToolStripMenuItem";
-            this.editBookingsToolStripMenuItem.Size = new System.Drawing.Size(189, 26);
+            this.editBookingsToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.editBookingsToolStripMenuItem.Text = "Edit Bookings";
             // 
             // viewBookingsToolStripMenuItem
             // 
             this.viewBookingsToolStripMenuItem.Name = "viewBookingsToolStripMenuItem";
-            this.viewBookingsToolStripMenuItem.Size = new System.Drawing.Size(189, 26);
+            this.viewBookingsToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.viewBookingsToolStripMenuItem.Text = "View Bookings";
             this.viewBookingsToolStripMenuItem.Click += new System.EventHandler(this.ViewBookingsToolStripMenuItem_Click);
             // 
@@ -247,7 +247,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(904, 449);
+            this.ClientSize = new System.Drawing.Size(1244, 575);
             this.Controls.Add(this.PbNettlyLogo);
             this.Controls.Add(this.LbSignUp);
             this.Controls.Add(this.LbSignIn);

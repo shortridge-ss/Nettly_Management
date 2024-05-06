@@ -31,27 +31,30 @@ namespace NettlyManagement
 
         private void Admin_Page_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'nettlyBookingDbDataSet.Appointments' table. You can move, or remove it, as needed.
+   /*         // TODO: This line of code loads data into the 'nettlyBookingDbDataSet.Appointments' table. You can move, or remove it, as needed.
             this.appointmentsTableAdapter.Fill(this.nettlyBookingDbDataSet.Appointments);
             // TODO: This line of code loads data into the 'nettlyBookingDbDataSet.UserProfiles' table. You can move, or remove it, as needed.
             this.userProfilesTableAdapter.Fill(this.nettlyBookingDbDataSet.UserProfiles);
             // TODO: This line of code loads data into the 'nettlyBookingDbDataSet.Feedback' table. You can move, or remove it, as needed.
             this.feedbackTableAdapter.Fill(this.nettlyBookingDbDataSet.Feedback);
             //select * from userprofiles
-            var nettlyUsersProfiles = _dbEntities.UserProfiles.ToList();
-            GvAdminPage.AutoGenerateColumns = false;
-            // Remove ID column if it exists
-            if (GvAdminPage.Columns.Contains("ID"))
-            {
-                GvAdminPage.Columns.Remove("UserID");
-                GvAdminPage.Columns.Remove("UserProfileID");
-            }
-
+        */        var nettlyUsersProfiles = _dbEntities.UserProfiles
+                    .Select( UsPro => new 
+                    { FirstName = UsPro.FirstName,
+                        LastName = UsPro.LastName,
+                        PhoneNumber = UsPro.ContactNumber,
+                        Email = UsPro.Email,
+                        Address = UsPro.Address,
+                        UpId = UsPro.UserProfileID,
+                        UiD = UsPro.UserID  }
+                    ).ToList();
+         
             GvAdminPage.DataSource = nettlyUsersProfiles;
-
-            //GvAdminPage.DisplayMember = "FirstName";
-            //GvAdminPage.ValueMember = "id";
-            //GvAdminPage.DataSource = nettlyUsersProfiles;
+            GvAdminPage.Columns[0].HeaderText = "First Name";
+            GvAdminPage.Columns[1].HeaderText = "Last Name";
+            GvAdminPage.Columns[2].HeaderText = "Contact Number";
+            GvAdminPage.Columns[5].Visible = false;
+            GvAdminPage.Columns[6].Visible = false;
         }
 
         private void BtTnAllbookings_Click(object sender, EventArgs e)
@@ -60,16 +63,97 @@ namespace NettlyManagement
             var allAppointments = _dbEntities.Appointments.ToList();
 
             // Set up DataGridView properties
-            GvAdminPage.AutoGenerateColumns = false;
-
-            // Remove ID column if it exists
-            if (GvAdminPage.Columns.Contains("ID"))
-            {
-                GvAdminPage.Columns.Remove("ID");
-            }
+            GvAdminPage.AutoGenerateColumns = true;
 
             // Bind the Appointment data to the DataGridView
             GvAdminPage.DataSource = allAppointments;
+        }
+
+        private void BtTnAddEntry_Click(object sender, EventArgs e)
+        {
+            var addEntry = new AddEdit_Window();
+            addEntry.MdiParent = this.MdiParent;    
+            addEntry.Show();
+
+        }
+
+        private void BtTnEditEntry_Click(object sender, EventArgs e)
+        {
+            if (GvAdminPage.SelectedRows.Count > 0)
+            { 
+            // Get Id of selected row
+            
+            var id =  (int) GvAdminPage.SelectedRows[0].Cells["UpID"].Value;
+
+            // Query Database for record
+
+            var userInfo = _dbEntities.UserProfiles.FirstOrDefault( UsPro => UsPro.UserProfileID == id );
+           
+            // Launch AddEdit window with data 
+            
+            var addEntry = new AddEdit_Window(userInfo);
+            addEntry.MdiParent = this.MdiParent;
+            addEntry.Show();
+
+            }
+            else
+            {
+                MessageBox.Show("Please select a row to edit.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+
+        }
+
+        private void BtTnDeleteEntry_Click(object sender, EventArgs e)
+        {
+            if (GvAdminPage.SelectedRows.Count > 0)
+            {
+                // Get Id of selected row
+                var id = (int)GvAdminPage.SelectedRows[0].Cells["UpID"].Value;
+
+                // Query Database for record
+
+                var userInfo = _dbEntities.UserProfiles.FirstOrDefault(UsPro => UsPro.UserProfileID == id);
+
+                // Delete entry from table
+
+                _dbEntities.UserProfiles.Remove(userInfo);
+                _dbEntities.SaveChanges();
+
+                GvAdminPage.Refresh();
+            }
+            else
+            {
+                MessageBox.Show("Please select a row to delete.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            }
+        }
+
+        private void BtTnRefresh_Click(object sender, EventArgs e)
+        {
+            //simple refresh
+            PopulateGrid();
+        }
+
+        private void PopulateGrid()
+        {
+           var nettlyUsersProfiles = _dbEntities.UserProfiles
+                .Select(UsPro => new
+                {
+                    FirstName = UsPro.FirstName,
+                    LastName = UsPro.LastName,
+                    PhoneNumber = UsPro.ContactNumber,
+                    Email = UsPro.Email,
+                    Address = UsPro.Address,
+                    UpId = UsPro.UserProfileID,
+                    UiD = UsPro.UserID
+                }
+                ).ToList();
+            GvAdminPage.DataSource = nettlyUsersProfiles;
+            GvAdminPage.Columns[0].HeaderText = "First Name";
+            GvAdminPage.Columns[1].HeaderText = "Last Name";
+            GvAdminPage.Columns[2].HeaderText = "Contact Number";
+            GvAdminPage.Columns[5].Visible = false;
+            GvAdminPage.Columns[6].Visible = false;
         }
     }
 }

@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Admin_Page));
             this.LbHeading = new System.Windows.Forms.Label();
             this.PanAllViews = new System.Windows.Forms.Panel();
@@ -37,7 +36,7 @@
             this.BtTnAllBookings = new System.Windows.Forms.Button();
             this.BtTnAllUsers = new System.Windows.Forms.Button();
             this.PanAllEdit = new System.Windows.Forms.Panel();
-            this.BtTnReset = new System.Windows.Forms.Button();
+            this.BtTnRefresh = new System.Windows.Forms.Button();
             this.BtTnDeleteEntry = new System.Windows.Forms.Button();
             this.BtTnEditEntry = new System.Windows.Forms.Button();
             this.BtTnAddEntry = new System.Windows.Forms.Button();
@@ -47,16 +46,6 @@
             this.PbNettlyLogo = new System.Windows.Forms.PictureBox();
             this.PbSettings = new System.Windows.Forms.PictureBox();
             this.PbNavBar = new System.Windows.Forms.PictureBox();
-            this.nettlyBookingDbDataSet = new NettlyManagement.NettlyBookingDbDataSet();
-            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.feedbackBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.feedbackTableAdapter = new NettlyManagement.NettlyBookingDbDataSetTableAdapters.FeedbackTableAdapter();
-            this.userProfilesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.userProfilesTableAdapter = new NettlyManagement.NettlyBookingDbDataSetTableAdapters.UserProfilesTableAdapter();
-            this.userProfilesBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.appointmentsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.appointmentsTableAdapter = new NettlyManagement.NettlyBookingDbDataSetTableAdapters.AppointmentsTableAdapter();
-            this.feedbackBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.GvAdminPage = new System.Windows.Forms.DataGridView();
             this.PanAllViews.SuspendLayout();
             this.PanAllEdit.SuspendLayout();
@@ -65,13 +54,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.PbNettlyLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PbSettings)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PbNavBar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nettlyBookingDbDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.feedbackBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.userProfilesBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.userProfilesBindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.appointmentsBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.feedbackBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.GvAdminPage)).BeginInit();
             this.SuspendLayout();
             // 
@@ -81,7 +63,7 @@
             this.LbHeading.BackColor = System.Drawing.Color.Transparent;
             this.LbHeading.Font = new System.Drawing.Font("Verdana", 18.2F, System.Drawing.FontStyle.Bold);
             this.LbHeading.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.LbHeading.Location = new System.Drawing.Point(266, 97);
+            this.LbHeading.Location = new System.Drawing.Point(398, 82);
             this.LbHeading.Name = "LbHeading";
             this.LbHeading.Size = new System.Drawing.Size(373, 38);
             this.LbHeading.TabIndex = 0;
@@ -96,7 +78,7 @@
             this.PanAllViews.Controls.Add(this.BtTnAllCredentials);
             this.PanAllViews.Controls.Add(this.BtTnAllBookings);
             this.PanAllViews.Controls.Add(this.BtTnAllUsers);
-            this.PanAllViews.Location = new System.Drawing.Point(12, 107);
+            this.PanAllViews.Location = new System.Drawing.Point(12, 161);
             this.PanAllViews.Name = "PanAllViews";
             this.PanAllViews.Size = new System.Drawing.Size(203, 338);
             this.PanAllViews.TabIndex = 2;
@@ -107,7 +89,7 @@
             this.BtTnAllFeedback.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold);
             this.BtTnAllFeedback.Location = new System.Drawing.Point(24, 229);
             this.BtTnAllFeedback.Name = "BtTnAllFeedback";
-            this.BtTnAllFeedback.Size = new System.Drawing.Size(137, 37);
+            this.BtTnAllFeedback.Size = new System.Drawing.Size(161, 37);
             this.BtTnAllFeedback.TabIndex = 3;
             this.BtTnAllFeedback.Text = "All Feedback";
             this.BtTnAllFeedback.UseVisualStyleBackColor = true;
@@ -118,7 +100,7 @@
             this.BtTnAllCredentials.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold);
             this.BtTnAllCredentials.Location = new System.Drawing.Point(24, 174);
             this.BtTnAllCredentials.Name = "BtTnAllCredentials";
-            this.BtTnAllCredentials.Size = new System.Drawing.Size(137, 37);
+            this.BtTnAllCredentials.Size = new System.Drawing.Size(161, 37);
             this.BtTnAllCredentials.TabIndex = 2;
             this.BtTnAllCredentials.Text = "All Credentials";
             this.BtTnAllCredentials.UseVisualStyleBackColor = true;
@@ -129,7 +111,7 @@
             this.BtTnAllBookings.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold);
             this.BtTnAllBookings.Location = new System.Drawing.Point(24, 117);
             this.BtTnAllBookings.Name = "BtTnAllBookings";
-            this.BtTnAllBookings.Size = new System.Drawing.Size(137, 37);
+            this.BtTnAllBookings.Size = new System.Drawing.Size(161, 37);
             this.BtTnAllBookings.TabIndex = 1;
             this.BtTnAllBookings.Text = "All Bookings";
             this.BtTnAllBookings.UseVisualStyleBackColor = true;
@@ -140,7 +122,7 @@
             this.BtTnAllUsers.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtTnAllUsers.Location = new System.Drawing.Point(24, 54);
             this.BtTnAllUsers.Name = "BtTnAllUsers";
-            this.BtTnAllUsers.Size = new System.Drawing.Size(137, 37);
+            this.BtTnAllUsers.Size = new System.Drawing.Size(161, 37);
             this.BtTnAllUsers.TabIndex = 0;
             this.BtTnAllUsers.Text = "All Users";
             this.BtTnAllUsers.UseVisualStyleBackColor = true;
@@ -149,25 +131,26 @@
             // 
             this.PanAllEdit.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("PanAllEdit.BackgroundImage")));
             this.PanAllEdit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.PanAllEdit.Controls.Add(this.BtTnReset);
+            this.PanAllEdit.Controls.Add(this.BtTnRefresh);
             this.PanAllEdit.Controls.Add(this.BtTnDeleteEntry);
             this.PanAllEdit.Controls.Add(this.BtTnEditEntry);
             this.PanAllEdit.Controls.Add(this.BtTnAddEntry);
-            this.PanAllEdit.Location = new System.Drawing.Point(717, 97);
+            this.PanAllEdit.Location = new System.Drawing.Point(1007, 161);
             this.PanAllEdit.Name = "PanAllEdit";
             this.PanAllEdit.Size = new System.Drawing.Size(220, 338);
             this.PanAllEdit.TabIndex = 3;
             // 
-            // BtTnReset
+            // BtTnRefresh
             // 
-            this.BtTnReset.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BtTnReset.BackgroundImage")));
-            this.BtTnReset.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold);
-            this.BtTnReset.Location = new System.Drawing.Point(44, 229);
-            this.BtTnReset.Name = "BtTnReset";
-            this.BtTnReset.Size = new System.Drawing.Size(137, 37);
-            this.BtTnReset.TabIndex = 4;
-            this.BtTnReset.Text = "Reset";
-            this.BtTnReset.UseVisualStyleBackColor = true;
+            this.BtTnRefresh.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BtTnRefresh.BackgroundImage")));
+            this.BtTnRefresh.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold);
+            this.BtTnRefresh.Location = new System.Drawing.Point(44, 229);
+            this.BtTnRefresh.Name = "BtTnRefresh";
+            this.BtTnRefresh.Size = new System.Drawing.Size(137, 37);
+            this.BtTnRefresh.TabIndex = 4;
+            this.BtTnRefresh.Text = "Refresh";
+            this.BtTnRefresh.UseVisualStyleBackColor = true;
+            this.BtTnRefresh.Click += new System.EventHandler(this.BtTnRefresh_Click);
             // 
             // BtTnDeleteEntry
             // 
@@ -179,6 +162,7 @@
             this.BtTnDeleteEntry.TabIndex = 3;
             this.BtTnDeleteEntry.Text = "Delete Entry";
             this.BtTnDeleteEntry.UseVisualStyleBackColor = true;
+            this.BtTnDeleteEntry.Click += new System.EventHandler(this.BtTnDeleteEntry_Click);
             // 
             // BtTnEditEntry
             // 
@@ -190,6 +174,7 @@
             this.BtTnEditEntry.TabIndex = 2;
             this.BtTnEditEntry.Text = "Edit Entry";
             this.BtTnEditEntry.UseVisualStyleBackColor = true;
+            this.BtTnEditEntry.Click += new System.EventHandler(this.BtTnEditEntry_Click);
             // 
             // BtTnAddEntry
             // 
@@ -201,6 +186,7 @@
             this.BtTnAddEntry.TabIndex = 1;
             this.BtTnAddEntry.Text = "Add Entry";
             this.BtTnAddEntry.UseVisualStyleBackColor = true;
+            this.BtTnAddEntry.Click += new System.EventHandler(this.BtTnAddEntry_Click);
             // 
             // PbSearch
             // 
@@ -249,7 +235,7 @@
             this.PbSettings.BackColor = System.Drawing.Color.Transparent;
             this.PbSettings.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("PbSettings.BackgroundImage")));
             this.PbSettings.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.PbSettings.Location = new System.Drawing.Point(902, 12);
+            this.PbSettings.Location = new System.Drawing.Point(1190, 14);
             this.PbSettings.Name = "PbSettings";
             this.PbSettings.Size = new System.Drawing.Size(25, 28);
             this.PbSettings.TabIndex = 45;
@@ -261,65 +247,18 @@
             this.PbNavBar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.PbNavBar.Location = new System.Drawing.Point(-6, 1);
             this.PbNavBar.Name = "PbNavBar";
-            this.PbNavBar.Size = new System.Drawing.Size(960, 50);
+            this.PbNavBar.Size = new System.Drawing.Size(1252, 50);
             this.PbNavBar.TabIndex = 44;
             this.PbNavBar.TabStop = false;
-            // 
-            // nettlyBookingDbDataSet
-            // 
-            this.nettlyBookingDbDataSet.DataSetName = "NettlyBookingDbDataSet";
-            this.nettlyBookingDbDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // bindingSource1
-            // 
-            this.bindingSource1.DataSource = this.nettlyBookingDbDataSet;
-            this.bindingSource1.Position = 0;
-            // 
-            // feedbackBindingSource
-            // 
-            this.feedbackBindingSource.DataMember = "Feedback";
-            this.feedbackBindingSource.DataSource = this.bindingSource1;
-            // 
-            // feedbackTableAdapter
-            // 
-            this.feedbackTableAdapter.ClearBeforeFill = true;
-            // 
-            // userProfilesBindingSource
-            // 
-            this.userProfilesBindingSource.DataMember = "UserProfiles";
-            this.userProfilesBindingSource.DataSource = this.bindingSource1;
-            // 
-            // userProfilesTableAdapter
-            // 
-            this.userProfilesTableAdapter.ClearBeforeFill = true;
-            // 
-            // userProfilesBindingSource1
-            // 
-            this.userProfilesBindingSource1.DataMember = "UserProfiles";
-            this.userProfilesBindingSource1.DataSource = this.bindingSource1;
-            // 
-            // appointmentsBindingSource
-            // 
-            this.appointmentsBindingSource.DataMember = "Appointments";
-            this.appointmentsBindingSource.DataSource = this.bindingSource1;
-            // 
-            // appointmentsTableAdapter
-            // 
-            this.appointmentsTableAdapter.ClearBeforeFill = true;
-            // 
-            // feedbackBindingSource1
-            // 
-            this.feedbackBindingSource1.DataMember = "Feedback";
-            this.feedbackBindingSource1.DataSource = this.bindingSource1;
             // 
             // GvAdminPage
             // 
             this.GvAdminPage.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.GvAdminPage.Location = new System.Drawing.Point(221, 138);
+            this.GvAdminPage.Location = new System.Drawing.Point(243, 206);
             this.GvAdminPage.Name = "GvAdminPage";
             this.GvAdminPage.RowHeadersWidth = 51;
             this.GvAdminPage.RowTemplate.Height = 24;
-            this.GvAdminPage.Size = new System.Drawing.Size(490, 326);
+            this.GvAdminPage.Size = new System.Drawing.Size(733, 326);
             this.GvAdminPage.TabIndex = 50;
             // 
             // Admin_Page
@@ -328,7 +267,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(949, 532);
+            this.ClientSize = new System.Drawing.Size(1248, 649);
             this.Controls.Add(this.GvAdminPage);
             this.Controls.Add(this.PbSearch);
             this.Controls.Add(this.TbSearch);
@@ -350,13 +289,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.PbNettlyLogo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PbSettings)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PbNavBar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nettlyBookingDbDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.feedbackBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.userProfilesBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.userProfilesBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.appointmentsBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.feedbackBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.GvAdminPage)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -372,7 +304,7 @@
         private System.Windows.Forms.Button BtTnAllFeedback;
         private System.Windows.Forms.Button BtTnAllCredentials;
         private System.Windows.Forms.Button BtTnAllBookings;
-        private System.Windows.Forms.Button BtTnReset;
+        private System.Windows.Forms.Button BtTnRefresh;
         private System.Windows.Forms.Button BtTnDeleteEntry;
         private System.Windows.Forms.Button BtTnEditEntry;
         private System.Windows.Forms.Button BtTnAddEntry;
@@ -383,16 +315,6 @@
         private System.Windows.Forms.PictureBox PbSettings;
         private System.Windows.Forms.PictureBox PbNavBar;
         private System.Windows.Forms.BindingSource nettlyBookingDbDataSetBindingSource;
-        private System.Windows.Forms.BindingSource bindingSource1;
-        private NettlyBookingDbDataSet nettlyBookingDbDataSet;
-        private System.Windows.Forms.BindingSource feedbackBindingSource;
-        private NettlyBookingDbDataSetTableAdapters.FeedbackTableAdapter feedbackTableAdapter;
-        private System.Windows.Forms.BindingSource userProfilesBindingSource;
-        private NettlyBookingDbDataSetTableAdapters.UserProfilesTableAdapter userProfilesTableAdapter;
-        private System.Windows.Forms.BindingSource userProfilesBindingSource1;
-        private System.Windows.Forms.BindingSource appointmentsBindingSource;
-        private NettlyBookingDbDataSetTableAdapters.AppointmentsTableAdapter appointmentsTableAdapter;
-        private System.Windows.Forms.BindingSource feedbackBindingSource1;
         private System.Windows.Forms.DataGridView GvAdminPage;
     }
 }
