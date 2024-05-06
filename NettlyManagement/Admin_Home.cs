@@ -91,9 +91,9 @@ namespace NettlyManagement
            
             // Launch AddEdit window with data 
             
-            var addEntry = new AddEdit_Window(userInfo);
-            addEntry.MdiParent = this.MdiParent;
-            addEntry.Show();
+            var editEntry = new AddEdit_Window(userInfo);
+            editEntry.MdiParent = this.MdiParent;
+            editEntry.Show();
 
             }
             else

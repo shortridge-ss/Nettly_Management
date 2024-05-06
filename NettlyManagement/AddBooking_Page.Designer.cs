@@ -34,7 +34,7 @@
             this.PbNettlyLogo = new System.Windows.Forms.PictureBox();
             this.PbSettings = new System.Windows.Forms.PictureBox();
             this.PbNavBar = new System.Windows.Forms.PictureBox();
-            this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
+            this.McDatePicker = new System.Windows.Forms.MonthCalendar();
             this.LbHeading = new System.Windows.Forms.Label();
             this.LbBookingSteps = new System.Windows.Forms.Label();
             this.LbSubHeading = new System.Windows.Forms.Label();
@@ -45,11 +45,12 @@
             this.DtP_StartTime = new System.Windows.Forms.DateTimePicker();
             this.DtP_EndTime = new System.Windows.Forms.DateTimePicker();
             this.TbBookingName = new System.Windows.Forms.TextBox();
-            this.TbAppointmentDetails = new System.Windows.Forms.TextBox();
-            this.BtTnDiscard = new System.Windows.Forms.Button();
+            this.TbAppDetails = new System.Windows.Forms.TextBox();
+            this.BtTnSave = new System.Windows.Forms.Button();
             this.BtTnCancel = new System.Windows.Forms.Button();
             this.BtTnBookNow = new System.Windows.Forms.Button();
             this.TbSearch = new System.Windows.Forms.TextBox();
+            this.LbId = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.PbHome)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PbSearch)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PbNettlyLogo)).BeginInit();
@@ -96,7 +97,7 @@
             this.PbSettings.BackColor = System.Drawing.Color.Transparent;
             this.PbSettings.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("PbSettings.BackgroundImage")));
             this.PbSettings.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.PbSettings.Location = new System.Drawing.Point(904, 23);
+            this.PbSettings.Location = new System.Drawing.Point(1118, 23);
             this.PbSettings.Name = "PbSettings";
             this.PbSettings.Size = new System.Drawing.Size(25, 28);
             this.PbSettings.TabIndex = 24;
@@ -108,15 +109,15 @@
             this.PbNavBar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.PbNavBar.Location = new System.Drawing.Point(-4, 12);
             this.PbNavBar.Name = "PbNavBar";
-            this.PbNavBar.Size = new System.Drawing.Size(960, 50);
+            this.PbNavBar.Size = new System.Drawing.Size(1188, 50);
             this.PbNavBar.TabIndex = 22;
             this.PbNavBar.TabStop = false;
             // 
-            // monthCalendar1
+            // McDatePicker
             // 
-            this.monthCalendar1.Location = new System.Drawing.Point(37, 242);
-            this.monthCalendar1.Name = "monthCalendar1";
-            this.monthCalendar1.TabIndex = 28;
+            this.McDatePicker.Location = new System.Drawing.Point(60, 253);
+            this.McDatePicker.Name = "McDatePicker";
+            this.McDatePicker.TabIndex = 28;
             // 
             // LbHeading
             // 
@@ -124,7 +125,7 @@
             this.LbHeading.BackColor = System.Drawing.Color.Transparent;
             this.LbHeading.Font = new System.Drawing.Font("Verdana", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LbHeading.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.LbHeading.Location = new System.Drawing.Point(94, 86);
+            this.LbHeading.Location = new System.Drawing.Point(139, 82);
             this.LbHeading.Name = "LbHeading";
             this.LbHeading.Size = new System.Drawing.Size(358, 34);
             this.LbHeading.TabIndex = 29;
@@ -162,7 +163,7 @@
             this.LbBookingName.BackColor = System.Drawing.Color.Transparent;
             this.LbBookingName.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LbBookingName.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.LbBookingName.Location = new System.Drawing.Point(379, 145);
+            this.LbBookingName.Location = new System.Drawing.Point(433, 157);
             this.LbBookingName.Name = "LbBookingName";
             this.LbBookingName.Size = new System.Drawing.Size(250, 20);
             this.LbBookingName.TabIndex = 32;
@@ -174,7 +175,7 @@
             this.LbStartTime.BackColor = System.Drawing.Color.Transparent;
             this.LbStartTime.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LbStartTime.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.LbStartTime.Location = new System.Drawing.Point(364, 218);
+            this.LbStartTime.Location = new System.Drawing.Point(434, 217);
             this.LbStartTime.Name = "LbStartTime";
             this.LbStartTime.Size = new System.Drawing.Size(194, 18);
             this.LbStartTime.TabIndex = 33;
@@ -186,7 +187,7 @@
             this.LbEndTime.BackColor = System.Drawing.Color.Transparent;
             this.LbEndTime.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LbEndTime.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.LbEndTime.Location = new System.Drawing.Point(364, 300);
+            this.LbEndTime.Location = new System.Drawing.Point(434, 299);
             this.LbEndTime.Name = "LbEndTime";
             this.LbEndTime.Size = new System.Drawing.Size(138, 18);
             this.LbEndTime.TabIndex = 34;
@@ -198,7 +199,7 @@
             this.LbAppointmentDetails.BackColor = System.Drawing.Color.Transparent;
             this.LbAppointmentDetails.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LbAppointmentDetails.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.LbAppointmentDetails.Location = new System.Drawing.Point(341, 362);
+            this.LbAppointmentDetails.Location = new System.Drawing.Point(434, 362);
             this.LbAppointmentDetails.Name = "LbAppointmentDetails";
             this.LbAppointmentDetails.Size = new System.Drawing.Size(224, 18);
             this.LbAppointmentDetails.TabIndex = 35;
@@ -209,7 +210,7 @@
             this.DtP_StartTime.CalendarFont = new System.Drawing.Font("Verdana", 9.2F, System.Drawing.FontStyle.Bold);
             this.DtP_StartTime.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DtP_StartTime.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.DtP_StartTime.Location = new System.Drawing.Point(367, 254);
+            this.DtP_StartTime.Location = new System.Drawing.Point(437, 253);
             this.DtP_StartTime.Name = "DtP_StartTime";
             this.DtP_StartTime.ShowUpDown = true;
             this.DtP_StartTime.Size = new System.Drawing.Size(300, 28);
@@ -220,7 +221,7 @@
             this.DtP_EndTime.CalendarFont = new System.Drawing.Font("Verdana", 9.2F, System.Drawing.FontStyle.Bold);
             this.DtP_EndTime.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DtP_EndTime.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.DtP_EndTime.Location = new System.Drawing.Point(367, 321);
+            this.DtP_EndTime.Location = new System.Drawing.Point(437, 320);
             this.DtP_EndTime.Name = "DtP_EndTime";
             this.DtP_EndTime.ShowUpDown = true;
             this.DtP_EndTime.Size = new System.Drawing.Size(300, 28);
@@ -228,47 +229,49 @@
             // 
             // TbBookingName
             // 
-            this.TbBookingName.Location = new System.Drawing.Point(383, 172);
+            this.TbBookingName.Location = new System.Drawing.Point(437, 184);
             this.TbBookingName.Multiline = true;
             this.TbBookingName.Name = "TbBookingName";
             this.TbBookingName.Size = new System.Drawing.Size(284, 24);
             this.TbBookingName.TabIndex = 38;
             // 
-            // TbAppointmentDetails
+            // TbAppDetails
             // 
-            this.TbAppointmentDetails.Location = new System.Drawing.Point(329, 381);
-            this.TbAppointmentDetails.Multiline = true;
-            this.TbAppointmentDetails.Name = "TbAppointmentDetails";
-            this.TbAppointmentDetails.Size = new System.Drawing.Size(480, 112);
-            this.TbAppointmentDetails.TabIndex = 39;
+            this.TbAppDetails.Location = new System.Drawing.Point(437, 383);
+            this.TbAppDetails.Multiline = true;
+            this.TbAppDetails.Name = "TbAppDetails";
+            this.TbAppDetails.Size = new System.Drawing.Size(579, 179);
+            this.TbAppDetails.TabIndex = 39;
             // 
-            // BtTnDiscard
+            // BtTnSave
             // 
-            this.BtTnDiscard.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtTnDiscard.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.BtTnDiscard.Location = new System.Drawing.Point(823, 197);
-            this.BtTnDiscard.Name = "BtTnDiscard";
-            this.BtTnDiscard.Size = new System.Drawing.Size(94, 29);
-            this.BtTnDiscard.TabIndex = 40;
-            this.BtTnDiscard.Text = "Discard";
-            this.BtTnDiscard.UseVisualStyleBackColor = true;
+            this.BtTnSave.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold);
+            this.BtTnSave.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.BtTnSave.Location = new System.Drawing.Point(1021, 272);
+            this.BtTnSave.Name = "BtTnSave";
+            this.BtTnSave.Size = new System.Drawing.Size(150, 45);
+            this.BtTnSave.TabIndex = 40;
+            this.BtTnSave.Text = "Save";
+            this.BtTnSave.UseVisualStyleBackColor = true;
+            
             // 
             // BtTnCancel
             // 
             this.BtTnCancel.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtTnCancel.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.BtTnCancel.Location = new System.Drawing.Point(823, 141);
+            this.BtTnCancel.Location = new System.Drawing.Point(1021, 195);
             this.BtTnCancel.Name = "BtTnCancel";
-            this.BtTnCancel.Size = new System.Drawing.Size(94, 29);
+            this.BtTnCancel.Size = new System.Drawing.Size(140, 40);
             this.BtTnCancel.TabIndex = 41;
             this.BtTnCancel.Text = "Cancel";
             this.BtTnCancel.UseVisualStyleBackColor = true;
+            this.BtTnCancel.Click += new System.EventHandler(this.BtTnCancel_Click);
             // 
             // BtTnBookNow
             // 
             this.BtTnBookNow.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtTnBookNow.ForeColor = System.Drawing.Color.Green;
-            this.BtTnBookNow.Location = new System.Drawing.Point(52, 461);
+            this.BtTnBookNow.Location = new System.Drawing.Point(94, 497);
             this.BtTnBookNow.Name = "BtTnBookNow";
             this.BtTnBookNow.Size = new System.Drawing.Size(228, 46);
             this.BtTnBookNow.TabIndex = 42;
@@ -283,19 +286,31 @@
             this.TbSearch.Size = new System.Drawing.Size(285, 37);
             this.TbSearch.TabIndex = 43;
             // 
+            // LbId
+            // 
+            this.LbId.AutoSize = true;
+            this.LbId.BackColor = System.Drawing.Color.Transparent;
+            this.LbId.Location = new System.Drawing.Point(835, 237);
+            this.LbId.Name = "LbId";
+            this.LbId.Size = new System.Drawing.Size(10, 16);
+            this.LbId.TabIndex = 44;
+            this.LbId.Text = "l";
+            this.LbId.Visible = false;
+            // 
             // Add_Booking
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(946, 525);
+            this.ClientSize = new System.Drawing.Size(1183, 616);
+            this.Controls.Add(this.LbId);
             this.Controls.Add(this.PbSearch);
             this.Controls.Add(this.TbSearch);
             this.Controls.Add(this.BtTnBookNow);
             this.Controls.Add(this.BtTnCancel);
-            this.Controls.Add(this.BtTnDiscard);
-            this.Controls.Add(this.TbAppointmentDetails);
+            this.Controls.Add(this.BtTnSave);
+            this.Controls.Add(this.TbAppDetails);
             this.Controls.Add(this.TbBookingName);
             this.Controls.Add(this.DtP_EndTime);
             this.Controls.Add(this.DtP_StartTime);
@@ -306,7 +321,7 @@
             this.Controls.Add(this.LbSubHeading);
             this.Controls.Add(this.LbBookingSteps);
             this.Controls.Add(this.LbHeading);
-            this.Controls.Add(this.monthCalendar1);
+            this.Controls.Add(this.McDatePicker);
             this.Controls.Add(this.PbHome);
             this.Controls.Add(this.PbNettlyLogo);
             this.Controls.Add(this.PbSettings);
@@ -331,7 +346,7 @@
         private System.Windows.Forms.PictureBox PbNettlyLogo;
         private System.Windows.Forms.PictureBox PbSettings;
         private System.Windows.Forms.PictureBox PbNavBar;
-        private System.Windows.Forms.MonthCalendar monthCalendar1;
+        private System.Windows.Forms.MonthCalendar McDatePicker;
         private System.Windows.Forms.Label LbHeading;
         private System.Windows.Forms.Label LbBookingSteps;
         private System.Windows.Forms.Label LbSubHeading;
@@ -342,10 +357,11 @@
         private System.Windows.Forms.DateTimePicker DtP_StartTime;
         private System.Windows.Forms.DateTimePicker DtP_EndTime;
         private System.Windows.Forms.TextBox TbBookingName;
-        private System.Windows.Forms.TextBox TbAppointmentDetails;
-        private System.Windows.Forms.Button BtTnDiscard;
+        private System.Windows.Forms.TextBox TbAppDetails;
+        private System.Windows.Forms.Button BtTnSave;
         private System.Windows.Forms.Button BtTnCancel;
         private System.Windows.Forms.Button BtTnBookNow;
         private System.Windows.Forms.TextBox TbSearch;
+        private System.Windows.Forms.Label LbId;
     }
 }

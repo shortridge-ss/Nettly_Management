@@ -24,10 +24,12 @@ namespace NettlyManagement
         public Nullable<int> UserID { get; set; }
         public Nullable<int> TaskID { get; set; }
         public Nullable<int> StaffID { get; set; }
+        public string AppointmentName { get; set; }
         public Nullable<System.DateTime> AppointmentDate { get; set; }
         public Nullable<System.TimeSpan> StartTime { get; set; }
         public Nullable<System.TimeSpan> EndTime { get; set; }
         public string Status { get; set; }
+        public string Details { get; set; }
     
         public virtual User User { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

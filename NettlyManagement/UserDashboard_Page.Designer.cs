@@ -95,7 +95,7 @@
             this.PbSettings.BackColor = System.Drawing.Color.Transparent;
             this.PbSettings.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("PbSettings.BackgroundImage")));
             this.PbSettings.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.PbSettings.Location = new System.Drawing.Point(1183, 10);
+            this.PbSettings.Location = new System.Drawing.Point(1293, 10);
             this.PbSettings.Name = "PbSettings";
             this.PbSettings.Size = new System.Drawing.Size(25, 28);
             this.PbSettings.TabIndex = 24;
@@ -107,7 +107,7 @@
             this.PbNavBar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.PbNavBar.Location = new System.Drawing.Point(-4, -2);
             this.PbNavBar.Name = "PbNavBar";
-            this.PbNavBar.Size = new System.Drawing.Size(1299, 50);
+            this.PbNavBar.Size = new System.Drawing.Size(1413, 50);
             this.PbNavBar.TabIndex = 22;
             this.PbNavBar.TabStop = false;
             // 
@@ -124,9 +124,9 @@
             // 
             this.BtTnHome.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtTnHome.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.BtTnHome.Location = new System.Drawing.Point(1039, 133);
+            this.BtTnHome.Location = new System.Drawing.Point(1168, 106);
             this.BtTnHome.Name = "BtTnHome";
-            this.BtTnHome.Size = new System.Drawing.Size(105, 29);
+            this.BtTnHome.Size = new System.Drawing.Size(145, 45);
             this.BtTnHome.TabIndex = 29;
             this.BtTnHome.Text = "Home";
             this.BtTnHome.UseVisualStyleBackColor = true;
@@ -136,9 +136,9 @@
             // 
             this.BtTnBookNow.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtTnBookNow.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.BtTnBookNow.Location = new System.Drawing.Point(1162, 133);
+            this.BtTnBookNow.Location = new System.Drawing.Point(1168, 211);
             this.BtTnBookNow.Name = "BtTnBookNow";
-            this.BtTnBookNow.Size = new System.Drawing.Size(105, 29);
+            this.BtTnBookNow.Size = new System.Drawing.Size(150, 45);
             this.BtTnBookNow.TabIndex = 30;
             this.BtTnBookNow.Text = "Book Now";
             this.BtTnBookNow.UseVisualStyleBackColor = true;
@@ -148,23 +148,25 @@
             // 
             this.BtTnEdit.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtTnEdit.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.BtTnEdit.Location = new System.Drawing.Point(1146, 187);
+            this.BtTnEdit.Location = new System.Drawing.Point(1168, 262);
             this.BtTnEdit.Name = "BtTnEdit";
-            this.BtTnEdit.Size = new System.Drawing.Size(94, 29);
+            this.BtTnEdit.Size = new System.Drawing.Size(150, 45);
             this.BtTnEdit.TabIndex = 31;
             this.BtTnEdit.Text = "Edit";
             this.BtTnEdit.UseVisualStyleBackColor = true;
+            this.BtTnEdit.Click += new System.EventHandler(this.BtTnEdit_Click);
             // 
             // BtTnDelete
             // 
             this.BtTnDelete.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtTnDelete.ForeColor = System.Drawing.Color.Red;
-            this.BtTnDelete.Location = new System.Drawing.Point(1146, 238);
+            this.BtTnDelete.Location = new System.Drawing.Point(1168, 316);
             this.BtTnDelete.Name = "BtTnDelete";
-            this.BtTnDelete.Size = new System.Drawing.Size(94, 29);
+            this.BtTnDelete.Size = new System.Drawing.Size(150, 45);
             this.BtTnDelete.TabIndex = 32;
             this.BtTnDelete.Text = "Delete";
             this.BtTnDelete.UseVisualStyleBackColor = true;
+            this.BtTnDelete.Click += new System.EventHandler(this.BtTnDelete_Click);
             // 
             // LbHeading
             // 
@@ -172,7 +174,7 @@
             this.LbHeading.BackColor = System.Drawing.Color.Transparent;
             this.LbHeading.Font = new System.Drawing.Font("Verdana", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LbHeading.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.LbHeading.Location = new System.Drawing.Point(360, 81);
+            this.LbHeading.Location = new System.Drawing.Point(431, 80);
             this.LbHeading.Name = "LbHeading";
             this.LbHeading.Size = new System.Drawing.Size(438, 34);
             this.LbHeading.TabIndex = 33;
@@ -184,7 +186,7 @@
             this.LbSubHeading.BackColor = System.Drawing.Color.Transparent;
             this.LbSubHeading.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LbSubHeading.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.LbSubHeading.Location = new System.Drawing.Point(278, 142);
+            this.LbSubHeading.Location = new System.Drawing.Point(311, 142);
             this.LbSubHeading.Name = "LbSubHeading";
             this.LbSubHeading.Size = new System.Drawing.Size(212, 20);
             this.LbSubHeading.TabIndex = 34;
@@ -300,7 +302,7 @@
             this.PbMessage.BackColor = System.Drawing.Color.Transparent;
             this.PbMessage.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("PbMessage.BackgroundImage")));
             this.PbMessage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.PbMessage.Location = new System.Drawing.Point(1214, 10);
+            this.PbMessage.Location = new System.Drawing.Point(1324, 10);
             this.PbMessage.Name = "PbMessage";
             this.PbMessage.Size = new System.Drawing.Size(26, 27);
             this.PbMessage.TabIndex = 37;
@@ -311,7 +313,7 @@
             this.PbNotification.BackColor = System.Drawing.Color.Transparent;
             this.PbNotification.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("PbNotification.BackgroundImage")));
             this.PbNotification.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.PbNotification.Location = new System.Drawing.Point(1246, 10);
+            this.PbNotification.Location = new System.Drawing.Point(1356, 10);
             this.PbNotification.Name = "PbNotification";
             this.PbNotification.Size = new System.Drawing.Size(26, 27);
             this.PbNotification.TabIndex = 38;
@@ -339,7 +341,7 @@
             // GvDashboard
             // 
             this.GvDashboard.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.GvDashboard.Location = new System.Drawing.Point(282, 165);
+            this.GvDashboard.Location = new System.Drawing.Point(326, 165);
             this.GvDashboard.Name = "GvDashboard";
             this.GvDashboard.RowHeadersWidth = 51;
             this.GvDashboard.RowTemplate.Height = 24;
@@ -352,7 +354,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1294, 568);
+            this.ClientSize = new System.Drawing.Size(1405, 616);
             this.Controls.Add(this.GvDashboard);
             this.Controls.Add(this.PbSearch);
             this.Controls.Add(this.TbSearch);
