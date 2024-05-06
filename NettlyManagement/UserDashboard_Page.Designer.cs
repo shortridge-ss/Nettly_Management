@@ -50,11 +50,11 @@
             this.TbMobileNum = new System.Windows.Forms.TextBox();
             this.TbLastName = new System.Windows.Forms.TextBox();
             this.TbFirstName = new System.Windows.Forms.TextBox();
-            this.listBox1 = new System.Windows.Forms.ListBox();
             this.PbMessage = new System.Windows.Forms.PictureBox();
             this.PbNotification = new System.Windows.Forms.PictureBox();
             this.PbSearch = new System.Windows.Forms.PictureBox();
             this.TbSearch = new System.Windows.Forms.TextBox();
+            this.GvDashboard = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.PbHome)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PbNettlyLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PbSettings)).BeginInit();
@@ -64,6 +64,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.PbMessage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PbNotification)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PbSearch)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GvDashboard)).BeginInit();
             this.SuspendLayout();
             // 
             // PbHome
@@ -94,7 +95,7 @@
             this.PbSettings.BackColor = System.Drawing.Color.Transparent;
             this.PbSettings.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("PbSettings.BackgroundImage")));
             this.PbSettings.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.PbSettings.Location = new System.Drawing.Point(824, 10);
+            this.PbSettings.Location = new System.Drawing.Point(1183, 10);
             this.PbSettings.Name = "PbSettings";
             this.PbSettings.Size = new System.Drawing.Size(25, 28);
             this.PbSettings.TabIndex = 24;
@@ -106,14 +107,14 @@
             this.PbNavBar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.PbNavBar.Location = new System.Drawing.Point(-4, -2);
             this.PbNavBar.Name = "PbNavBar";
-            this.PbNavBar.Size = new System.Drawing.Size(960, 50);
+            this.PbNavBar.Size = new System.Drawing.Size(1299, 50);
             this.PbNavBar.TabIndex = 22;
             this.PbNavBar.TabStop = false;
             // 
             // dateTimePicker1
             // 
             this.dateTimePicker1.AllowDrop = true;
-            this.dateTimePicker1.Location = new System.Drawing.Point(330, 462);
+            this.dateTimePicker1.Location = new System.Drawing.Point(765, 507);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.dateTimePicker1.Size = new System.Drawing.Size(409, 22);
@@ -123,7 +124,7 @@
             // 
             this.BtTnHome.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtTnHome.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.BtTnHome.Location = new System.Drawing.Point(701, 145);
+            this.BtTnHome.Location = new System.Drawing.Point(1039, 133);
             this.BtTnHome.Name = "BtTnHome";
             this.BtTnHome.Size = new System.Drawing.Size(105, 29);
             this.BtTnHome.TabIndex = 29;
@@ -135,7 +136,7 @@
             // 
             this.BtTnBookNow.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtTnBookNow.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.BtTnBookNow.Location = new System.Drawing.Point(824, 145);
+            this.BtTnBookNow.Location = new System.Drawing.Point(1162, 133);
             this.BtTnBookNow.Name = "BtTnBookNow";
             this.BtTnBookNow.Size = new System.Drawing.Size(105, 29);
             this.BtTnBookNow.TabIndex = 30;
@@ -147,7 +148,7 @@
             // 
             this.BtTnEdit.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtTnEdit.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.BtTnEdit.Location = new System.Drawing.Point(808, 199);
+            this.BtTnEdit.Location = new System.Drawing.Point(1146, 187);
             this.BtTnEdit.Name = "BtTnEdit";
             this.BtTnEdit.Size = new System.Drawing.Size(94, 29);
             this.BtTnEdit.TabIndex = 31;
@@ -158,7 +159,7 @@
             // 
             this.BtTnDelete.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtTnDelete.ForeColor = System.Drawing.Color.Red;
-            this.BtTnDelete.Location = new System.Drawing.Point(808, 250);
+            this.BtTnDelete.Location = new System.Drawing.Point(1146, 238);
             this.BtTnDelete.Name = "BtTnDelete";
             this.BtTnDelete.Size = new System.Drawing.Size(94, 29);
             this.BtTnDelete.TabIndex = 32;
@@ -171,7 +172,7 @@
             this.LbHeading.BackColor = System.Drawing.Color.Transparent;
             this.LbHeading.Font = new System.Drawing.Font("Verdana", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LbHeading.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.LbHeading.Location = new System.Drawing.Point(301, 97);
+            this.LbHeading.Location = new System.Drawing.Point(360, 81);
             this.LbHeading.Name = "LbHeading";
             this.LbHeading.Size = new System.Drawing.Size(438, 34);
             this.LbHeading.TabIndex = 33;
@@ -183,7 +184,7 @@
             this.LbSubHeading.BackColor = System.Drawing.Color.Transparent;
             this.LbSubHeading.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LbSubHeading.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.LbSubHeading.Location = new System.Drawing.Point(303, 187);
+            this.LbSubHeading.Location = new System.Drawing.Point(278, 142);
             this.LbSubHeading.Name = "LbSubHeading";
             this.LbSubHeading.Size = new System.Drawing.Size(212, 20);
             this.LbSubHeading.TabIndex = 34;
@@ -294,21 +295,12 @@
             this.TbFirstName.Size = new System.Drawing.Size(156, 22);
             this.TbFirstName.TabIndex = 0;
             // 
-            // listBox1
-            // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 16;
-            this.listBox1.Location = new System.Drawing.Point(307, 224);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(415, 212);
-            this.listBox1.TabIndex = 36;
-            // 
             // PbMessage
             // 
             this.PbMessage.BackColor = System.Drawing.Color.Transparent;
             this.PbMessage.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("PbMessage.BackgroundImage")));
             this.PbMessage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.PbMessage.Location = new System.Drawing.Point(855, 10);
+            this.PbMessage.Location = new System.Drawing.Point(1214, 10);
             this.PbMessage.Name = "PbMessage";
             this.PbMessage.Size = new System.Drawing.Size(26, 27);
             this.PbMessage.TabIndex = 37;
@@ -319,7 +311,7 @@
             this.PbNotification.BackColor = System.Drawing.Color.Transparent;
             this.PbNotification.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("PbNotification.BackgroundImage")));
             this.PbNotification.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.PbNotification.Location = new System.Drawing.Point(887, 10);
+            this.PbNotification.Location = new System.Drawing.Point(1246, 10);
             this.PbNotification.Name = "PbNotification";
             this.PbNotification.Size = new System.Drawing.Size(26, 27);
             this.PbNotification.TabIndex = 38;
@@ -344,18 +336,28 @@
             this.TbSearch.Size = new System.Drawing.Size(285, 37);
             this.TbSearch.TabIndex = 45;
             // 
+            // GvDashboard
+            // 
+            this.GvDashboard.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.GvDashboard.Location = new System.Drawing.Point(282, 165);
+            this.GvDashboard.Name = "GvDashboard";
+            this.GvDashboard.RowHeadersWidth = 51;
+            this.GvDashboard.RowTemplate.Height = 24;
+            this.GvDashboard.Size = new System.Drawing.Size(733, 326);
+            this.GvDashboard.TabIndex = 51;
+            // 
             // User_Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(946, 519);
+            this.ClientSize = new System.Drawing.Size(1294, 568);
+            this.Controls.Add(this.GvDashboard);
             this.Controls.Add(this.PbSearch);
             this.Controls.Add(this.TbSearch);
             this.Controls.Add(this.PbNotification);
             this.Controls.Add(this.PbMessage);
-            this.Controls.Add(this.listBox1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.LbSubHeading);
             this.Controls.Add(this.LbHeading);
@@ -371,6 +373,7 @@
             this.DoubleBuffered = true;
             this.Name = "User_Dashboard";
             this.Text = "Dashboard";
+            this.Load += new System.EventHandler(this.User_Dashboard_Load);
             ((System.ComponentModel.ISupportInitialize)(this.PbHome)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PbNettlyLogo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PbSettings)).EndInit();
@@ -381,6 +384,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.PbMessage)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PbNotification)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PbSearch)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GvDashboard)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -408,11 +412,11 @@
         private System.Windows.Forms.Label LbMobileNum;
         private System.Windows.Forms.Label LbLastName;
         private System.Windows.Forms.Label LbFirstName;
-        private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.PictureBox PbMessage;
         private System.Windows.Forms.PictureBox PbNotification;
         private System.Windows.Forms.PictureBox PbUserImage;
         private System.Windows.Forms.PictureBox PbSearch;
         private System.Windows.Forms.TextBox TbSearch;
+        private System.Windows.Forms.DataGridView GvDashboard;
     }
 }
