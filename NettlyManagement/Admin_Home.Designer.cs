@@ -104,6 +104,7 @@
             this.BtTnAllCredentials.TabIndex = 2;
             this.BtTnAllCredentials.Text = "All Credentials";
             this.BtTnAllCredentials.UseVisualStyleBackColor = true;
+            this.BtTnAllCredentials.Click += new System.EventHandler(this.BtTnAllCredentials_Click);
             // 
             // BtTnAllBookings
             // 
@@ -115,6 +116,7 @@
             this.BtTnAllBookings.TabIndex = 1;
             this.BtTnAllBookings.Text = "All Bookings";
             this.BtTnAllBookings.UseVisualStyleBackColor = true;
+            this.BtTnAllBookings.Click += new System.EventHandler(this.BtTnAllBookings_Click_1);
             // 
             // BtTnAllUsers
             // 
@@ -126,6 +128,7 @@
             this.BtTnAllUsers.TabIndex = 0;
             this.BtTnAllUsers.Text = "All Users";
             this.BtTnAllUsers.UseVisualStyleBackColor = true;
+            this.BtTnAllUsers.Click += new System.EventHandler(this.BtTnAllUsers_Click);
             // 
             // PanAllEdit
             // 

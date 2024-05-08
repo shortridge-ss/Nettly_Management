@@ -12,9 +12,9 @@ namespace NettlyManagement
     using System;
     using System.Collections.Generic;
     
-    public partial class Task
+    public partial class TASK
     {
-        public int TaskID { get; set; }
+        public int ServiceID { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
         public int Duration { get; set; }

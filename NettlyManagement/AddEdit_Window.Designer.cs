@@ -30,41 +30,49 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddEdit_Window));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.textBox15 = new System.Windows.Forms.TextBox();
+            this.textBox14 = new System.Windows.Forms.TextBox();
+            this.textBox13 = new System.Windows.Forms.TextBox();
+            this.textBox12 = new System.Windows.Forms.TextBox();
+            this.textBox11 = new System.Windows.Forms.TextBox();
+            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.TbAddress = new System.Windows.Forms.TextBox();
+            this.TbEmail = new System.Windows.Forms.TextBox();
+            this.TbMNum = new System.Windows.Forms.TextBox();
+            this.TbLName = new System.Windows.Forms.TextBox();
             this.LbAddress = new System.Windows.Forms.Label();
             this.LbEmail = new System.Windows.Forms.Label();
             this.LbPhoneNum = new System.Windows.Forms.Label();
             this.LbLastName = new System.Windows.Forms.Label();
             this.LbFirstName = new System.Windows.Forms.Label();
-            this.LbHeading = new System.Windows.Forms.Label();
             this.TbFName = new System.Windows.Forms.TextBox();
-            this.TbLName = new System.Windows.Forms.TextBox();
-            this.TbMNum = new System.Windows.Forms.TextBox();
-            this.TbEmail = new System.Windows.Forms.TextBox();
-            this.TbAddress = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.textBox10 = new System.Windows.Forms.TextBox();
-            this.textBox11 = new System.Windows.Forms.TextBox();
-            this.textBox12 = new System.Windows.Forms.TextBox();
-            this.textBox13 = new System.Windows.Forms.TextBox();
-            this.textBox14 = new System.Windows.Forms.TextBox();
-            this.textBox15 = new System.Windows.Forms.TextBox();
+            this.LbHeading = new System.Windows.Forms.Label();
             this.BtTnSave = new System.Windows.Forms.Button();
             this.BtTnCancel = new System.Windows.Forms.Button();
             this.LbId = new System.Windows.Forms.Label();
+            this.LbUserName = new System.Windows.Forms.Label();
+            this.TbUserName = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
             // 
-            this.tableLayoutPanel1.ColumnCount = 5;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel1.ColumnCount = 6;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.tableLayoutPanel1.Controls.Add(this.textBox3, 5, 3);
+            this.tableLayoutPanel1.Controls.Add(this.textBox2, 5, 2);
+            this.tableLayoutPanel1.Controls.Add(this.TbUserName, 5, 1);
             this.tableLayoutPanel1.Controls.Add(this.textBox15, 4, 3);
             this.tableLayoutPanel1.Controls.Add(this.textBox14, 3, 3);
             this.tableLayoutPanel1.Controls.Add(this.textBox13, 2, 3);
@@ -85,20 +93,133 @@
             this.tableLayoutPanel1.Controls.Add(this.LbLastName, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.LbFirstName, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.TbFName, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.LbUserName, 5, 0);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(153, 160);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 4;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1024, 329);
             this.tableLayoutPanel1.TabIndex = 0;
+            // 
+            // textBox15
+            // 
+            this.textBox15.Location = new System.Drawing.Point(683, 249);
+            this.textBox15.Multiline = true;
+            this.textBox15.Name = "textBox15";
+            this.textBox15.Size = new System.Drawing.Size(164, 40);
+            this.textBox15.TabIndex = 20;
+            // 
+            // textBox14
+            // 
+            this.textBox14.Location = new System.Drawing.Point(513, 249);
+            this.textBox14.Multiline = true;
+            this.textBox14.Name = "textBox14";
+            this.textBox14.Size = new System.Drawing.Size(164, 40);
+            this.textBox14.TabIndex = 19;
+            // 
+            // textBox13
+            // 
+            this.textBox13.Location = new System.Drawing.Point(343, 249);
+            this.textBox13.Multiline = true;
+            this.textBox13.Name = "textBox13";
+            this.textBox13.Size = new System.Drawing.Size(164, 40);
+            this.textBox13.TabIndex = 18;
+            // 
+            // textBox12
+            // 
+            this.textBox12.Location = new System.Drawing.Point(173, 249);
+            this.textBox12.Multiline = true;
+            this.textBox12.Name = "textBox12";
+            this.textBox12.Size = new System.Drawing.Size(164, 40);
+            this.textBox12.TabIndex = 17;
+            // 
+            // textBox11
+            // 
+            this.textBox11.Location = new System.Drawing.Point(3, 249);
+            this.textBox11.Multiline = true;
+            this.textBox11.Name = "textBox11";
+            this.textBox11.Size = new System.Drawing.Size(164, 40);
+            this.textBox11.TabIndex = 16;
+            // 
+            // textBox10
+            // 
+            this.textBox10.Location = new System.Drawing.Point(683, 167);
+            this.textBox10.Multiline = true;
+            this.textBox10.Name = "textBox10";
+            this.textBox10.Size = new System.Drawing.Size(164, 40);
+            this.textBox10.TabIndex = 15;
+            // 
+            // textBox9
+            // 
+            this.textBox9.Location = new System.Drawing.Point(513, 167);
+            this.textBox9.Multiline = true;
+            this.textBox9.Name = "textBox9";
+            this.textBox9.Size = new System.Drawing.Size(164, 40);
+            this.textBox9.TabIndex = 14;
+            // 
+            // textBox8
+            // 
+            this.textBox8.Location = new System.Drawing.Point(343, 167);
+            this.textBox8.Multiline = true;
+            this.textBox8.Name = "textBox8";
+            this.textBox8.Size = new System.Drawing.Size(164, 40);
+            this.textBox8.TabIndex = 13;
+            // 
+            // textBox7
+            // 
+            this.textBox7.Location = new System.Drawing.Point(173, 167);
+            this.textBox7.Multiline = true;
+            this.textBox7.Name = "textBox7";
+            this.textBox7.Size = new System.Drawing.Size(164, 40);
+            this.textBox7.TabIndex = 12;
+            // 
+            // textBox6
+            // 
+            this.textBox6.Location = new System.Drawing.Point(3, 167);
+            this.textBox6.Multiline = true;
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(164, 40);
+            this.textBox6.TabIndex = 11;
+            // 
+            // TbAddress
+            // 
+            this.TbAddress.Location = new System.Drawing.Point(683, 85);
+            this.TbAddress.Multiline = true;
+            this.TbAddress.Name = "TbAddress";
+            this.TbAddress.Size = new System.Drawing.Size(164, 40);
+            this.TbAddress.TabIndex = 10;
+            // 
+            // TbEmail
+            // 
+            this.TbEmail.Location = new System.Drawing.Point(513, 85);
+            this.TbEmail.Multiline = true;
+            this.TbEmail.Name = "TbEmail";
+            this.TbEmail.Size = new System.Drawing.Size(164, 40);
+            this.TbEmail.TabIndex = 9;
+            // 
+            // TbMNum
+            // 
+            this.TbMNum.Location = new System.Drawing.Point(343, 85);
+            this.TbMNum.Multiline = true;
+            this.TbMNum.Name = "TbMNum";
+            this.TbMNum.Size = new System.Drawing.Size(164, 40);
+            this.TbMNum.TabIndex = 8;
+            // 
+            // TbLName
+            // 
+            this.TbLName.Location = new System.Drawing.Point(173, 85);
+            this.TbLName.Multiline = true;
+            this.TbLName.Name = "TbLName";
+            this.TbLName.Size = new System.Drawing.Size(164, 40);
+            this.TbLName.TabIndex = 7;
             // 
             // LbAddress
             // 
             this.LbAddress.AutoSize = true;
-            this.LbAddress.Location = new System.Drawing.Point(819, 0);
+            this.LbAddress.Location = new System.Drawing.Point(683, 0);
             this.LbAddress.Name = "LbAddress";
             this.LbAddress.Size = new System.Drawing.Size(58, 16);
             this.LbAddress.TabIndex = 6;
@@ -107,7 +228,7 @@
             // LbEmail
             // 
             this.LbEmail.AutoSize = true;
-            this.LbEmail.Location = new System.Drawing.Point(615, 0);
+            this.LbEmail.Location = new System.Drawing.Point(513, 0);
             this.LbEmail.Name = "LbEmail";
             this.LbEmail.Size = new System.Drawing.Size(95, 16);
             this.LbEmail.TabIndex = 5;
@@ -116,7 +237,7 @@
             // LbPhoneNum
             // 
             this.LbPhoneNum.AutoSize = true;
-            this.LbPhoneNum.Location = new System.Drawing.Point(411, 0);
+            this.LbPhoneNum.Location = new System.Drawing.Point(343, 0);
             this.LbPhoneNum.Name = "LbPhoneNum";
             this.LbPhoneNum.Size = new System.Drawing.Size(103, 16);
             this.LbPhoneNum.TabIndex = 4;
@@ -125,7 +246,7 @@
             // LbLastName
             // 
             this.LbLastName.AutoSize = true;
-            this.LbLastName.Location = new System.Drawing.Point(207, 0);
+            this.LbLastName.Location = new System.Drawing.Point(173, 0);
             this.LbLastName.Name = "LbLastName";
             this.LbLastName.Size = new System.Drawing.Size(72, 16);
             this.LbLastName.TabIndex = 3;
@@ -140,6 +261,14 @@
             this.LbFirstName.TabIndex = 2;
             this.LbFirstName.Text = "First Name";
             // 
+            // TbFName
+            // 
+            this.TbFName.Location = new System.Drawing.Point(3, 85);
+            this.TbFName.Multiline = true;
+            this.TbFName.Name = "TbFName";
+            this.TbFName.Size = new System.Drawing.Size(164, 43);
+            this.TbFName.TabIndex = 2;
+            // 
             // LbHeading
             // 
             this.LbHeading.AutoSize = true;
@@ -148,128 +277,8 @@
             this.LbHeading.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.LbHeading.Location = new System.Drawing.Point(352, 54);
             this.LbHeading.Name = "LbHeading";
-            this.LbHeading.Size = new System.Drawing.Size(0, 53);
+            this.LbHeading.Size = new System.Drawing.Size(0, 52);
             this.LbHeading.TabIndex = 1;
-            // 
-            // TbFName
-            // 
-            this.TbFName.Location = new System.Drawing.Point(3, 85);
-            this.TbFName.Multiline = true;
-            this.TbFName.Name = "TbFName";
-            this.TbFName.Size = new System.Drawing.Size(198, 43);
-            this.TbFName.TabIndex = 2;
-            // 
-            // TbLName
-            // 
-            this.TbLName.Location = new System.Drawing.Point(207, 85);
-            this.TbLName.Multiline = true;
-            this.TbLName.Name = "TbLName";
-            this.TbLName.Size = new System.Drawing.Size(198, 40);
-            this.TbLName.TabIndex = 7;
-            // 
-            // TbMNum
-            // 
-            this.TbMNum.Location = new System.Drawing.Point(411, 85);
-            this.TbMNum.Multiline = true;
-            this.TbMNum.Name = "TbMNum";
-            this.TbMNum.Size = new System.Drawing.Size(198, 40);
-            this.TbMNum.TabIndex = 8;
-            // 
-            // TbEmail
-            // 
-            this.TbEmail.Location = new System.Drawing.Point(615, 85);
-            this.TbEmail.Multiline = true;
-            this.TbEmail.Name = "TbEmail";
-            this.TbEmail.Size = new System.Drawing.Size(198, 40);
-            this.TbEmail.TabIndex = 9;
-            // 
-            // TbAddress
-            // 
-            this.TbAddress.Location = new System.Drawing.Point(819, 85);
-            this.TbAddress.Multiline = true;
-            this.TbAddress.Name = "TbAddress";
-            this.TbAddress.Size = new System.Drawing.Size(198, 40);
-            this.TbAddress.TabIndex = 10;
-            // 
-            // textBox6
-            // 
-            this.textBox6.Location = new System.Drawing.Point(3, 167);
-            this.textBox6.Multiline = true;
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(198, 40);
-            this.textBox6.TabIndex = 11;
-            // 
-            // textBox7
-            // 
-            this.textBox7.Location = new System.Drawing.Point(207, 167);
-            this.textBox7.Multiline = true;
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(198, 40);
-            this.textBox7.TabIndex = 12;
-            // 
-            // textBox8
-            // 
-            this.textBox8.Location = new System.Drawing.Point(411, 167);
-            this.textBox8.Multiline = true;
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(198, 40);
-            this.textBox8.TabIndex = 13;
-            // 
-            // textBox9
-            // 
-            this.textBox9.Location = new System.Drawing.Point(615, 167);
-            this.textBox9.Multiline = true;
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(198, 40);
-            this.textBox9.TabIndex = 14;
-            // 
-            // textBox10
-            // 
-            this.textBox10.Location = new System.Drawing.Point(819, 167);
-            this.textBox10.Multiline = true;
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(198, 40);
-            this.textBox10.TabIndex = 15;
-            // 
-            // textBox11
-            // 
-            this.textBox11.Location = new System.Drawing.Point(3, 249);
-            this.textBox11.Multiline = true;
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(198, 40);
-            this.textBox11.TabIndex = 16;
-            // 
-            // textBox12
-            // 
-            this.textBox12.Location = new System.Drawing.Point(207, 249);
-            this.textBox12.Multiline = true;
-            this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(198, 40);
-            this.textBox12.TabIndex = 17;
-            // 
-            // textBox13
-            // 
-            this.textBox13.Location = new System.Drawing.Point(411, 249);
-            this.textBox13.Multiline = true;
-            this.textBox13.Name = "textBox13";
-            this.textBox13.Size = new System.Drawing.Size(198, 40);
-            this.textBox13.TabIndex = 18;
-            // 
-            // textBox14
-            // 
-            this.textBox14.Location = new System.Drawing.Point(615, 249);
-            this.textBox14.Multiline = true;
-            this.textBox14.Name = "textBox14";
-            this.textBox14.Size = new System.Drawing.Size(198, 40);
-            this.textBox14.TabIndex = 19;
-            // 
-            // textBox15
-            // 
-            this.textBox15.Location = new System.Drawing.Point(819, 249);
-            this.textBox15.Multiline = true;
-            this.textBox15.Name = "textBox15";
-            this.textBox15.Size = new System.Drawing.Size(198, 40);
-            this.textBox15.TabIndex = 20;
             // 
             // BtTnSave
             // 
@@ -303,6 +312,39 @@
             this.LbId.Size = new System.Drawing.Size(0, 16);
             this.LbId.TabIndex = 4;
             this.LbId.Visible = false;
+            // 
+            // LbUserName
+            // 
+            this.LbUserName.AutoSize = true;
+            this.LbUserName.Location = new System.Drawing.Point(853, 0);
+            this.LbUserName.Name = "LbUserName";
+            this.LbUserName.Size = new System.Drawing.Size(76, 16);
+            this.LbUserName.TabIndex = 21;
+            this.LbUserName.Text = "User Name";
+            // 
+            // TbUserName
+            // 
+            this.TbUserName.Location = new System.Drawing.Point(853, 85);
+            this.TbUserName.Multiline = true;
+            this.TbUserName.Name = "TbUserName";
+            this.TbUserName.Size = new System.Drawing.Size(164, 40);
+            this.TbUserName.TabIndex = 22;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(853, 167);
+            this.textBox2.Multiline = true;
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(164, 40);
+            this.textBox2.TabIndex = 23;
+            // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(853, 249);
+            this.textBox3.Multiline = true;
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(164, 40);
+            this.textBox3.TabIndex = 24;
             // 
             // AddEdit_Window
             // 
@@ -353,5 +395,9 @@
         private System.Windows.Forms.Button BtTnSave;
         private System.Windows.Forms.Button BtTnCancel;
         private System.Windows.Forms.Label LbId;
+        private System.Windows.Forms.Label LbUserName;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox TbUserName;
     }
 }

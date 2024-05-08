@@ -45,11 +45,11 @@
             this.viewFeedbackToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.administrationManagementToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.administrationManagementToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.adminLoginToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.adminSignUpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.adminHomeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.logOutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.adminHomeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.closeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.PbNettlyLogo)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -82,7 +82,7 @@
             this.LbHeading.BackColor = System.Drawing.Color.Transparent;
             this.LbHeading.Font = new System.Drawing.Font("Verdana", 32F, System.Drawing.FontStyle.Bold);
             this.LbHeading.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.LbHeading.Location = new System.Drawing.Point(234, 55);
+            this.LbHeading.Location = new System.Drawing.Point(270, 67);
             this.LbHeading.MaximumSize = new System.Drawing.Size(650, 1800);
             this.LbHeading.Name = "LbHeading";
             this.LbHeading.Size = new System.Drawing.Size(580, 195);
@@ -152,20 +152,20 @@
             // addBookingsToolStripMenuItem
             // 
             this.addBookingsToolStripMenuItem.Name = "addBookingsToolStripMenuItem";
-            this.addBookingsToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.addBookingsToolStripMenuItem.Size = new System.Drawing.Size(189, 26);
             this.addBookingsToolStripMenuItem.Text = "Add Bookings";
             this.addBookingsToolStripMenuItem.Click += new System.EventHandler(this.AddBookingsToolStripMenuItem_Click);
             // 
             // editBookingsToolStripMenuItem
             // 
             this.editBookingsToolStripMenuItem.Name = "editBookingsToolStripMenuItem";
-            this.editBookingsToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.editBookingsToolStripMenuItem.Size = new System.Drawing.Size(189, 26);
             this.editBookingsToolStripMenuItem.Text = "Edit Bookings";
             // 
             // viewBookingsToolStripMenuItem
             // 
             this.viewBookingsToolStripMenuItem.Name = "viewBookingsToolStripMenuItem";
-            this.viewBookingsToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.viewBookingsToolStripMenuItem.Size = new System.Drawing.Size(189, 26);
             this.viewBookingsToolStripMenuItem.Text = "View Bookings";
             this.viewBookingsToolStripMenuItem.Click += new System.EventHandler(this.ViewBookingsToolStripMenuItem_Click);
             // 
@@ -201,29 +201,31 @@
             // administrationManagementToolStripMenuItem1
             // 
             this.administrationManagementToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.adminLoginToolStripMenuItem,
             this.adminSignUpToolStripMenuItem,
             this.adminHomeToolStripMenuItem});
             this.administrationManagementToolStripMenuItem1.Name = "administrationManagementToolStripMenuItem1";
             this.administrationManagementToolStripMenuItem1.Size = new System.Drawing.Size(213, 24);
             this.administrationManagementToolStripMenuItem1.Text = "Administration Management";
             // 
-            // adminLoginToolStripMenuItem
-            // 
-            this.adminLoginToolStripMenuItem.Name = "adminLoginToolStripMenuItem";
-            this.adminLoginToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.adminLoginToolStripMenuItem.Text = "Admin Login";
-            // 
             // adminSignUpToolStripMenuItem
             // 
             this.adminSignUpToolStripMenuItem.Name = "adminSignUpToolStripMenuItem";
             this.adminSignUpToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.adminSignUpToolStripMenuItem.Text = "Admin Sign Up";
+            this.adminSignUpToolStripMenuItem.Click += new System.EventHandler(this.adminSignUpToolStripMenuItem_Click);
+            // 
+            // adminHomeToolStripMenuItem
+            // 
+            this.adminHomeToolStripMenuItem.Name = "adminHomeToolStripMenuItem";
+            this.adminHomeToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.adminHomeToolStripMenuItem.Text = "Admin Home";
+            this.adminHomeToolStripMenuItem.Click += new System.EventHandler(this.adminHomeToolStripMenuItem_Click);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.logOutToolStripMenuItem});
+            this.logOutToolStripMenuItem,
+            this.closeToolStripMenuItem});
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
             this.exitToolStripMenuItem.Size = new System.Drawing.Size(47, 24);
             this.exitToolStripMenuItem.Text = "Exit";
@@ -234,12 +236,12 @@
             this.logOutToolStripMenuItem.Size = new System.Drawing.Size(145, 26);
             this.logOutToolStripMenuItem.Text = "Log Out";
             // 
-            // adminHomeToolStripMenuItem
+            // closeToolStripMenuItem
             // 
-            this.adminHomeToolStripMenuItem.Name = "adminHomeToolStripMenuItem";
-            this.adminHomeToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.adminHomeToolStripMenuItem.Text = "Admin Home";
-            this.adminHomeToolStripMenuItem.Click += new System.EventHandler(this.adminHomeToolStripMenuItem_Click);
+            this.closeToolStripMenuItem.Name = "closeToolStripMenuItem";
+            this.closeToolStripMenuItem.Size = new System.Drawing.Size(145, 26);
+            this.closeToolStripMenuItem.Text = "Close";
+            this.closeToolStripMenuItem.Click += new System.EventHandler(this.closeToolStripMenuItem_Click);
             // 
             // Landing_Page
             // 
@@ -259,6 +261,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Landing_Page";
             this.Text = "Home";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Landing_Page_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.PbNettlyLogo)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
@@ -286,10 +289,10 @@
         private System.Windows.Forms.ToolStripMenuItem viewBookingsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem giveFeedbackToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem viewFeedbackToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem adminLoginToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem adminSignUpToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem logOutToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem adminHomeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem closeToolStripMenuItem;
     }
 }
 

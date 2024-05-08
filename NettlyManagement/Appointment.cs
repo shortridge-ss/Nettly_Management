@@ -17,22 +17,20 @@ namespace NettlyManagement
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Appointment()
         {
-            this.Feedbacks = new HashSet<Feedback>();
+            this.AppointmentDetails = new HashSet<AppointmentDetail>();
         }
     
         public int AppointmentID { get; set; }
         public Nullable<int> UserID { get; set; }
-        public Nullable<int> TaskID { get; set; }
-        public Nullable<int> StaffID { get; set; }
         public string AppointmentName { get; set; }
-        public Nullable<System.DateTime> AppointmentDate { get; set; }
-        public Nullable<System.TimeSpan> StartTime { get; set; }
-        public Nullable<System.TimeSpan> EndTime { get; set; }
+        public System.DateTime AppointmentDate { get; set; }
+        public System.TimeSpan StartTime { get; set; }
+        public System.TimeSpan EndTime { get; set; }
         public string Status { get; set; }
         public string Details { get; set; }
     
-        public virtual User User { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Feedback> Feedbacks { get; set; }
+        public virtual ICollection<AppointmentDetail> AppointmentDetails { get; set; }
+        public virtual User User { get; set; }
     }
 }

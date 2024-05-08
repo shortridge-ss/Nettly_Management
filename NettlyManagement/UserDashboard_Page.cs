@@ -20,16 +20,31 @@ namespace NettlyManagement
             _dbEntities = new NettlyBookingDbEntities1();
         }
 
-        private void PbHome_Click(object sender, EventArgs e)
+        private void OpenLandingPage()
         {
+            // Check if Landing_Page is already open
+            foreach (Form openForm in Application.OpenForms)
+            {
+                if (openForm is Landing_Page)
+                {
+                    openForm.BringToFront();
+                    return;
+                }
+            }
+
+            // Landing_Page is not open, create a new instance and show it
             var homePage = new Landing_Page();
             homePage.Show();
         }
 
+        private void PbHome_Click(object sender, EventArgs e)
+        {
+            OpenLandingPage();
+        }
+
         private void BtTnHome_Click(object sender, EventArgs e)
         {
-            var homePage = new Landing_Page();
-            homePage.Show();
+            OpenLandingPage();
         }
 
         private void BtTnBookNow_Click(object sender, EventArgs e)

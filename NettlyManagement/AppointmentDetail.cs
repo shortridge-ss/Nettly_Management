@@ -12,18 +12,12 @@ namespace NettlyManagement
     using System;
     using System.Collections.Generic;
     
-    public partial class UserProfile
+    public partial class AppointmentDetail
     {
-        public int UserProfileID { get; set; }
-        public Nullable<int> UserID { get; set; }
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
-        public string ContactNumber { get; set; }
-        public string Email { get; set; }
-        public string Address { get; set; }
-        public string UserName { get; set; }
-        public string Password { get; set; }
+        public int AppointmentDetailID { get; set; }
+        public Nullable<int> AppointmentID { get; set; }
+        public string Detail { get; set; }
     
-        public virtual User User { get; set; }
+        public virtual Appointment Appointment { get; set; }
     }
 }

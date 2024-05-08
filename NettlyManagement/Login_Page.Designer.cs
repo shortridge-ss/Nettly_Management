@@ -36,7 +36,7 @@
             this.PbMan = new System.Windows.Forms.PictureBox();
             this.TbEmail = new System.Windows.Forms.TextBox();
             this.TbPassword = new System.Windows.Forms.TextBox();
-            this.lLbSingIn = new System.Windows.Forms.LinkLabel();
+            this.lLbSingUp = new System.Windows.Forms.LinkLabel();
             this.lLbForgotPassword = new System.Windows.Forms.LinkLabel();
             this.CHbRememberMe = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.PbMan)).BeginInit();
@@ -51,6 +51,7 @@
             this.BtTnSignIn.TabIndex = 0;
             this.BtTnSignIn.Text = "Sign In";
             this.BtTnSignIn.UseVisualStyleBackColor = true;
+            this.BtTnSignIn.Click += new System.EventHandler(this.BtTnSignIn_Click);
             // 
             // LbHeading
             // 
@@ -105,20 +106,21 @@
             // 
             this.TbPassword.Location = new System.Drawing.Point(216, 232);
             this.TbPassword.Name = "TbPassword";
+            this.TbPassword.PasswordChar = '*';
             this.TbPassword.Size = new System.Drawing.Size(239, 22);
             this.TbPassword.TabIndex = 6;
             // 
-            // lLbSingIn
+            // lLbSingUp
             // 
-            this.lLbSingIn.AutoSize = true;
-            this.lLbSingIn.Font = new System.Drawing.Font("Verdana", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lLbSingIn.Location = new System.Drawing.Point(408, 257);
-            this.lLbSingIn.Name = "lLbSingIn";
-            this.lLbSingIn.Size = new System.Drawing.Size(57, 16);
-            this.lLbSingIn.TabIndex = 7;
-            this.lLbSingIn.TabStop = true;
-            this.lLbSingIn.Text = "Sign Up";
-            this.lLbSingIn.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lLbSingIn_LinkClicked);
+            this.lLbSingUp.AutoSize = true;
+            this.lLbSingUp.Font = new System.Drawing.Font("Verdana", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lLbSingUp.Location = new System.Drawing.Point(408, 257);
+            this.lLbSingUp.Name = "lLbSingUp";
+            this.lLbSingUp.Size = new System.Drawing.Size(57, 16);
+            this.lLbSingUp.TabIndex = 7;
+            this.lLbSingUp.TabStop = true;
+            this.lLbSingUp.Text = "Sign Up";
+            this.lLbSingUp.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lLbSingUp_LinkClicked);
             // 
             // lLbForgotPassword
             // 
@@ -150,7 +152,7 @@
             this.ClientSize = new System.Drawing.Size(888, 509);
             this.Controls.Add(this.CHbRememberMe);
             this.Controls.Add(this.lLbForgotPassword);
-            this.Controls.Add(this.lLbSingIn);
+            this.Controls.Add(this.lLbSingUp);
             this.Controls.Add(this.TbPassword);
             this.Controls.Add(this.TbEmail);
             this.Controls.Add(this.LbPassword);
@@ -176,7 +178,7 @@
         private System.Windows.Forms.PictureBox PbMan;
         private System.Windows.Forms.TextBox TbEmail;
         private System.Windows.Forms.TextBox TbPassword;
-        private System.Windows.Forms.LinkLabel lLbSingIn;
+        private System.Windows.Forms.LinkLabel lLbSingUp;
         private System.Windows.Forms.LinkLabel lLbForgotPassword;
         private System.Windows.Forms.CheckBox CHbRememberMe;
     }

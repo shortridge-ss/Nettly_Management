@@ -83,6 +83,7 @@
             this.BtTnBack.TabIndex = 19;
             this.BtTnBack.Text = "Go Back";
             this.BtTnBack.UseVisualStyleBackColor = true;
+            this.BtTnBack.Click += new System.EventHandler(this.BtTnBack_Click);
             // 
             // BtTnSkip
             // 
@@ -172,6 +173,7 @@
             // 
             // GvFeedback
             // 
+            this.GvFeedback.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.GvFeedback.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.GvFeedback.Location = new System.Drawing.Point(424, 198);
             this.GvFeedback.Name = "GvFeedback";

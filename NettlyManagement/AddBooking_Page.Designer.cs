@@ -253,7 +253,6 @@
             this.BtTnSave.TabIndex = 40;
             this.BtTnSave.Text = "Save";
             this.BtTnSave.UseVisualStyleBackColor = true;
-            
             // 
             // BtTnCancel
             // 
@@ -277,6 +276,7 @@
             this.BtTnBookNow.TabIndex = 42;
             this.BtTnBookNow.Text = "Book Appointment";
             this.BtTnBookNow.UseVisualStyleBackColor = true;
+            this.BtTnBookNow.Click += new System.EventHandler(this.BtTnBookNow_Click);
             // 
             // TbSearch
             // 

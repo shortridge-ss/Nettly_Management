@@ -22,15 +22,16 @@ namespace NettlyManagement
             this.Feedbacks = new HashSet<Feedback>();
             this.UserProfiles = new HashSet<UserProfile>();
             this.WaitingLists = new HashSet<WaitingList>();
+            this.Roles = new HashSet<Role>();
         }
     
         public int UserID { get; set; }
         public string Username { get; set; }
         public string Password { get; set; }
+        public int Role { get; set; }
+        public bool Status { get; set; }
         public string Email { get; set; }
-        public string Role { get; set; }
         public string ContactNumber { get; set; }
-        public string Status { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Appointment> Appointments { get; set; }
@@ -42,5 +43,7 @@ namespace NettlyManagement
         public virtual ICollection<UserProfile> UserProfiles { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<WaitingList> WaitingLists { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Role> Roles { get; set; }
     }
 }

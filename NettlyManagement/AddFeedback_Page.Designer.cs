@@ -264,6 +264,7 @@
             this.BtTnSubmit.TabIndex = 18;
             this.BtTnSubmit.Text = "Submit";
             this.BtTnSubmit.UseVisualStyleBackColor = true;
+            this.BtTnSubmit.Click += new System.EventHandler(this.BtTnSubmit_Click);
             // 
             // PbNavBar
             // 
