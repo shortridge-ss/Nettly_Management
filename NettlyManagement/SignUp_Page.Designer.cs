@@ -50,6 +50,7 @@
             this.TbFirstName = new System.Windows.Forms.TextBox();
             this.BtTnSignUp = new System.Windows.Forms.Button();
             this.LbUserID = new System.Windows.Forms.Label();
+            this.LbUserProId = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.PdMan)).BeginInit();
             this.PanSignUp.SuspendLayout();
             this.SuspendLayout();
@@ -60,8 +61,7 @@
             this.LbHeading.BackColor = System.Drawing.Color.Transparent;
             this.LbHeading.Font = new System.Drawing.Font("Verdana", 18F, System.Drawing.FontStyle.Bold);
             this.LbHeading.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.LbHeading.Location = new System.Drawing.Point(134, 15);
-            this.LbHeading.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.LbHeading.Location = new System.Drawing.Point(179, 18);
             this.LbHeading.Name = "LbHeading";
             this.LbHeading.Size = new System.Drawing.Size(153, 36);
             this.LbHeading.TabIndex = 0;
@@ -72,10 +72,10 @@
             this.PdMan.BackColor = System.Drawing.Color.Transparent;
             this.PdMan.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("PdMan.BackgroundImage")));
             this.PdMan.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.PdMan.Location = new System.Drawing.Point(228, 26);
-            this.PdMan.Margin = new System.Windows.Forms.Padding(2);
+            this.PdMan.Location = new System.Drawing.Point(304, 32);
+            this.PdMan.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.PdMan.Name = "PdMan";
-            this.PdMan.Size = new System.Drawing.Size(584, 435);
+            this.PdMan.Size = new System.Drawing.Size(779, 535);
             this.PdMan.TabIndex = 1;
             this.PdMan.TabStop = false;
             // 
@@ -101,10 +101,10 @@
             this.PanSignUp.Controls.Add(this.TbEmail);
             this.PanSignUp.Controls.Add(this.TbFirstName);
             this.PanSignUp.Controls.Add(this.BtTnSignUp);
-            this.PanSignUp.Location = new System.Drawing.Point(154, 37);
-            this.PanSignUp.Margin = new System.Windows.Forms.Padding(2);
+            this.PanSignUp.Location = new System.Drawing.Point(205, 46);
+            this.PanSignUp.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.PanSignUp.Name = "PanSignUp";
-            this.PanSignUp.Size = new System.Drawing.Size(350, 484);
+            this.PanSignUp.Size = new System.Drawing.Size(467, 596);
             this.PanSignUp.TabIndex = 2;
             // 
             // LbAddress
@@ -113,8 +113,7 @@
             this.LbAddress.BackColor = System.Drawing.Color.Transparent;
             this.LbAddress.Font = new System.Drawing.Font("Verdana", 8F, System.Drawing.FontStyle.Bold);
             this.LbAddress.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.LbAddress.Location = new System.Drawing.Point(32, 217);
-            this.LbAddress.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.LbAddress.Location = new System.Drawing.Point(43, 267);
             this.LbAddress.Name = "LbAddress";
             this.LbAddress.Size = new System.Drawing.Size(118, 17);
             this.LbAddress.TabIndex = 18;
@@ -126,8 +125,7 @@
             this.LbConPassword.BackColor = System.Drawing.Color.Transparent;
             this.LbConPassword.Font = new System.Drawing.Font("Verdana", 8F, System.Drawing.FontStyle.Bold);
             this.LbConPassword.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.LbConPassword.Location = new System.Drawing.Point(37, 337);
-            this.LbConPassword.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.LbConPassword.Location = new System.Drawing.Point(49, 415);
             this.LbConPassword.Name = "LbConPassword";
             this.LbConPassword.Size = new System.Drawing.Size(151, 17);
             this.LbConPassword.TabIndex = 16;
@@ -139,8 +137,7 @@
             this.LbPassword.BackColor = System.Drawing.Color.Transparent;
             this.LbPassword.Font = new System.Drawing.Font("Verdana", 8F, System.Drawing.FontStyle.Bold);
             this.LbPassword.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.LbPassword.Location = new System.Drawing.Point(37, 299);
-            this.LbPassword.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.LbPassword.Location = new System.Drawing.Point(49, 368);
             this.LbPassword.Name = "LbPassword";
             this.LbPassword.Size = new System.Drawing.Size(131, 17);
             this.LbPassword.TabIndex = 15;
@@ -150,10 +147,10 @@
             // 
             this.TbAddress.Font = new System.Drawing.Font("Verdana", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TbAddress.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.TbAddress.Location = new System.Drawing.Point(34, 236);
-            this.TbAddress.Margin = new System.Windows.Forms.Padding(2);
+            this.TbAddress.Location = new System.Drawing.Point(45, 290);
+            this.TbAddress.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TbAddress.Name = "TbAddress";
-            this.TbAddress.Size = new System.Drawing.Size(252, 23);
+            this.TbAddress.Size = new System.Drawing.Size(335, 23);
             this.TbAddress.TabIndex = 17;
             // 
             // LbEmail
@@ -162,8 +159,7 @@
             this.LbEmail.BackColor = System.Drawing.Color.Transparent;
             this.LbEmail.Font = new System.Drawing.Font("Verdana", 8F, System.Drawing.FontStyle.Bold);
             this.LbEmail.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.LbEmail.Location = new System.Drawing.Point(37, 259);
-            this.LbEmail.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.LbEmail.Location = new System.Drawing.Point(49, 319);
             this.LbEmail.Name = "LbEmail";
             this.LbEmail.Size = new System.Drawing.Size(164, 17);
             this.LbEmail.TabIndex = 14;
@@ -175,8 +171,7 @@
             this.LbMobileNum.BackColor = System.Drawing.Color.Transparent;
             this.LbMobileNum.Font = new System.Drawing.Font("Verdana", 8F, System.Drawing.FontStyle.Bold);
             this.LbMobileNum.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.LbMobileNum.Location = new System.Drawing.Point(37, 176);
-            this.LbMobileNum.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.LbMobileNum.Location = new System.Drawing.Point(49, 217);
             this.LbMobileNum.Name = "LbMobileNum";
             this.LbMobileNum.Size = new System.Drawing.Size(171, 17);
             this.LbMobileNum.TabIndex = 13;
@@ -188,8 +183,7 @@
             this.LbLName.BackColor = System.Drawing.Color.Transparent;
             this.LbLName.Font = new System.Drawing.Font("Verdana", 8F, System.Drawing.FontStyle.Bold);
             this.LbLName.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.LbLName.Location = new System.Drawing.Point(37, 135);
-            this.LbLName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.LbLName.Location = new System.Drawing.Point(49, 166);
             this.LbLName.Name = "LbLName";
             this.LbLName.Size = new System.Drawing.Size(135, 17);
             this.LbLName.TabIndex = 12;
@@ -201,8 +195,7 @@
             this.LbFName.BackColor = System.Drawing.Color.Transparent;
             this.LbFName.Font = new System.Drawing.Font("Verdana", 8F, System.Drawing.FontStyle.Bold);
             this.LbFName.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.LbFName.Location = new System.Drawing.Point(37, 96);
-            this.LbFName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.LbFName.Location = new System.Drawing.Point(49, 118);
             this.LbFName.Name = "LbFName";
             this.LbFName.Size = new System.Drawing.Size(137, 17);
             this.LbFName.TabIndex = 11;
@@ -214,8 +207,7 @@
             this.LbUserName.BackColor = System.Drawing.Color.Transparent;
             this.LbUserName.Font = new System.Drawing.Font("Verdana", 8F, System.Drawing.FontStyle.Bold);
             this.LbUserName.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.LbUserName.Location = new System.Drawing.Point(32, 59);
-            this.LbUserName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.LbUserName.Location = new System.Drawing.Point(43, 73);
             this.LbUserName.Name = "LbUserName";
             this.LbUserName.Size = new System.Drawing.Size(147, 17);
             this.LbUserName.TabIndex = 10;
@@ -224,82 +216,82 @@
             // TbUserName
             // 
             this.TbUserName.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.TbUserName.Location = new System.Drawing.Point(34, 75);
-            this.TbUserName.Margin = new System.Windows.Forms.Padding(2);
+            this.TbUserName.Location = new System.Drawing.Point(45, 92);
+            this.TbUserName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TbUserName.Name = "TbUserName";
-            this.TbUserName.Size = new System.Drawing.Size(252, 20);
+            this.TbUserName.Size = new System.Drawing.Size(335, 22);
             this.TbUserName.TabIndex = 9;
             // 
             // TbConfirmPassword
             // 
             this.TbConfirmPassword.Font = new System.Drawing.Font("Verdana", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TbConfirmPassword.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.TbConfirmPassword.Location = new System.Drawing.Point(34, 352);
-            this.TbConfirmPassword.Margin = new System.Windows.Forms.Padding(2);
+            this.TbConfirmPassword.Location = new System.Drawing.Point(45, 433);
+            this.TbConfirmPassword.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TbConfirmPassword.Name = "TbConfirmPassword";
             this.TbConfirmPassword.PasswordChar = '*';
-            this.TbConfirmPassword.Size = new System.Drawing.Size(252, 23);
+            this.TbConfirmPassword.Size = new System.Drawing.Size(335, 23);
             this.TbConfirmPassword.TabIndex = 5;
             // 
             // TbPassword
             // 
             this.TbPassword.Font = new System.Drawing.Font("Verdana", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TbPassword.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.TbPassword.Location = new System.Drawing.Point(34, 315);
-            this.TbPassword.Margin = new System.Windows.Forms.Padding(2);
+            this.TbPassword.Location = new System.Drawing.Point(45, 388);
+            this.TbPassword.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TbPassword.Name = "TbPassword";
             this.TbPassword.PasswordChar = '*';
-            this.TbPassword.Size = new System.Drawing.Size(252, 23);
+            this.TbPassword.Size = new System.Drawing.Size(335, 23);
             this.TbPassword.TabIndex = 8;
             // 
             // TbMobileNum
             // 
             this.TbMobileNum.Font = new System.Drawing.Font("Verdana", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TbMobileNum.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.TbMobileNum.Location = new System.Drawing.Point(34, 192);
-            this.TbMobileNum.Margin = new System.Windows.Forms.Padding(2);
+            this.TbMobileNum.Location = new System.Drawing.Point(45, 236);
+            this.TbMobileNum.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TbMobileNum.Name = "TbMobileNum";
-            this.TbMobileNum.Size = new System.Drawing.Size(252, 23);
+            this.TbMobileNum.Size = new System.Drawing.Size(335, 23);
             this.TbMobileNum.TabIndex = 7;
             // 
             // TbLastName
             // 
             this.TbLastName.Font = new System.Drawing.Font("Verdana", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TbLastName.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.TbLastName.Location = new System.Drawing.Point(34, 150);
-            this.TbLastName.Margin = new System.Windows.Forms.Padding(2);
+            this.TbLastName.Location = new System.Drawing.Point(45, 185);
+            this.TbLastName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TbLastName.Name = "TbLastName";
-            this.TbLastName.Size = new System.Drawing.Size(252, 23);
+            this.TbLastName.Size = new System.Drawing.Size(335, 23);
             this.TbLastName.TabIndex = 6;
             // 
             // TbEmail
             // 
             this.TbEmail.Font = new System.Drawing.Font("Verdana", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TbEmail.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.TbEmail.Location = new System.Drawing.Point(34, 272);
-            this.TbEmail.Margin = new System.Windows.Forms.Padding(2);
+            this.TbEmail.Location = new System.Drawing.Point(45, 335);
+            this.TbEmail.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TbEmail.Name = "TbEmail";
-            this.TbEmail.Size = new System.Drawing.Size(252, 23);
+            this.TbEmail.Size = new System.Drawing.Size(335, 23);
             this.TbEmail.TabIndex = 5;
             // 
             // TbFirstName
             // 
             this.TbFirstName.Font = new System.Drawing.Font("Verdana", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TbFirstName.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.TbFirstName.Location = new System.Drawing.Point(34, 111);
-            this.TbFirstName.Margin = new System.Windows.Forms.Padding(2);
+            this.TbFirstName.Location = new System.Drawing.Point(45, 137);
+            this.TbFirstName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TbFirstName.Name = "TbFirstName";
-            this.TbFirstName.Size = new System.Drawing.Size(252, 23);
+            this.TbFirstName.Size = new System.Drawing.Size(335, 23);
             this.TbFirstName.TabIndex = 4;
             // 
             // BtTnSignUp
             // 
             this.BtTnSignUp.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtTnSignUp.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.BtTnSignUp.Location = new System.Drawing.Point(87, 407);
-            this.BtTnSignUp.Margin = new System.Windows.Forms.Padding(2);
+            this.BtTnSignUp.Location = new System.Drawing.Point(116, 501);
+            this.BtTnSignUp.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BtTnSignUp.Name = "BtTnSignUp";
-            this.BtTnSignUp.Size = new System.Drawing.Size(143, 48);
+            this.BtTnSignUp.Size = new System.Drawing.Size(191, 59);
             this.BtTnSignUp.TabIndex = 3;
             this.BtTnSignUp.Text = "Sign Up";
             this.BtTnSignUp.UseVisualStyleBackColor = true;
@@ -308,25 +300,34 @@
             // LbUserID
             // 
             this.LbUserID.AutoSize = true;
-            this.LbUserID.Location = new System.Drawing.Point(908, 352);
-            this.LbUserID.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.LbUserID.Location = new System.Drawing.Point(1211, 433);
             this.LbUserID.Name = "LbUserID";
-            this.LbUserID.Size = new System.Drawing.Size(0, 15);
+            this.LbUserID.Size = new System.Drawing.Size(0, 16);
             this.LbUserID.TabIndex = 3;
             this.LbUserID.Visible = false;
             // 
+            // LbUserProId
+            // 
+            this.LbUserProId.AutoSize = true;
+            this.LbUserProId.Location = new System.Drawing.Point(1304, 410);
+            this.LbUserProId.Name = "LbUserProId";
+            this.LbUserProId.Size = new System.Drawing.Size(0, 16);
+            this.LbUserProId.TabIndex = 4;
+            this.LbUserProId.Visible = false;
+            // 
             // SignUp_Page
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1135, 611);
+            this.ClientSize = new System.Drawing.Size(1513, 752);
+            this.Controls.Add(this.LbUserProId);
             this.Controls.Add(this.LbUserID);
             this.Controls.Add(this.PanSignUp);
             this.Controls.Add(this.PdMan);
             this.DoubleBuffered = true;
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "SignUp_Page";
             this.Text = "Sign Up";
             ((System.ComponentModel.ISupportInitialize)(this.PdMan)).EndInit();
@@ -360,5 +361,6 @@
         private System.Windows.Forms.Label LbUserID;
         private System.Windows.Forms.TextBox TbAddress;
         private System.Windows.Forms.Label LbAddress;
+        private System.Windows.Forms.Label LbUserProId;
     }
 }

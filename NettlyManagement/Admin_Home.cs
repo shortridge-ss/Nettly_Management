@@ -309,5 +309,45 @@ namespace NettlyManagement
                 MessageBox.Show("An error occurred: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void BtTnAllFeedback_Click(object sender, EventArgs e)
+        {
+            try 
+            { 
+            // Select data from the Appointments table using Entity Framework
+            var allFeedback = _dbEntities.Feedbacks
+                .Select(Af => new
+                {
+                    UName = Af.User.Username.ToString(),
+                    fDetails = Af.Comments,
+                    fRatings = Af.Rating,
+                    fDate = Af.DateSubmitted,
+                    fId = Af.FeedbackID,
+                    UiD = Af.UserID
+
+                }).ToList();
+            GvAdminPage.DataSource = allFeedback;
+            GvAdminPage.Columns[0].HeaderText = "User Name";
+            GvAdminPage.Columns[1].HeaderText = "Comments";
+            GvAdminPage.Columns[2].HeaderText = "Rating 1 - 10";
+            GvAdminPage.Columns[3].HeaderText = "Date Submitted";
+            
+            GvAdminPage.Columns[4].Visible = false;
+            GvAdminPage.Columns[5].Visible = false;
+
+            // Set up DataGridView properties
+            GvAdminPage.AutoGenerateColumns = true;
+
+            // Bind the Appointment data to the DataGridView
+            GvAdminPage.DataSource = allFeedback;
+
+                // ...
+            }
+        
+         catch (Exception ex)
+            {
+                MessageBox.Show("An error occurred: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }

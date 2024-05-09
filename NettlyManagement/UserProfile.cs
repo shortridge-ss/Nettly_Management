@@ -15,7 +15,7 @@ namespace NettlyManagement
     public partial class UserProfile
     {
         public int UserProfileID { get; set; }
-        public Nullable<int> UserID { get; set; }
+        public int UserID { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string ContactNumber { get; set; }

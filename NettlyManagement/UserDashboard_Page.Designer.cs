@@ -340,6 +340,7 @@
             // 
             // GvDashboard
             // 
+            this.GvDashboard.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.GvDashboard.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.GvDashboard.Location = new System.Drawing.Point(326, 165);
             this.GvDashboard.Name = "GvDashboard";

@@ -234,19 +234,15 @@ namespace NettlyManagement {
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
         }
-        
+
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        protected override bool ShouldSerializeTables() {
-            return false;
-        }
-        
+        protected override bool ShouldSerializeTables() => false;
+
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        protected override bool ShouldSerializeRelations() {
-            return false;
-        }
-        
+        protected override bool ShouldSerializeRelations() => false;
+
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         protected override void ReadXmlSerializable(global::System.Xml.XmlReader reader) {
@@ -298,13 +294,11 @@ namespace NettlyManagement {
             stream.Position = 0;
             return global::System.Xml.Schema.XmlSchema.Read(new global::System.Xml.XmlTextReader(stream), null);
         }
-        
+
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        internal void InitVars() {
-            this.InitVars(true);
-        }
-        
+        internal void InitVars() => this.InitVars(true);
+
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         internal void InitVars(bool initTable) {
@@ -405,49 +399,35 @@ namespace NettlyManagement {
                         this.tableWaitingList.UserIDColumn}, false);
             this.Relations.Add(this.relationFK_WaitingList_Users);
         }
-        
+
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private bool ShouldSerializeAppointments() {
-            return false;
-        }
-        
+        private bool ShouldSerializeAppointments() => false;
+
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private bool ShouldSerializeAvailability() {
-            return false;
-        }
-        
+        private bool ShouldSerializeAvailability() => false;
+
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private bool ShouldSerializeFeedback() {
-            return false;
-        }
-        
+        private bool ShouldSerializeFeedback() => false;
+
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private bool ShouldSerializeTasks() {
-            return false;
-        }
-        
+        private bool ShouldSerializeTasks() => false;
+
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private bool ShouldSerializeUserProfiles() {
-            return false;
-        }
-        
+        private bool ShouldSerializeUserProfiles() => false;
+
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private bool ShouldSerializeUsers() {
-            return false;
-        }
-        
+        private bool ShouldSerializeUsers() => false;
+
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private bool ShouldSerializeWaitingList() {
-            return false;
-        }
-        
+        private bool ShouldSerializeWaitingList() => false;
+
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void SchemaChanged(object sender, global::System.ComponentModel.CollectionChangeEventArgs e) {
@@ -672,13 +652,11 @@ namespace NettlyManagement {
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public event AppointmentsRowChangeEventHandler AppointmentsRowDeleted;
-            
+
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void AddAppointmentsRow(AppointmentsRow row) {
-                this.Rows.Add(row);
-            }
-            
+            public void AddAppointmentsRow(AppointmentsRow row) => this.Rows.Add(row);
+
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public AppointmentsRow AddAppointmentsRow(UsersRow parentUsersRowByFK_Appointments_Users, int TaskID, int StaffID, System.DateTime AppointmentDate, System.TimeSpan StartTime, System.TimeSpan EndTime, string Status) {
@@ -699,14 +677,12 @@ namespace NettlyManagement {
                 this.Rows.Add(rowAppointmentsRow);
                 return rowAppointmentsRow;
             }
-            
+
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public AppointmentsRow FindByAppointmentID(int AppointmentID) {
-                return ((AppointmentsRow)(this.Rows.Find(new object[] {
+            public AppointmentsRow FindByAppointmentID(int AppointmentID) => ((AppointmentsRow)(this.Rows.Find(new object[] {
                             AppointmentID})));
-            }
-            
+
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public override global::System.Data.DataTable Clone() {
@@ -714,13 +690,11 @@ namespace NettlyManagement {
                 cln.InitVars();
                 return cln;
             }
-            
+
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected override global::System.Data.DataTable CreateInstance() {
-                return new AppointmentsDataTable();
-            }
-            
+            protected override global::System.Data.DataTable CreateInstance() => new AppointmentsDataTable();
+
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             internal void InitVars() {
@@ -763,25 +737,19 @@ namespace NettlyManagement {
                 this.columnAppointmentID.Unique = true;
                 this.columnStatus.MaxLength = 50;
             }
-            
+
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public AppointmentsRow NewAppointmentsRow() {
-                return ((AppointmentsRow)(this.NewRow()));
-            }
-            
+            public AppointmentsRow NewAppointmentsRow() => ((AppointmentsRow)(this.NewRow()));
+
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new AppointmentsRow(builder);
-            }
-            
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) => new AppointmentsRow(builder);
+
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected override global::System.Type GetRowType() {
-                return typeof(AppointmentsRow);
-            }
-            
+            protected override global::System.Type GetRowType() => typeof(AppointmentsRow);
+
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
@@ -817,13 +785,11 @@ namespace NettlyManagement {
                     this.AppointmentsRowDeleting(this, new AppointmentsRowChangeEvent(((AppointmentsRow)(e.Row)), e.Action));
                 }
             }
-            
+
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void RemoveAppointmentsRow(AppointmentsRow row) {
-                this.Rows.Remove(row);
-            }
-            
+            public void RemoveAppointmentsRow(AppointmentsRow row) => this.Rows.Remove(row);
+
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
@@ -1006,13 +972,11 @@ namespace NettlyManagement {
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public event AvailabilityRowChangeEventHandler AvailabilityRowDeleted;
-            
+
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void AddAvailabilityRow(AvailabilityRow row) {
-                this.Rows.Add(row);
-            }
-            
+            public void AddAvailabilityRow(AvailabilityRow row) => this.Rows.Add(row);
+
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public AvailabilityRow AddAvailabilityRow(UsersRow parentUsersRowByFK_Availability_Staff, System.DateTime Date, System.TimeSpan StartTime, System.TimeSpan EndTime) {
@@ -1030,14 +994,12 @@ namespace NettlyManagement {
                 this.Rows.Add(rowAvailabilityRow);
                 return rowAvailabilityRow;
             }
-            
+
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public AvailabilityRow FindByAvailabilityID(int AvailabilityID) {
-                return ((AvailabilityRow)(this.Rows.Find(new object[] {
+            public AvailabilityRow FindByAvailabilityID(int AvailabilityID) => ((AvailabilityRow)(this.Rows.Find(new object[] {
                             AvailabilityID})));
-            }
-            
+
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public override global::System.Data.DataTable Clone() {
@@ -1045,13 +1007,11 @@ namespace NettlyManagement {
                 cln.InitVars();
                 return cln;
             }
-            
+
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected override global::System.Data.DataTable CreateInstance() {
-                return new AvailabilityDataTable();
-            }
-            
+            protected override global::System.Data.DataTable CreateInstance() => new AvailabilityDataTable();
+
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             internal void InitVars() {
@@ -1084,25 +1044,19 @@ namespace NettlyManagement {
                 this.columnAvailabilityID.ReadOnly = true;
                 this.columnAvailabilityID.Unique = true;
             }
-            
+
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public AvailabilityRow NewAvailabilityRow() {
-                return ((AvailabilityRow)(this.NewRow()));
-            }
-            
+            public AvailabilityRow NewAvailabilityRow() => ((AvailabilityRow)(this.NewRow()));
+
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new AvailabilityRow(builder);
-            }
-            
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) => new AvailabilityRow(builder);
+
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected override global::System.Type GetRowType() {
-                return typeof(AvailabilityRow);
-            }
-            
+            protected override global::System.Type GetRowType() => typeof(AvailabilityRow);
+
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
@@ -1138,13 +1092,11 @@ namespace NettlyManagement {
                     this.AvailabilityRowDeleting(this, new AvailabilityRowChangeEvent(((AvailabilityRow)(e.Row)), e.Action));
                 }
             }
-            
+
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void RemoveAvailabilityRow(AvailabilityRow row) {
-                this.Rows.Remove(row);
-            }
-            
+            public void RemoveAvailabilityRow(AvailabilityRow row) => this.Rows.Remove(row);
+
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
@@ -1337,13 +1289,11 @@ namespace NettlyManagement {
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public event FeedbackRowChangeEventHandler FeedbackRowDeleted;
-            
+
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void AddFeedbackRow(FeedbackRow row) {
-                this.Rows.Add(row);
-            }
-            
+            public void AddFeedbackRow(FeedbackRow row) => this.Rows.Add(row);
+
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public FeedbackRow AddFeedbackRow(AppointmentsRow parentAppointmentsRowByFK_Feedback_Appointments, UsersRow parentUsersRowByFK_Feedback_Users, int Rating, string Comments, System.DateTime DateSubmitted) {
@@ -1365,14 +1315,12 @@ namespace NettlyManagement {
                 this.Rows.Add(rowFeedbackRow);
                 return rowFeedbackRow;
             }
-            
+
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public FeedbackRow FindByFeedbackID(int FeedbackID) {
-                return ((FeedbackRow)(this.Rows.Find(new object[] {
+            public FeedbackRow FindByFeedbackID(int FeedbackID) => ((FeedbackRow)(this.Rows.Find(new object[] {
                             FeedbackID})));
-            }
-            
+
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public override global::System.Data.DataTable Clone() {
@@ -1380,13 +1328,11 @@ namespace NettlyManagement {
                 cln.InitVars();
                 return cln;
             }
-            
+
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected override global::System.Data.DataTable CreateInstance() {
-                return new FeedbackDataTable();
-            }
-            
+            protected override global::System.Data.DataTable CreateInstance() => new FeedbackDataTable();
+
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             internal void InitVars() {
@@ -1423,25 +1369,19 @@ namespace NettlyManagement {
                 this.columnFeedbackID.Unique = true;
                 this.columnComments.MaxLength = 2147483647;
             }
-            
+
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public FeedbackRow NewFeedbackRow() {
-                return ((FeedbackRow)(this.NewRow()));
-            }
-            
+            public FeedbackRow NewFeedbackRow() => ((FeedbackRow)(this.NewRow()));
+
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new FeedbackRow(builder);
-            }
-            
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) => new FeedbackRow(builder);
+
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected override global::System.Type GetRowType() {
-                return typeof(FeedbackRow);
-            }
-            
+            protected override global::System.Type GetRowType() => typeof(FeedbackRow);
+
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
@@ -1477,13 +1417,11 @@ namespace NettlyManagement {
                     this.FeedbackRowDeleting(this, new FeedbackRowChangeEvent(((FeedbackRow)(e.Row)), e.Action));
                 }
             }
-            
+
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void RemoveFeedbackRow(FeedbackRow row) {
-                this.Rows.Remove(row);
-            }
-            
+            public void RemoveFeedbackRow(FeedbackRow row) => this.Rows.Remove(row);
+
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
@@ -1666,13 +1604,11 @@ namespace NettlyManagement {
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public event TasksRowChangeEventHandler TasksRowDeleted;
-            
+
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void AddTasksRow(TasksRow row) {
-                this.Rows.Add(row);
-            }
-            
+            public void AddTasksRow(TasksRow row) => this.Rows.Add(row);
+
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public TasksRow AddTasksRow(string Name, string Description, int Duration, decimal Price) {
@@ -1687,14 +1623,12 @@ namespace NettlyManagement {
                 this.Rows.Add(rowTasksRow);
                 return rowTasksRow;
             }
-            
+
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public TasksRow FindByTaskID(int TaskID) {
-                return ((TasksRow)(this.Rows.Find(new object[] {
+            public TasksRow FindByTaskID(int TaskID) => ((TasksRow)(this.Rows.Find(new object[] {
                             TaskID})));
-            }
-            
+
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public override global::System.Data.DataTable Clone() {
@@ -1702,13 +1636,11 @@ namespace NettlyManagement {
                 cln.InitVars();
                 return cln;
             }
-            
+
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected override global::System.Data.DataTable CreateInstance() {
-                return new TasksDataTable();
-            }
-            
+            protected override global::System.Data.DataTable CreateInstance() => new TasksDataTable();
+
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             internal void InitVars() {
@@ -1747,25 +1679,19 @@ namespace NettlyManagement {
                 this.columnDuration.AllowDBNull = false;
                 this.columnPrice.AllowDBNull = false;
             }
-            
+
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public TasksRow NewTasksRow() {
-                return ((TasksRow)(this.NewRow()));
-            }
-            
+            public TasksRow NewTasksRow() => ((TasksRow)(this.NewRow()));
+
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new TasksRow(builder);
-            }
-            
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) => new TasksRow(builder);
+
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected override global::System.Type GetRowType() {
-                return typeof(TasksRow);
-            }
-            
+            protected override global::System.Type GetRowType() => typeof(TasksRow);
+
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
@@ -1801,13 +1727,11 @@ namespace NettlyManagement {
                     this.TasksRowDeleting(this, new TasksRowChangeEvent(((TasksRow)(e.Row)), e.Action));
                 }
             }
-            
+
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void RemoveTasksRow(TasksRow row) {
-                this.Rows.Remove(row);
-            }
-            
+            public void RemoveTasksRow(TasksRow row) => this.Rows.Remove(row);
+
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
@@ -2010,13 +1934,11 @@ namespace NettlyManagement {
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public event UserProfilesRowChangeEventHandler UserProfilesRowDeleted;
-            
+
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void AddUserProfilesRow(UserProfilesRow row) {
-                this.Rows.Add(row);
-            }
-            
+            public void AddUserProfilesRow(UserProfilesRow row) => this.Rows.Add(row);
+
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public UserProfilesRow AddUserProfilesRow(UsersRow parentUsersRowByFK_UserProfiles_Users, string FirstName, string LastName, string ContactNumber, string Email, string Address) {
@@ -2036,14 +1958,12 @@ namespace NettlyManagement {
                 this.Rows.Add(rowUserProfilesRow);
                 return rowUserProfilesRow;
             }
-            
+
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public UserProfilesRow FindByUserProfileID(int UserProfileID) {
-                return ((UserProfilesRow)(this.Rows.Find(new object[] {
+            public UserProfilesRow FindByUserProfileID(int UserProfileID) => ((UserProfilesRow)(this.Rows.Find(new object[] {
                             UserProfileID})));
-            }
-            
+
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public override global::System.Data.DataTable Clone() {
@@ -2051,13 +1971,11 @@ namespace NettlyManagement {
                 cln.InitVars();
                 return cln;
             }
-            
+
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected override global::System.Data.DataTable CreateInstance() {
-                return new UserProfilesDataTable();
-            }
-            
+            protected override global::System.Data.DataTable CreateInstance() => new UserProfilesDataTable();
+
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             internal void InitVars() {
@@ -2101,25 +2019,19 @@ namespace NettlyManagement {
                 this.columnEmail.MaxLength = 255;
                 this.columnAddress.MaxLength = 300;
             }
-            
+
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public UserProfilesRow NewUserProfilesRow() {
-                return ((UserProfilesRow)(this.NewRow()));
-            }
-            
+            public UserProfilesRow NewUserProfilesRow() => ((UserProfilesRow)(this.NewRow()));
+
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new UserProfilesRow(builder);
-            }
-            
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) => new UserProfilesRow(builder);
+
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected override global::System.Type GetRowType() {
-                return typeof(UserProfilesRow);
-            }
-            
+            protected override global::System.Type GetRowType() => typeof(UserProfilesRow);
+
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
@@ -2155,13 +2067,11 @@ namespace NettlyManagement {
                     this.UserProfilesRowDeleting(this, new UserProfilesRowChangeEvent(((UserProfilesRow)(e.Row)), e.Action));
                 }
             }
-            
+
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void RemoveUserProfilesRow(UserProfilesRow row) {
-                this.Rows.Remove(row);
-            }
-            
+            public void RemoveUserProfilesRow(UserProfilesRow row) => this.Rows.Remove(row);
+
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
@@ -2364,13 +2274,11 @@ namespace NettlyManagement {
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public event UsersRowChangeEventHandler UsersRowDeleted;
-            
+
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void AddUsersRow(UsersRow row) {
-                this.Rows.Add(row);
-            }
-            
+            public void AddUsersRow(UsersRow row) => this.Rows.Add(row);
+
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public UsersRow AddUsersRow(string Username, string Password, string Email, string Role, string ContactNumber, string Status) {
@@ -2387,14 +2295,12 @@ namespace NettlyManagement {
                 this.Rows.Add(rowUsersRow);
                 return rowUsersRow;
             }
-            
+
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public UsersRow FindByUserID(int UserID) {
-                return ((UsersRow)(this.Rows.Find(new object[] {
+            public UsersRow FindByUserID(int UserID) => ((UsersRow)(this.Rows.Find(new object[] {
                             UserID})));
-            }
-            
+
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public override global::System.Data.DataTable Clone() {
@@ -2402,13 +2308,11 @@ namespace NettlyManagement {
                 cln.InitVars();
                 return cln;
             }
-            
+
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected override global::System.Data.DataTable CreateInstance() {
-                return new UsersDataTable();
-            }
-            
+            protected override global::System.Data.DataTable CreateInstance() => new UsersDataTable();
+
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             internal void InitVars() {
@@ -2458,25 +2362,19 @@ namespace NettlyManagement {
                 this.columnContactNumber.MaxLength = 50;
                 this.columnStatus.MaxLength = 50;
             }
-            
+
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public UsersRow NewUsersRow() {
-                return ((UsersRow)(this.NewRow()));
-            }
-            
+            public UsersRow NewUsersRow() => ((UsersRow)(this.NewRow()));
+
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new UsersRow(builder);
-            }
-            
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) => new UsersRow(builder);
+
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected override global::System.Type GetRowType() {
-                return typeof(UsersRow);
-            }
-            
+            protected override global::System.Type GetRowType() => typeof(UsersRow);
+
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
@@ -2512,13 +2410,11 @@ namespace NettlyManagement {
                     this.UsersRowDeleting(this, new UsersRowChangeEvent(((UsersRow)(e.Row)), e.Action));
                 }
             }
-            
+
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void RemoveUsersRow(UsersRow row) {
-                this.Rows.Remove(row);
-            }
-            
+            public void RemoveUsersRow(UsersRow row) => this.Rows.Remove(row);
+
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
@@ -2701,13 +2597,11 @@ namespace NettlyManagement {
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public event WaitingListRowChangeEventHandler WaitingListRowDeleted;
-            
+
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void AddWaitingListRow(WaitingListRow row) {
-                this.Rows.Add(row);
-            }
-            
+            public void AddWaitingListRow(WaitingListRow row) => this.Rows.Add(row);
+
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public WaitingListRow AddWaitingListRow(UsersRow parentUsersRowByFK_WaitingList_Users, System.DateTime DesiredDate, System.TimeSpan DesiredSlot, string Status) {
@@ -2725,14 +2619,12 @@ namespace NettlyManagement {
                 this.Rows.Add(rowWaitingListRow);
                 return rowWaitingListRow;
             }
-            
+
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public WaitingListRow FindByWaitingListID(int WaitingListID) {
-                return ((WaitingListRow)(this.Rows.Find(new object[] {
+            public WaitingListRow FindByWaitingListID(int WaitingListID) => ((WaitingListRow)(this.Rows.Find(new object[] {
                             WaitingListID})));
-            }
-            
+
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public override global::System.Data.DataTable Clone() {
@@ -2740,13 +2632,11 @@ namespace NettlyManagement {
                 cln.InitVars();
                 return cln;
             }
-            
+
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected override global::System.Data.DataTable CreateInstance() {
-                return new WaitingListDataTable();
-            }
-            
+            protected override global::System.Data.DataTable CreateInstance() => new WaitingListDataTable();
+
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             internal void InitVars() {
@@ -2780,25 +2670,19 @@ namespace NettlyManagement {
                 this.columnWaitingListID.Unique = true;
                 this.columnStatus.MaxLength = 50;
             }
-            
+
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public WaitingListRow NewWaitingListRow() {
-                return ((WaitingListRow)(this.NewRow()));
-            }
-            
+            public WaitingListRow NewWaitingListRow() => ((WaitingListRow)(this.NewRow()));
+
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new WaitingListRow(builder);
-            }
-            
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) => new WaitingListRow(builder);
+
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected override global::System.Type GetRowType() {
-                return typeof(WaitingListRow);
-            }
-            
+            protected override global::System.Type GetRowType() => typeof(WaitingListRow);
+
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
@@ -2834,13 +2718,11 @@ namespace NettlyManagement {
                     this.WaitingListRowDeleting(this, new WaitingListRowChangeEvent(((WaitingListRow)(e.Row)), e.Action));
                 }
             }
-            
+
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void RemoveWaitingListRow(WaitingListRow row) {
-                this.Rows.Remove(row);
-            }
-            
+            public void RemoveWaitingListRow(WaitingListRow row) => this.Rows.Remove(row);
+
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
@@ -3052,91 +2934,63 @@ namespace NettlyManagement {
                     this.SetParentRow(value, this.Table.ParentRelations["FK_Appointments_Users"]);
                 }
             }
-            
+
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsUserIDNull() {
-                return this.IsNull(this.tableAppointments.UserIDColumn);
-            }
-            
+            public bool IsUserIDNull() => this.IsNull(this.tableAppointments.UserIDColumn);
+
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetUserIDNull() {
-                this[this.tableAppointments.UserIDColumn] = global::System.Convert.DBNull;
-            }
-            
+            public void SetUserIDNull() => this[this.tableAppointments.UserIDColumn] = global::System.Convert.DBNull;
+
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsTaskIDNull() {
-                return this.IsNull(this.tableAppointments.TaskIDColumn);
-            }
-            
+            public bool IsTaskIDNull() => this.IsNull(this.tableAppointments.TaskIDColumn);
+
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetTaskIDNull() {
-                this[this.tableAppointments.TaskIDColumn] = global::System.Convert.DBNull;
-            }
-            
+            public void SetTaskIDNull() => this[this.tableAppointments.TaskIDColumn] = global::System.Convert.DBNull;
+
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsStaffIDNull() {
-                return this.IsNull(this.tableAppointments.StaffIDColumn);
-            }
-            
+            public bool IsStaffIDNull() => this.IsNull(this.tableAppointments.StaffIDColumn);
+
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetStaffIDNull() {
-                this[this.tableAppointments.StaffIDColumn] = global::System.Convert.DBNull;
-            }
-            
+            public void SetStaffIDNull() => this[this.tableAppointments.StaffIDColumn] = global::System.Convert.DBNull;
+
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsAppointmentDateNull() {
-                return this.IsNull(this.tableAppointments.AppointmentDateColumn);
-            }
-            
+            public bool IsAppointmentDateNull() => this.IsNull(this.tableAppointments.AppointmentDateColumn);
+
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetAppointmentDateNull() {
-                this[this.tableAppointments.AppointmentDateColumn] = global::System.Convert.DBNull;
-            }
-            
+            public void SetAppointmentDateNull() => this[this.tableAppointments.AppointmentDateColumn] = global::System.Convert.DBNull;
+
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsStartTimeNull() {
-                return this.IsNull(this.tableAppointments.StartTimeColumn);
-            }
-            
+            public bool IsStartTimeNull() => this.IsNull(this.tableAppointments.StartTimeColumn);
+
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetStartTimeNull() {
-                this[this.tableAppointments.StartTimeColumn] = global::System.Convert.DBNull;
-            }
-            
+            public void SetStartTimeNull() => this[this.tableAppointments.StartTimeColumn] = global::System.Convert.DBNull;
+
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsEndTimeNull() {
-                return this.IsNull(this.tableAppointments.EndTimeColumn);
-            }
-            
+            public bool IsEndTimeNull() => this.IsNull(this.tableAppointments.EndTimeColumn);
+
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetEndTimeNull() {
-                this[this.tableAppointments.EndTimeColumn] = global::System.Convert.DBNull;
-            }
-            
+            public void SetEndTimeNull() => this[this.tableAppointments.EndTimeColumn] = global::System.Convert.DBNull;
+
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsStatusNull() {
-                return this.IsNull(this.tableAppointments.StatusColumn);
-            }
-            
+            public bool IsStatusNull() => this.IsNull(this.tableAppointments.StatusColumn);
+
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetStatusNull() {
-                this[this.tableAppointments.StatusColumn] = global::System.Convert.DBNull;
-            }
-            
+            public void SetStatusNull() => this[this.tableAppointments.StatusColumn] = global::System.Convert.DBNull;
+
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public FeedbackRow[] GetFeedbackRows() {
@@ -3248,54 +3102,38 @@ namespace NettlyManagement {
                     this.SetParentRow(value, this.Table.ParentRelations["FK_Availability_Staff"]);
                 }
             }
-            
+
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsStaffIDNull() {
-                return this.IsNull(this.tableAvailability.StaffIDColumn);
-            }
-            
+            public bool IsStaffIDNull() => this.IsNull(this.tableAvailability.StaffIDColumn);
+
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetStaffIDNull() {
-                this[this.tableAvailability.StaffIDColumn] = global::System.Convert.DBNull;
-            }
-            
+            public void SetStaffIDNull() => this[this.tableAvailability.StaffIDColumn] = global::System.Convert.DBNull;
+
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsDateNull() {
-                return this.IsNull(this.tableAvailability.DateColumn);
-            }
-            
+            public bool IsDateNull() => this.IsNull(this.tableAvailability.DateColumn);
+
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetDateNull() {
-                this[this.tableAvailability.DateColumn] = global::System.Convert.DBNull;
-            }
-            
+            public void SetDateNull() => this[this.tableAvailability.DateColumn] = global::System.Convert.DBNull;
+
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsStartTimeNull() {
-                return this.IsNull(this.tableAvailability.StartTimeColumn);
-            }
-            
+            public bool IsStartTimeNull() => this.IsNull(this.tableAvailability.StartTimeColumn);
+
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetStartTimeNull() {
-                this[this.tableAvailability.StartTimeColumn] = global::System.Convert.DBNull;
-            }
-            
+            public void SetStartTimeNull() => this[this.tableAvailability.StartTimeColumn] = global::System.Convert.DBNull;
+
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsEndTimeNull() {
-                return this.IsNull(this.tableAvailability.EndTimeColumn);
-            }
-            
+            public bool IsEndTimeNull() => this.IsNull(this.tableAvailability.EndTimeColumn);
+
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetEndTimeNull() {
-                this[this.tableAvailability.EndTimeColumn] = global::System.Convert.DBNull;
-            }
+            public void SetEndTimeNull() => this[this.tableAvailability.EndTimeColumn] = global::System.Convert.DBNull;
         }
         
         /// <summary>
@@ -3424,66 +3262,46 @@ namespace NettlyManagement {
                     this.SetParentRow(value, this.Table.ParentRelations["FK_Feedback_Users"]);
                 }
             }
-            
+
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsAppointmentIDNull() {
-                return this.IsNull(this.tableFeedback.AppointmentIDColumn);
-            }
-            
+            public bool IsAppointmentIDNull() => this.IsNull(this.tableFeedback.AppointmentIDColumn);
+
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetAppointmentIDNull() {
-                this[this.tableFeedback.AppointmentIDColumn] = global::System.Convert.DBNull;
-            }
-            
+            public void SetAppointmentIDNull() => this[this.tableFeedback.AppointmentIDColumn] = global::System.Convert.DBNull;
+
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsUserIDNull() {
-                return this.IsNull(this.tableFeedback.UserIDColumn);
-            }
-            
+            public bool IsUserIDNull() => this.IsNull(this.tableFeedback.UserIDColumn);
+
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetUserIDNull() {
-                this[this.tableFeedback.UserIDColumn] = global::System.Convert.DBNull;
-            }
-            
+            public void SetUserIDNull() => this[this.tableFeedback.UserIDColumn] = global::System.Convert.DBNull;
+
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsRatingNull() {
-                return this.IsNull(this.tableFeedback.RatingColumn);
-            }
-            
+            public bool IsRatingNull() => this.IsNull(this.tableFeedback.RatingColumn);
+
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetRatingNull() {
-                this[this.tableFeedback.RatingColumn] = global::System.Convert.DBNull;
-            }
-            
+            public void SetRatingNull() => this[this.tableFeedback.RatingColumn] = global::System.Convert.DBNull;
+
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsCommentsNull() {
-                return this.IsNull(this.tableFeedback.CommentsColumn);
-            }
-            
+            public bool IsCommentsNull() => this.IsNull(this.tableFeedback.CommentsColumn);
+
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetCommentsNull() {
-                this[this.tableFeedback.CommentsColumn] = global::System.Convert.DBNull;
-            }
-            
+            public void SetCommentsNull() => this[this.tableFeedback.CommentsColumn] = global::System.Convert.DBNull;
+
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsDateSubmittedNull() {
-                return this.IsNull(this.tableFeedback.DateSubmittedColumn);
-            }
-            
+            public bool IsDateSubmittedNull() => this.IsNull(this.tableFeedback.DateSubmittedColumn);
+
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetDateSubmittedNull() {
-                this[this.tableFeedback.DateSubmittedColumn] = global::System.Convert.DBNull;
-            }
+            public void SetDateSubmittedNull() => this[this.tableFeedback.DateSubmittedColumn] = global::System.Convert.DBNull;
         }
         
         /// <summary>
@@ -3687,78 +3505,54 @@ namespace NettlyManagement {
                     this.SetParentRow(value, this.Table.ParentRelations["FK_UserProfiles_Users"]);
                 }
             }
-            
+
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsUserIDNull() {
-                return this.IsNull(this.tableUserProfiles.UserIDColumn);
-            }
-            
+            public bool IsUserIDNull() => this.IsNull(this.tableUserProfiles.UserIDColumn);
+
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetUserIDNull() {
-                this[this.tableUserProfiles.UserIDColumn] = global::System.Convert.DBNull;
-            }
-            
+            public void SetUserIDNull() => this[this.tableUserProfiles.UserIDColumn] = global::System.Convert.DBNull;
+
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsFirstNameNull() {
-                return this.IsNull(this.tableUserProfiles.FirstNameColumn);
-            }
-            
+            public bool IsFirstNameNull() => this.IsNull(this.tableUserProfiles.FirstNameColumn);
+
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetFirstNameNull() {
-                this[this.tableUserProfiles.FirstNameColumn] = global::System.Convert.DBNull;
-            }
-            
+            public void SetFirstNameNull() => this[this.tableUserProfiles.FirstNameColumn] = global::System.Convert.DBNull;
+
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsLastNameNull() {
-                return this.IsNull(this.tableUserProfiles.LastNameColumn);
-            }
-            
+            public bool IsLastNameNull() => this.IsNull(this.tableUserProfiles.LastNameColumn);
+
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetLastNameNull() {
-                this[this.tableUserProfiles.LastNameColumn] = global::System.Convert.DBNull;
-            }
-            
+            public void SetLastNameNull() => this[this.tableUserProfiles.LastNameColumn] = global::System.Convert.DBNull;
+
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsContactNumberNull() {
-                return this.IsNull(this.tableUserProfiles.ContactNumberColumn);
-            }
-            
+            public bool IsContactNumberNull() => this.IsNull(this.tableUserProfiles.ContactNumberColumn);
+
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetContactNumberNull() {
-                this[this.tableUserProfiles.ContactNumberColumn] = global::System.Convert.DBNull;
-            }
-            
+            public void SetContactNumberNull() => this[this.tableUserProfiles.ContactNumberColumn] = global::System.Convert.DBNull;
+
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsEmailNull() {
-                return this.IsNull(this.tableUserProfiles.EmailColumn);
-            }
-            
+            public bool IsEmailNull() => this.IsNull(this.tableUserProfiles.EmailColumn);
+
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetEmailNull() {
-                this[this.tableUserProfiles.EmailColumn] = global::System.Convert.DBNull;
-            }
-            
+            public void SetEmailNull() => this[this.tableUserProfiles.EmailColumn] = global::System.Convert.DBNull;
+
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsAddressNull() {
-                return this.IsNull(this.tableUserProfiles.AddressColumn);
-            }
-            
+            public bool IsAddressNull() => this.IsNull(this.tableUserProfiles.AddressColumn);
+
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetAddressNull() {
-                this[this.tableUserProfiles.AddressColumn] = global::System.Convert.DBNull;
-            }
+            public void SetAddressNull() => this[this.tableUserProfiles.AddressColumn] = global::System.Convert.DBNull;
         }
         
         /// <summary>
@@ -3856,19 +3650,15 @@ namespace NettlyManagement {
                     this[this.tableUsers.StatusColumn] = value;
                 }
             }
-            
+
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsStatusNull() {
-                return this.IsNull(this.tableUsers.StatusColumn);
-            }
-            
+            public bool IsStatusNull() => this.IsNull(this.tableUsers.StatusColumn);
+
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetStatusNull() {
-                this[this.tableUsers.StatusColumn] = global::System.Convert.DBNull;
-            }
-            
+            public void SetStatusNull() => this[this.tableUsers.StatusColumn] = global::System.Convert.DBNull;
+
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public AppointmentsRow[] GetAppointmentsRows() {
@@ -4024,54 +3814,38 @@ namespace NettlyManagement {
                     this.SetParentRow(value, this.Table.ParentRelations["FK_WaitingList_Users"]);
                 }
             }
-            
+
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsUserIDNull() {
-                return this.IsNull(this.tableWaitingList.UserIDColumn);
-            }
-            
+            public bool IsUserIDNull() => this.IsNull(this.tableWaitingList.UserIDColumn);
+
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetUserIDNull() {
-                this[this.tableWaitingList.UserIDColumn] = global::System.Convert.DBNull;
-            }
-            
+            public void SetUserIDNull() => this[this.tableWaitingList.UserIDColumn] = global::System.Convert.DBNull;
+
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsDesiredDateNull() {
-                return this.IsNull(this.tableWaitingList.DesiredDateColumn);
-            }
-            
+            public bool IsDesiredDateNull() => this.IsNull(this.tableWaitingList.DesiredDateColumn);
+
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetDesiredDateNull() {
-                this[this.tableWaitingList.DesiredDateColumn] = global::System.Convert.DBNull;
-            }
-            
+            public void SetDesiredDateNull() => this[this.tableWaitingList.DesiredDateColumn] = global::System.Convert.DBNull;
+
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsDesiredSlotNull() {
-                return this.IsNull(this.tableWaitingList.DesiredSlotColumn);
-            }
-            
+            public bool IsDesiredSlotNull() => this.IsNull(this.tableWaitingList.DesiredSlotColumn);
+
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetDesiredSlotNull() {
-                this[this.tableWaitingList.DesiredSlotColumn] = global::System.Convert.DBNull;
-            }
-            
+            public void SetDesiredSlotNull() => this[this.tableWaitingList.DesiredSlotColumn] = global::System.Convert.DBNull;
+
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsStatusNull() {
-                return this.IsNull(this.tableWaitingList.StatusColumn);
-            }
-            
+            public bool IsStatusNull() => this.IsNull(this.tableWaitingList.StatusColumn);
+
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetStatusNull() {
-                this[this.tableWaitingList.StatusColumn] = global::System.Convert.DBNull;
-            }
+            public void SetStatusNull() => this[this.tableWaitingList.StatusColumn] = global::System.Convert.DBNull;
         }
         
         /// <summary>
@@ -4548,36 +4322,28 @@ SELECT AppointmentID, UserID, TaskID, StaffID, AppointmentDate, StartTime, EndTi
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
-        
+
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(NettlyBookingDbDataSet.AppointmentsDataTable dataTable) {
-            return this.Adapter.Update(dataTable);
-        }
-        
+        public virtual int Update(NettlyBookingDbDataSet.AppointmentsDataTable dataTable) => this.Adapter.Update(dataTable);
+
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(NettlyBookingDbDataSet dataSet) {
-            return this.Adapter.Update(dataSet, "Appointments");
-        }
-        
+        public virtual int Update(NettlyBookingDbDataSet dataSet) => this.Adapter.Update(dataSet, "Appointments");
+
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(global::System.Data.DataRow dataRow) {
-            return this.Adapter.Update(new global::System.Data.DataRow[] {
+        public virtual int Update(global::System.Data.DataRow dataRow) => this.Adapter.Update(new global::System.Data.DataRow[] {
                         dataRow});
-        }
-        
+
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(global::System.Data.DataRow[] dataRows) {
-            return this.Adapter.Update(dataRows);
-        }
-        
+        public virtual int Update(global::System.Data.DataRow[] dataRows) => this.Adapter.Update(dataRows);
+
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
@@ -4855,14 +4621,12 @@ SELECT AppointmentID, UserID, TaskID, StaffID, AppointmentDate, StartTime, EndTi
                 }
             }
         }
-        
+
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(global::System.Nullable<int> UserID, global::System.Nullable<int> TaskID, global::System.Nullable<int> StaffID, global::System.Nullable<global::System.DateTime> AppointmentDate, global::System.Nullable<global::System.TimeSpan> StartTime, global::System.Nullable<global::System.TimeSpan> EndTime, string Status, int Original_AppointmentID, global::System.Nullable<int> Original_UserID, global::System.Nullable<int> Original_TaskID, global::System.Nullable<int> Original_StaffID, global::System.Nullable<global::System.DateTime> Original_AppointmentDate, global::System.Nullable<global::System.TimeSpan> Original_StartTime, global::System.Nullable<global::System.TimeSpan> Original_EndTime, string Original_Status) {
-            return this.Update(UserID, TaskID, StaffID, AppointmentDate, StartTime, EndTime, Status, Original_AppointmentID, Original_UserID, Original_TaskID, Original_StaffID, Original_AppointmentDate, Original_StartTime, Original_EndTime, Original_Status, Original_AppointmentID);
-        }
+        public virtual int Update(global::System.Nullable<int> UserID, global::System.Nullable<int> TaskID, global::System.Nullable<int> StaffID, global::System.Nullable<global::System.DateTime> AppointmentDate, global::System.Nullable<global::System.TimeSpan> StartTime, global::System.Nullable<global::System.TimeSpan> EndTime, string Status, int Original_AppointmentID, global::System.Nullable<int> Original_UserID, global::System.Nullable<int> Original_TaskID, global::System.Nullable<int> Original_StaffID, global::System.Nullable<global::System.DateTime> Original_AppointmentDate, global::System.Nullable<global::System.TimeSpan> Original_StartTime, global::System.Nullable<global::System.TimeSpan> Original_EndTime, string Original_Status) => this.Update(UserID, TaskID, StaffID, AppointmentDate, StartTime, EndTime, Status, Original_AppointmentID, Original_UserID, Original_TaskID, Original_StaffID, Original_AppointmentDate, Original_StartTime, Original_EndTime, Original_Status, Original_AppointmentID);
     }
     
     /// <summary>
@@ -5077,36 +4841,28 @@ SELECT AvailabilityID, StaffID, Date, StartTime, EndTime FROM Availability WHERE
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
-        
+
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(NettlyBookingDbDataSet.AvailabilityDataTable dataTable) {
-            return this.Adapter.Update(dataTable);
-        }
-        
+        public virtual int Update(NettlyBookingDbDataSet.AvailabilityDataTable dataTable) => this.Adapter.Update(dataTable);
+
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(NettlyBookingDbDataSet dataSet) {
-            return this.Adapter.Update(dataSet, "Availability");
-        }
-        
+        public virtual int Update(NettlyBookingDbDataSet dataSet) => this.Adapter.Update(dataSet, "Availability");
+
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(global::System.Data.DataRow dataRow) {
-            return this.Adapter.Update(new global::System.Data.DataRow[] {
+        public virtual int Update(global::System.Data.DataRow dataRow) => this.Adapter.Update(new global::System.Data.DataRow[] {
                         dataRow});
-        }
-        
+
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(global::System.Data.DataRow[] dataRows) {
-            return this.Adapter.Update(dataRows);
-        }
-        
+        public virtual int Update(global::System.Data.DataRow[] dataRows) => this.Adapter.Update(dataRows);
+
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
@@ -5284,14 +5040,12 @@ SELECT AvailabilityID, StaffID, Date, StartTime, EndTime FROM Availability WHERE
                 }
             }
         }
-        
+
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(global::System.Nullable<int> StaffID, global::System.Nullable<global::System.DateTime> Date, global::System.Nullable<global::System.TimeSpan> StartTime, global::System.Nullable<global::System.TimeSpan> EndTime, int Original_AvailabilityID, global::System.Nullable<int> Original_StaffID, global::System.Nullable<global::System.DateTime> Original_Date, global::System.Nullable<global::System.TimeSpan> Original_StartTime, global::System.Nullable<global::System.TimeSpan> Original_EndTime) {
-            return this.Update(StaffID, Date, StartTime, EndTime, Original_AvailabilityID, Original_StaffID, Original_Date, Original_StartTime, Original_EndTime, Original_AvailabilityID);
-        }
+        public virtual int Update(global::System.Nullable<int> StaffID, global::System.Nullable<global::System.DateTime> Date, global::System.Nullable<global::System.TimeSpan> StartTime, global::System.Nullable<global::System.TimeSpan> EndTime, int Original_AvailabilityID, global::System.Nullable<int> Original_StaffID, global::System.Nullable<global::System.DateTime> Original_Date, global::System.Nullable<global::System.TimeSpan> Original_StartTime, global::System.Nullable<global::System.TimeSpan> Original_EndTime) => this.Update(StaffID, Date, StartTime, EndTime, Original_AvailabilityID, Original_StaffID, Original_Date, Original_StartTime, Original_EndTime, Original_AvailabilityID);
     }
     
     /// <summary>
@@ -5508,36 +5262,28 @@ SELECT FeedbackID, AppointmentID, UserID, Rating, Comments, DateSubmitted FROM F
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
-        
+
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(NettlyBookingDbDataSet.FeedbackDataTable dataTable) {
-            return this.Adapter.Update(dataTable);
-        }
-        
+        public virtual int Update(NettlyBookingDbDataSet.FeedbackDataTable dataTable) => this.Adapter.Update(dataTable);
+
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(NettlyBookingDbDataSet dataSet) {
-            return this.Adapter.Update(dataSet, "Feedback");
-        }
-        
+        public virtual int Update(NettlyBookingDbDataSet dataSet) => this.Adapter.Update(dataSet, "Feedback");
+
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(global::System.Data.DataRow dataRow) {
-            return this.Adapter.Update(new global::System.Data.DataRow[] {
+        public virtual int Update(global::System.Data.DataRow dataRow) => this.Adapter.Update(new global::System.Data.DataRow[] {
                         dataRow});
-        }
-        
+
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(global::System.Data.DataRow[] dataRows) {
-            return this.Adapter.Update(dataRows);
-        }
-        
+        public virtual int Update(global::System.Data.DataRow[] dataRows) => this.Adapter.Update(dataRows);
+
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
@@ -5727,14 +5473,12 @@ SELECT FeedbackID, AppointmentID, UserID, Rating, Comments, DateSubmitted FROM F
                 }
             }
         }
-        
+
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(global::System.Nullable<int> AppointmentID, global::System.Nullable<int> UserID, global::System.Nullable<int> Rating, string Comments, global::System.Nullable<global::System.DateTime> DateSubmitted, int Original_FeedbackID, global::System.Nullable<int> Original_AppointmentID, global::System.Nullable<int> Original_UserID, global::System.Nullable<int> Original_Rating, global::System.Nullable<global::System.DateTime> Original_DateSubmitted) {
-            return this.Update(AppointmentID, UserID, Rating, Comments, DateSubmitted, Original_FeedbackID, Original_AppointmentID, Original_UserID, Original_Rating, Original_DateSubmitted, Original_FeedbackID);
-        }
+        public virtual int Update(global::System.Nullable<int> AppointmentID, global::System.Nullable<int> UserID, global::System.Nullable<int> Rating, string Comments, global::System.Nullable<global::System.DateTime> DateSubmitted, int Original_FeedbackID, global::System.Nullable<int> Original_AppointmentID, global::System.Nullable<int> Original_UserID, global::System.Nullable<int> Original_Rating, global::System.Nullable<global::System.DateTime> Original_DateSubmitted) => this.Update(AppointmentID, UserID, Rating, Comments, DateSubmitted, Original_FeedbackID, Original_AppointmentID, Original_UserID, Original_Rating, Original_DateSubmitted, Original_FeedbackID);
     }
     
     /// <summary>
@@ -5940,36 +5684,28 @@ SELECT TaskID, Name, Description, Duration, Price FROM Tasks WHERE (TaskID = @Ta
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
-        
+
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(NettlyBookingDbDataSet.TasksDataTable dataTable) {
-            return this.Adapter.Update(dataTable);
-        }
-        
+        public virtual int Update(NettlyBookingDbDataSet.TasksDataTable dataTable) => this.Adapter.Update(dataTable);
+
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(NettlyBookingDbDataSet dataSet) {
-            return this.Adapter.Update(dataSet, "Tasks");
-        }
-        
+        public virtual int Update(NettlyBookingDbDataSet dataSet) => this.Adapter.Update(dataSet, "Tasks");
+
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(global::System.Data.DataRow dataRow) {
-            return this.Adapter.Update(new global::System.Data.DataRow[] {
+        public virtual int Update(global::System.Data.DataRow dataRow) => this.Adapter.Update(new global::System.Data.DataRow[] {
                         dataRow});
-        }
-        
+
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(global::System.Data.DataRow[] dataRows) {
-            return this.Adapter.Update(dataRows);
-        }
-        
+        public virtual int Update(global::System.Data.DataRow[] dataRows) => this.Adapter.Update(dataRows);
+
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
@@ -6079,14 +5815,12 @@ SELECT TaskID, Name, Description, Duration, Price FROM Tasks WHERE (TaskID = @Ta
                 }
             }
         }
-        
+
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Name, string Description, int Duration, decimal Price, int Original_TaskID, string Original_Name, int Original_Duration, decimal Original_Price) {
-            return this.Update(Name, Description, Duration, Price, Original_TaskID, Original_Name, Original_Duration, Original_Price, Original_TaskID);
-        }
+        public virtual int Update(string Name, string Description, int Duration, decimal Price, int Original_TaskID, string Original_Name, int Original_Duration, decimal Original_Price) => this.Update(Name, Description, Duration, Price, Original_TaskID, Original_Name, Original_Duration, Original_Price, Original_TaskID);
     }
     
     /// <summary>
@@ -6314,36 +6048,28 @@ SELECT UserProfileID, UserID, FirstName, LastName, ContactNumber, Email, Address
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
-        
+
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(NettlyBookingDbDataSet.UserProfilesDataTable dataTable) {
-            return this.Adapter.Update(dataTable);
-        }
-        
+        public virtual int Update(NettlyBookingDbDataSet.UserProfilesDataTable dataTable) => this.Adapter.Update(dataTable);
+
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(NettlyBookingDbDataSet dataSet) {
-            return this.Adapter.Update(dataSet, "UserProfiles");
-        }
-        
+        public virtual int Update(NettlyBookingDbDataSet dataSet) => this.Adapter.Update(dataSet, "UserProfiles");
+
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(global::System.Data.DataRow dataRow) {
-            return this.Adapter.Update(new global::System.Data.DataRow[] {
+        public virtual int Update(global::System.Data.DataRow dataRow) => this.Adapter.Update(new global::System.Data.DataRow[] {
                         dataRow});
-        }
-        
+
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(global::System.Data.DataRow[] dataRows) {
-            return this.Adapter.Update(dataRows);
-        }
-        
+        public virtual int Update(global::System.Data.DataRow[] dataRows) => this.Adapter.Update(dataRows);
+
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
@@ -6577,14 +6303,12 @@ SELECT UserProfileID, UserID, FirstName, LastName, ContactNumber, Email, Address
                 }
             }
         }
-        
+
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(global::System.Nullable<int> UserID, string FirstName, string LastName, string ContactNumber, string Email, string Address, int Original_UserProfileID, global::System.Nullable<int> Original_UserID, string Original_FirstName, string Original_LastName, string Original_ContactNumber, string Original_Email, string Original_Address) {
-            return this.Update(UserID, FirstName, LastName, ContactNumber, Email, Address, Original_UserProfileID, Original_UserID, Original_FirstName, Original_LastName, Original_ContactNumber, Original_Email, Original_Address, Original_UserProfileID);
-        }
+        public virtual int Update(global::System.Nullable<int> UserID, string FirstName, string LastName, string ContactNumber, string Email, string Address, int Original_UserProfileID, global::System.Nullable<int> Original_UserID, string Original_FirstName, string Original_LastName, string Original_ContactNumber, string Original_Email, string Original_Address) => this.Update(UserID, FirstName, LastName, ContactNumber, Email, Address, Original_UserProfileID, Original_UserID, Original_FirstName, Original_LastName, Original_ContactNumber, Original_Email, Original_Address, Original_UserProfileID);
     }
     
     /// <summary>
@@ -6802,36 +6526,28 @@ SELECT UserID, Username, Password, Email, Role, ContactNumber, Status FROM Users
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
-        
+
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(NettlyBookingDbDataSet.UsersDataTable dataTable) {
-            return this.Adapter.Update(dataTable);
-        }
-        
+        public virtual int Update(NettlyBookingDbDataSet.UsersDataTable dataTable) => this.Adapter.Update(dataTable);
+
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(NettlyBookingDbDataSet dataSet) {
-            return this.Adapter.Update(dataSet, "Users");
-        }
-        
+        public virtual int Update(NettlyBookingDbDataSet dataSet) => this.Adapter.Update(dataSet, "Users");
+
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(global::System.Data.DataRow dataRow) {
-            return this.Adapter.Update(new global::System.Data.DataRow[] {
+        public virtual int Update(global::System.Data.DataRow dataRow) => this.Adapter.Update(new global::System.Data.DataRow[] {
                         dataRow});
-        }
-        
+
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(global::System.Data.DataRow[] dataRows) {
-            return this.Adapter.Update(dataRows);
-        }
-        
+        public virtual int Update(global::System.Data.DataRow[] dataRows) => this.Adapter.Update(dataRows);
+
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
@@ -7045,14 +6761,12 @@ SELECT UserID, Username, Password, Email, Role, ContactNumber, Status FROM Users
                 }
             }
         }
-        
+
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Username, string Password, string Email, string Role, string ContactNumber, string Status, int Original_UserID, string Original_Username, string Original_Password, string Original_Email, string Original_Role, string Original_ContactNumber, string Original_Status) {
-            return this.Update(Username, Password, Email, Role, ContactNumber, Status, Original_UserID, Original_Username, Original_Password, Original_Email, Original_Role, Original_ContactNumber, Original_Status, Original_UserID);
-        }
+        public virtual int Update(string Username, string Password, string Email, string Role, string ContactNumber, string Status, int Original_UserID, string Original_Username, string Original_Password, string Original_Email, string Original_Role, string Original_ContactNumber, string Original_Status) => this.Update(Username, Password, Email, Role, ContactNumber, Status, Original_UserID, Original_Username, Original_Password, Original_Email, Original_Role, Original_ContactNumber, Original_Status, Original_UserID);
     }
     
     /// <summary>
@@ -7266,36 +6980,28 @@ SELECT WaitingListID, UserID, DesiredDate, DesiredSlot, Status FROM WaitingList 
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
-        
+
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(NettlyBookingDbDataSet.WaitingListDataTable dataTable) {
-            return this.Adapter.Update(dataTable);
-        }
-        
+        public virtual int Update(NettlyBookingDbDataSet.WaitingListDataTable dataTable) => this.Adapter.Update(dataTable);
+
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(NettlyBookingDbDataSet dataSet) {
-            return this.Adapter.Update(dataSet, "WaitingList");
-        }
-        
+        public virtual int Update(NettlyBookingDbDataSet dataSet) => this.Adapter.Update(dataSet, "WaitingList");
+
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(global::System.Data.DataRow dataRow) {
-            return this.Adapter.Update(new global::System.Data.DataRow[] {
+        public virtual int Update(global::System.Data.DataRow dataRow) => this.Adapter.Update(new global::System.Data.DataRow[] {
                         dataRow});
-        }
-        
+
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(global::System.Data.DataRow[] dataRows) {
-            return this.Adapter.Update(dataRows);
-        }
-        
+        public virtual int Update(global::System.Data.DataRow[] dataRows) => this.Adapter.Update(dataRows);
+
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
@@ -7473,14 +7179,12 @@ SELECT WaitingListID, UserID, DesiredDate, DesiredSlot, Status FROM WaitingList 
                 }
             }
         }
-        
+
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(global::System.Nullable<int> UserID, global::System.Nullable<global::System.DateTime> DesiredDate, global::System.Nullable<global::System.TimeSpan> DesiredSlot, string Status, int Original_WaitingListID, global::System.Nullable<int> Original_UserID, global::System.Nullable<global::System.DateTime> Original_DesiredDate, global::System.Nullable<global::System.TimeSpan> Original_DesiredSlot, string Original_Status) {
-            return this.Update(UserID, DesiredDate, DesiredSlot, Status, Original_WaitingListID, Original_UserID, Original_DesiredDate, Original_DesiredSlot, Original_Status, Original_WaitingListID);
-        }
+        public virtual int Update(global::System.Nullable<int> UserID, global::System.Nullable<global::System.DateTime> DesiredDate, global::System.Nullable<global::System.TimeSpan> DesiredSlot, string Status, int Original_WaitingListID, global::System.Nullable<int> Original_UserID, global::System.Nullable<global::System.DateTime> Original_DesiredDate, global::System.Nullable<global::System.TimeSpan> Original_DesiredSlot, string Original_Status) => this.Update(UserID, DesiredDate, DesiredSlot, Status, Original_WaitingListID, Original_UserID, Original_DesiredDate, Original_DesiredSlot, Original_Status, Original_WaitingListID);
     }
     
     /// <summary>
@@ -8175,13 +7879,11 @@ SELECT WaitingListID, UserID, DesiredDate, DesiredSlot, Status FROM WaitingList 
             }
             return result;
         }
-        
+
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        protected virtual void SortSelfReferenceRows(global::System.Data.DataRow[] rows, global::System.Data.DataRelation relation, bool childFirst) {
-            global::System.Array.Sort<global::System.Data.DataRow>(rows, new SelfReferenceComparer(relation, childFirst));
-        }
-        
+        protected virtual void SortSelfReferenceRows(global::System.Data.DataRow[] rows, global::System.Data.DataRelation relation, bool childFirst) => global::System.Array.Sort<global::System.Data.DataRow>(rows, new SelfReferenceComparer(relation, childFirst));
+
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         protected virtual bool MatchTableAdapterConnection(global::System.Data.IDbConnection inputConnection) {

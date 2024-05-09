@@ -30,23 +30,38 @@ namespace NettlyManagement
         {
             try
             {
-                var user = new UserProfile();
-                string FirstName = TbFirstName.Text;
-                string LastName = TbLastName.Text;
-                var address = TbAddress;
+               
+                var FirstName = TbFirstName.Text;
+                var LastName = TbLastName.Text;
+                var address = TbAddress.Text;
                 var MobileNum = TbMobileNum.Text;
                 var Email = TbEmail.Text;
                 var userName = TbUserName.Text;
                 var password = TbPassword.Text;
+                var userId = (int)(int)LbUserID.TabIndex;
+                var userProId = (int)(int)LbUserProId.TabIndex;
 
-                var userPro = new User
+
+                var user = new UserProfile();
+                {  user.FirstName = FirstName; 
+                    user.LastName = LastName;
+                    user.Address = address;
+                    user.ContactNumber = MobileNum;
+                    user.Email = Email;
+                    user.UserName = userName;
+                    user.Password = password;
+                    user.UserID = userId;
+                    user.UserProfileID = userProId;
+                }
+                /* var userPro = new User
                 {
                     Username = userName,
                     Password = password,
-                };
+
+                };*/
 
                 _dbEntities.UserProfiles.Add(user);
-                _dbEntities.Users.Add(userPro);
+              //  _dbEntities.Users.Add(userPro);
                 _dbEntities.SaveChanges();
 
                 MessageBox.Show("User profile created successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -73,33 +88,6 @@ namespace NettlyManagement
             }
 
 
-
-            /*var user = new UserProfile ();
-            string FirstName = TbFirstName.Text;
-            string LastName = TbLastName.Text;
-            var address = TbAddress;
-            var MobileNum = TbMobileNum.Text;
-            var Email = TbEmail.Text;
-            var userName = TbUserName.Text;
-            var password = TbPassword.Text;
-
-            var userPro = new User
-            { Username = userName
-            , Password = password,
-              
-            };
-            _dbEntities.UserProfiles.Add(user);
-            _dbEntities.Users.Add(userPro);
-            _dbEntities.SaveChanges();
-
-            MessageBox.Show("User profile created successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-            // Optionally, close the form after successful operation
-            this.Close();
-
-
-
-        }*/
         }
     }
 }

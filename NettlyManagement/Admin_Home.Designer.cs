@@ -93,6 +93,7 @@
             this.BtTnAllFeedback.TabIndex = 3;
             this.BtTnAllFeedback.Text = "All Feedback";
             this.BtTnAllFeedback.UseVisualStyleBackColor = true;
+            this.BtTnAllFeedback.Click += new System.EventHandler(this.BtTnAllFeedback_Click);
             // 
             // BtTnAllCredentials
             // 

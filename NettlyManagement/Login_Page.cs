@@ -19,12 +19,19 @@ namespace NettlyManagement
         // Public property to access the stored UserID
         public int UserID => _userID;
 
+        private bool _rememberMeChecked;
 
         private readonly NettlyBookingDbEntities1 _dbEntities;
         public Login_page()
         {
             InitializeComponent();
             _dbEntities = new NettlyBookingDbEntities1();
+        }
+
+        private void Login_page_Load(object sender, EventArgs e)
+        {
+            // Load the checkbox state when the form loads
+            CHbRememberMe.Checked = Properties.Settings.Default.RememberMeChecked;
         }
 
         private void lLbSingUp_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -69,9 +76,11 @@ namespace NettlyManagement
                     MessageBox.Show("Please provide valid credenitals");
 
                 }
-
+               
                 else 
                 {
+                    
+
                     var role = user.Roles.FirstOrDefault();
                     var roleName = role.RoleName;
                     Landing_Page homepage = new Landing_Page(this, roleName);
