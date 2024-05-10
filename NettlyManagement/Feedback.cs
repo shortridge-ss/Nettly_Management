@@ -15,10 +15,10 @@ namespace NettlyManagement
     public partial class Feedback
     {
         public int FeedbackID { get; set; }
-        public int UserID { get; set; }
+        public Nullable<int> UserID { get; set; }
         public string Comments { get; set; }
-        public int Rating { get; set; }
-        public System.DateTime DateSubmitted { get; set; }
+        public Nullable<int> Rating { get; set; }
+        public Nullable<System.DateTime> DateSubmitted { get; set; }
     
         public virtual User User { get; set; }
     }

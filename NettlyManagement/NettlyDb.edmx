@@ -40,11 +40,11 @@
           <Key>
             <PropertyRef Name="FeedbackID" />
           </Key>
-          <Property Name="FeedbackID" Type="int" Nullable="false" />
-          <Property Name="UserID" Type="int" Nullable="false" />
-          <Property Name="Comments" Type="text" Nullable="false" />
-          <Property Name="Rating" Type="int" Nullable="false" />
-          <Property Name="DateSubmitted" Type="datetime" Nullable="false" />
+          <Property Name="FeedbackID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserID" Type="int" />
+          <Property Name="Comments" Type="text" />
+          <Property Name="Rating" Type="int" />
+          <Property Name="DateSubmitted" Type="datetime" />
         </EntityType>
         <EntityType Name="Roles">
           <Key>
@@ -118,7 +118,7 @@
           <Property Name="Status" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <Association Name="FK__Feedback__UserID__3C34F16F">
-          <End Role="Users" Type="Self.Users" Multiplicity="1" />
+          <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
           <End Role="Feedback" Type="Self.Feedback" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Users">
@@ -266,7 +266,6 @@
           <EntitySet Name="AppointmentDetails" EntityType="NettlyBookingDbModel.AppointmentDetail" />
           <EntitySet Name="Appointments" EntityType="NettlyBookingDbModel.Appointment" />
           <EntitySet Name="Availabilities" EntityType="NettlyBookingDbModel.Availability" />
-          <EntitySet Name="Feedbacks" EntityType="NettlyBookingDbModel.Feedback" />
           <EntitySet Name="Roles" EntityType="NettlyBookingDbModel.Role" />
           <EntitySet Name="sysdiagrams" EntityType="NettlyBookingDbModel.sysdiagram" />
           <EntitySet Name="TASKs" EntityType="NettlyBookingDbModel.TASK" />
@@ -285,10 +284,6 @@
             <End Role="User" EntitySet="Users" />
             <End Role="Availability" EntitySet="Availabilities" />
           </AssociationSet>
-          <AssociationSet Name="FK__Feedback__UserID__3C34F16F" Association="NettlyBookingDbModel.FK__Feedback__UserID__3C34F16F">
-            <End Role="User" EntitySet="Users" />
-            <End Role="Feedback" EntitySet="Feedbacks" />
-          </AssociationSet>
           <AssociationSet Name="FK_UserProfile_Users" Association="NettlyBookingDbModel.FK_UserProfile_Users">
             <End Role="User" EntitySet="Users" />
             <End Role="UserProfile" EntitySet="UserProfiles" />
@@ -300,6 +295,11 @@
           <AssociationSet Name="UserRole" Association="NettlyBookingDbModel.UserRole">
             <End Role="Role" EntitySet="Roles" />
             <End Role="User" EntitySet="Users" />
+          </AssociationSet>
+          <EntitySet Name="Feedbacks" EntityType="NettlyBookingDbModel.Feedback" />
+          <AssociationSet Name="FK__Feedback__UserID__3C34F16F" Association="NettlyBookingDbModel.FK__Feedback__UserID__3C34F16F">
+            <End Role="User" EntitySet="Users" />
+            <End Role="Feedback" EntitySet="Feedbacks" />
           </AssociationSet>
         </EntityContainer>
         <EntityType Name="AppointmentDetail">
@@ -336,17 +336,6 @@
           <Property Name="StartTime" Type="Time" Precision="7" />
           <Property Name="EndTime" Type="Time" Precision="7" />
           <NavigationProperty Name="User" Relationship="NettlyBookingDbModel.FK_Availability_Staff" FromRole="Availability" ToRole="User" />
-        </EntityType>
-        <EntityType Name="Feedback">
-          <Key>
-            <PropertyRef Name="FeedbackID" />
-          </Key>
-          <Property Name="FeedbackID" Type="Int32" Nullable="false" />
-          <Property Name="UserID" Type="Int32" Nullable="false" />
-          <Property Name="Comments" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Name="Rating" Type="Int32" Nullable="false" />
-          <Property Name="DateSubmitted" Type="DateTime" Nullable="false" Precision="3" />
-          <NavigationProperty Name="User" Relationship="NettlyBookingDbModel.FK__Feedback__UserID__3C34F16F" FromRole="Feedback" ToRole="User" />
         </EntityType>
         <EntityType Name="Role">
           <Key>
@@ -404,10 +393,10 @@
           <Property Name="ContactNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Appointments" Relationship="NettlyBookingDbModel.FK_Appointments_Users" FromRole="User" ToRole="Appointment" />
           <NavigationProperty Name="Availabilities" Relationship="NettlyBookingDbModel.FK_Availability_Staff" FromRole="User" ToRole="Availability" />
-          <NavigationProperty Name="Feedbacks" Relationship="NettlyBookingDbModel.FK__Feedback__UserID__3C34F16F" FromRole="User" ToRole="Feedback" />
           <NavigationProperty Name="UserProfiles" Relationship="NettlyBookingDbModel.FK_UserProfile_Users" FromRole="User" ToRole="UserProfile" />
           <NavigationProperty Name="WaitingLists" Relationship="NettlyBookingDbModel.FK_WaitingList_Users" FromRole="User" ToRole="WaitingList" />
           <NavigationProperty Name="Roles" Relationship="NettlyBookingDbModel.UserRole" FromRole="User" ToRole="Role" />
+          <NavigationProperty Name="Feedbacks" Relationship="NettlyBookingDbModel.FK__Feedback__UserID__3C34F16F" FromRole="User" ToRole="Feedback" />
         </EntityType>
         <EntityType Name="WaitingList">
           <Key>
@@ -456,18 +445,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Feedback__UserID__3C34F16F">
-          <End Type="NettlyBookingDbModel.User" Role="User" Multiplicity="1" />
-          <End Type="NettlyBookingDbModel.Feedback" Role="Feedback" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="User">
-              <PropertyRef Name="UserID" />
-            </Principal>
-            <Dependent Role="Feedback">
-              <PropertyRef Name="UserID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_UserProfile_Users">
           <End Type="NettlyBookingDbModel.User" Role="User" Multiplicity="1" />
           <End Type="NettlyBookingDbModel.UserProfile" Role="UserProfile" Multiplicity="*" />
@@ -495,6 +472,29 @@
         <Association Name="UserRole">
           <End Type="NettlyBookingDbModel.Role" Role="Role" Multiplicity="*" />
           <End Type="NettlyBookingDbModel.User" Role="User" Multiplicity="*" />
+        </Association>
+        <EntityType Name="Feedback">
+          <Key>
+            <PropertyRef Name="FeedbackID" />
+          </Key>
+          <Property Name="FeedbackID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserID" Type="Int32" />
+          <Property Name="Comments" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Rating" Type="Int32" />
+          <Property Name="DateSubmitted" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="User" Relationship="NettlyBookingDbModel.FK__Feedback__UserID__3C34F16F" FromRole="Feedback" ToRole="User" />
+        </EntityType>
+        <Association Name="FK__Feedback__UserID__3C34F16F">
+          <End Type="NettlyBookingDbModel.User" Role="User" Multiplicity="0..1" />
+          <End Type="NettlyBookingDbModel.Feedback" Role="Feedback" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="Feedback">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
         </Association>
         </Schema>
     </edmx:ConceptualModels>
@@ -533,17 +533,6 @@
                 <ScalarProperty Name="Date" ColumnName="Date" />
                 <ScalarProperty Name="StaffID" ColumnName="StaffID" />
                 <ScalarProperty Name="AvailabilityID" ColumnName="AvailabilityID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Feedbacks">
-            <EntityTypeMapping TypeName="NettlyBookingDbModel.Feedback">
-              <MappingFragment StoreEntitySet="Feedback">
-                <ScalarProperty Name="DateSubmitted" ColumnName="DateSubmitted" />
-                <ScalarProperty Name="Rating" ColumnName="Rating" />
-                <ScalarProperty Name="Comments" ColumnName="Comments" />
-                <ScalarProperty Name="UserID" ColumnName="UserID" />
-                <ScalarProperty Name="FeedbackID" ColumnName="FeedbackID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -624,6 +613,17 @@
               <ScalarProperty Name="RoleID" ColumnName="RoleID" />
             </EndProperty>
           </AssociationSetMapping>
+          <EntitySetMapping Name="Feedbacks">
+            <EntityTypeMapping TypeName="NettlyBookingDbModel.Feedback">
+              <MappingFragment StoreEntitySet="Feedback">
+                <ScalarProperty Name="DateSubmitted" ColumnName="DateSubmitted" />
+                <ScalarProperty Name="Rating" ColumnName="Rating" />
+                <ScalarProperty Name="Comments" ColumnName="Comments" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="FeedbackID" ColumnName="FeedbackID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

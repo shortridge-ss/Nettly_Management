@@ -18,7 +18,7 @@ namespace NettlyManagement
     public partial class SignUp_Page : Form
     {
         private readonly NettlyBookingDbEntities1 _dbEntities;
-        private bool isvalid;
+        //private bool isvalid;
 
         public SignUp_Page()
         {

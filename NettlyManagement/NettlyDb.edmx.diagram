@@ -8,7 +8,6 @@
         <EntityTypeShape EntityType="NettlyBookingDbModel.AppointmentDetail" Width="1.5" PointX="7.5" PointY="2.125" />
         <EntityTypeShape EntityType="NettlyBookingDbModel.Appointment" Width="1.5" PointX="5.25" PointY="1.625" />
         <EntityTypeShape EntityType="NettlyBookingDbModel.Availability" Width="1.5" PointX="5.25" PointY="11.875" />
-        <EntityTypeShape EntityType="NettlyBookingDbModel.Feedback" Width="1.5" PointX="5.25" PointY="14.875" />
         <EntityTypeShape EntityType="NettlyBookingDbModel.Role" Width="1.5" PointX="0.75" PointY="8.5" />
         <EntityTypeShape EntityType="NettlyBookingDbModel.sysdiagram" Width="1.5" PointX="0.75" PointY="0.75" />
         <EntityTypeShape EntityType="NettlyBookingDbModel.TASK" Width="1.5" PointX="0.75" PointY="3.75" />
@@ -18,10 +17,11 @@
         <AssociationConnector Association="NettlyBookingDbModel.FK_AppointmentDetails_Appointment" />
         <AssociationConnector Association="NettlyBookingDbModel.FK_Appointments_Users" />
         <AssociationConnector Association="NettlyBookingDbModel.FK_Availability_Staff" />
-        <AssociationConnector Association="NettlyBookingDbModel.FK__Feedback__UserID__3C34F16F" />
         <AssociationConnector Association="NettlyBookingDbModel.FK_UserProfile_Users" />
         <AssociationConnector Association="NettlyBookingDbModel.FK_WaitingList_Users" />
         <AssociationConnector Association="NettlyBookingDbModel.UserRole" />
+        <EntityTypeShape EntityType="NettlyBookingDbModel.Feedback" Width="1.5" PointX="5.25" PointY="15.125" />
+        <AssociationConnector Association="NettlyBookingDbModel.FK__Feedback__UserID__3C34F16F" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

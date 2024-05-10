@@ -102,13 +102,13 @@ namespace NettlyManagement
                 if (string.IsNullOrWhiteSpace(TbBookingName.Text))
                 {
                     MessageBox.Show("Please enter a booking name");
-                    return; // Stop execution if booking name is empty
+                    return; 
                 }
 
                 if (McDatePicker.SelectionStart < DateTime.Now.Date)
                 {
                     MessageBox.Show("Appointment date cannot be in the past");
-                    return; // Stop execution if appointment date is in the past
+                    return; 
                 }
 
                 if (DtP_StartTime.Value.TimeOfDay >= DtP_EndTime.Value.TimeOfDay)
@@ -164,24 +164,17 @@ namespace NettlyManagement
         {
             try
             {
-                // Check if user is logged in
-               /* if ((_roleName != "Admin" && _roleName != "User"))
-                {
-                    MessageBox.Show("Please sign in with authorized credentials");
-                    return; // Stop execution if not logged in
-                }*/
-
                 // Validate input fields
                 if (string.IsNullOrWhiteSpace(TbBookingName.Text))
                 {
                     MessageBox.Show("Please enter a booking name");
-                    return; // Stop execution if booking name is empty
+                    return; 
                 }
 
                 if (McDatePicker.SelectionStart < DateTime.Now.Date)
                 {
                     MessageBox.Show("Appointment date cannot be in the past");
-                    return; // Stop execution if appointment date is in the past
+                    return; 
                 }
 
                 if (DtP_StartTime.Value.TimeOfDay >= DtP_EndTime.Value.TimeOfDay)

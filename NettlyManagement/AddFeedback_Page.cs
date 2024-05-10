@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Entity.Validation;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -22,19 +23,21 @@ namespace NettlyManagement
        // public AddFeedback(int userID) // Constructor to receive the UserID
 
         public string _roleName;
-        public AddFeedback()
-        {
-            InitializeComponent();
-            _dbEntities = new NettlyBookingDbEntities1();
-            
-        }
-
-        public AddFeedback(Login_page login, string RoleName, int userID)
+        public AddFeedback(Login_page login, string RoleName, int UserID)
         {
             InitializeComponent();
             _login = login;
             _roleName = RoleName;
-            _userID = userID; // Store the UserID
+            _userID = UserID;
+            _dbEntities = new NettlyBookingDbEntities1();
+            
+        }
+
+        public AddFeedback()
+        {
+            InitializeComponent();
+            
+            _dbEntities = new NettlyBookingDbEntities1 ();
         }
 
         private void OpenLandingPage()
@@ -107,9 +110,18 @@ namespace NettlyManagement
                     this.Close();
                 }
             }
-            catch (Exception ex)
+            catch (DbEntityValidationException ex)
             {
-                MessageBox.Show("An error occurred while submitting feedback: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                StringBuilder sb = new StringBuilder();
+                foreach (var eve in ex.EntityValidationErrors)
+                {
+                    foreach (var ve in eve.ValidationErrors)
+                    {
+                        sb.AppendLine($"Property: {ve.PropertyName}, Error: {ve.ErrorMessage}");
+                    }
+                }
+
+                MessageBox.Show($"Validation errors occurred:\n{sb.ToString()}", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
     }

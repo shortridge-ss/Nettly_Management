@@ -18,6 +18,7 @@ namespace NettlyManagement
 
         public Login_page Login_page { get; }
         public User User { get; }
+        public int UserID { get; }
 
         public Landing_Page(Login_page login_page, string roleName)
         {
@@ -36,7 +37,21 @@ namespace NettlyManagement
 
         public Landing_Page(User user)
         {
+            
             _roleName = user.Roles.FirstOrDefault()?.RoleName; // Extract roleName from user.Roles
+        }
+
+        public Landing_Page(Login_page login, int UserID)
+        {
+            InitializeComponent();
+            _login = login;
+            UserID = _user.UserID;
+            
+        }
+
+        public Landing_Page(Login_page login_page, string roleName, int userID) : this(login_page, roleName)
+        {
+            UserID = userID;
         }
 
         public Landing_Page()
@@ -80,7 +95,7 @@ namespace NettlyManagement
 
         private void giveFeedbackToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var giveFeedback = new AddFeedback();
+            var giveFeedback = new AddFeedback(_login, _roleName, UserID);
             giveFeedback.Show();
         }
 

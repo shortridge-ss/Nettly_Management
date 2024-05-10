@@ -83,7 +83,8 @@ namespace NettlyManagement
 
                     var role = user.Roles.FirstOrDefault();
                     var roleName = role.RoleName;
-                    Landing_Page homepage = new Landing_Page(this, roleName);
+                    var userID = user.UserID;
+                    Landing_Page homepage = new Landing_Page(this, roleName, userID);
                     homepage.Show();
                     Hide();
                     
