@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Entity.Migrations;
+using System.Data.Entity.Validation;
 using System.Drawing;
 using System.Linq;
 using System.Net;
@@ -32,6 +34,7 @@ namespace NettlyManagement
             LbHeading.Text = "Edit Appointment";
             this.Text = "Edit Booking";
             isEditMode = true;
+            _dbEntities = new NettlyBookingDbEntities1();
             PopulateFields(appointInfo);
 
 
@@ -59,6 +62,7 @@ namespace NettlyManagement
                 {
                     openForm.BringToFront();
                     return;
+                    
                 }
             }
 
@@ -69,6 +73,7 @@ namespace NettlyManagement
         private void PbHome_Click(object sender, EventArgs e)
         {
             OpenLandingPage();
+            this.Close();
         }
 
         private void BtTnCancel_Click(object sender, EventArgs e)
@@ -86,17 +91,13 @@ namespace NettlyManagement
             return DtP_StartTime;
         }
 
-      /*  private void BtTnSave_Click(object sender, EventArgs e)
+      
+
+        private void BtTnBookNow_Click(object sender, EventArgs e)
         {
             try
-            {
-                // Check if user is logged in
-                if ((_roleName != "Admin" && _roleName != "User"))
-                {
-                    MessageBox.Show("Please sign in with authorized credentials");
-                    return; // Stop execution if not logged in
-                }
 
+            {
                 // Validate input fields
                 if (string.IsNullOrWhiteSpace(TbBookingName.Text))
                 {
@@ -116,46 +117,14 @@ namespace NettlyManagement
                     return; // Stop execution if end time is not after start time
                 }
 
-                // Save appointment
-                if (isEditMode)
-                {
-                    // Edit appointment
-                    var id = int.Parse(LbId.Text);
-                    var appointInfo = _dbEntities.Appointments.FirstOrDefault(A => A.AppointmentID == id);
-
-                    appointInfo.AppointmentName = TbBookingName.Text;
-                    appointInfo.AppointmentDate = McDatePicker.SelectionStart;
-                    appointInfo.StartTime = DtP_StartTime.Value.TimeOfDay;
-                    appointInfo.EndTime = DtP_EndTime.Value.TimeOfDay;
-                    appointInfo.Details = TbAppDetails.Text;
 
 
-                    _dbEntities.SaveChanges();
-
-                    MessageBox.Show("Appointment updated successfully");
-                }
-                else
-                {
-                    MessageBox.Show("Please use the 'Book Now' button to make a new booking.");
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("An error occurred while saving the appointment: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }*/
-
-        private void BtTnBookNow_Click(object sender, EventArgs e)
-        {
-            try
-            {
                 var appointmentName = TbBookingName.Text;
                 var AppointmentDate = McDatePicker.SelectionStart;
                 var StartTime = DtP_StartTime.Value.TimeOfDay;
                 var endTime = DtP_EndTime.Value.TimeOfDay;
                 var Details = TbAppDetails.Text;
-
-
+              
                 {
                     // Add new appointment
                     var newBooking = new Appointment();
@@ -166,24 +135,28 @@ namespace NettlyManagement
                         newBooking.StartTime = StartTime;
                         newBooking.EndTime = endTime;
                         newBooking.Details = Details;
-
-                        //  AppointmentName = TbBookingName.Text,
-                        // AppointmentDate = McDatePicker.SelectionStart,
-                        //StartTime = DtP_StartTime.Value.TimeOfDay,
-                        // EndTime = DtP_EndTime.Value.TimeOfDay,
-                        //Details = TbAppDetails.Text
                     };
 
                     _dbEntities.Appointments.Add(newBooking);
                     _dbEntities.SaveChanges();
 
                     MessageBox.Show("Appointment booked successfully");
+                    this.Close();
                 }
 
             }
-            catch (Exception ex)
+            catch (DbEntityValidationException ex)
             {
-                MessageBox.Show("An error occurred while booking the appointment: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                StringBuilder sb = new StringBuilder();
+                foreach (var eve in ex.EntityValidationErrors)
+                {
+                    foreach (var ve in eve.ValidationErrors)
+                    {
+                        sb.AppendLine($"Property: {ve.PropertyName}, Error: {ve.ErrorMessage}");
+                    }
+                }
+
+                MessageBox.Show($"Validation errors occurred:\n{sb.ToString()}", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -215,79 +188,49 @@ namespace NettlyManagement
                 {
                     MessageBox.Show("End time must be after start time");
                     return; // Stop execution if end time is not after start time
-                }
+                }   
 
                 // Save appointment
                 if (isEditMode)
                 {
                     // Edit appointment
                     var id = int.Parse(LbId.Text);
-                    var appointInfo = _dbEntities.Appointments.FirstOrDefault(A => A.AppointmentID == id);
+                    var newBooking = _dbEntities.Appointments.FirstOrDefault(A => A.AppointmentID == id);
 
-                    appointInfo.AppointmentName = TbBookingName.Text;
-                    appointInfo.AppointmentDate = McDatePicker.SelectionStart;
-                    appointInfo.StartTime = DtP_StartTime.Value.TimeOfDay;
-                    appointInfo.EndTime = DtP_EndTime.Value.TimeOfDay;
-                    appointInfo.Details = TbAppDetails.Text;
-
-
+                    newBooking.AppointmentName = TbBookingName.Text;
+                    newBooking.AppointmentDate = McDatePicker.SelectionStart;
+                    newBooking.StartTime = DtP_StartTime.Value.TimeOfDay;
+                    newBooking.EndTime = DtP_EndTime.Value.TimeOfDay;
+                    newBooking.Details = TbAppDetails.Text;
+                   
+                    _dbEntities.Appointments.AddOrUpdate(newBooking);
                     _dbEntities.SaveChanges();
 
                     MessageBox.Show("Appointment updated successfully");
+                    this.Close();
                 }
                 else
                 {
                     MessageBox.Show("Please use the 'Book Now' button to make a new booking.");
                 }
             }
-            catch (Exception ex)
+            catch (DbEntityValidationException ex)
             {
-                MessageBox.Show("An error occurred while saving the appointment: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                StringBuilder sb = new StringBuilder();
+                foreach (var eve in ex.EntityValidationErrors)
+                {
+                    foreach (var ve in eve.ValidationErrors)
+                    {
+                        sb.AppendLine($"Property: {ve.PropertyName}, Error: {ve.ErrorMessage}");
+                    }
+                }
+
+                MessageBox.Show($"Validation errors occurred:\n{sb.ToString()}", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
     }
 }
 
-
-
-        /*if (_roleName != "Admin")
-        {
-            MessageBox.Show("Please sign in with authorized credentials");
-        }
-        if (isEditMode)
-        {
-            //edit code
-            var id = int.Parse(LbId.Text);
-            var appointInfo = _dbEntities.Appointments.FirstOrDefault(A => A.AppointmentID == id);
-
-            appointInfo.AppointmentName = TbBookingName.Text;
-            DateTime? appointmentDate = appointInfo.AppointmentDate;
-            appointInfo.AppointmentDate = McDatePicker.SelectionStart;
-            appointInfo.StartTime = (TimeSpan)Stext;
-            appointInfo.EndTime = (TimeSpan)Etext;
-            appointInfo.Details = TbAppDetails.Text;
-
-            _dbEntities.SaveChanges();
-        }
-        else
-        {
-            // add code
-            var newBooking = new Appointment
-            {
-                AppointmentName = TbBookingName.Text,
-                AppointmentDate = McDatePicker.SelectionStart,
-                StartTime = DtP_StartTime.Value.TimeOfDay,
-                EndTime = DtP_EndTime.Value.TimeOfDay,
-                Details = TbAppDetails.Text
-
-            };
-            _dbEntities.Appointments.Add(newBooking);
-            _dbEntities.SaveChanges();
-        }
-
-    }
-
-    }*/
     
 
 

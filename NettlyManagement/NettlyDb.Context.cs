@@ -19,9 +19,12 @@ namespace NettlyManagement
             : base("name=NettlyBookingDbEntities1")
         {
         }
-
-        protected override void OnModelCreating(DbModelBuilder modelBuilder) => throw new UnintentionalCodeFirstException();
-
+    
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            throw new UnintentionalCodeFirstException();
+        }
+    
         public virtual DbSet<AppointmentDetail> AppointmentDetails { get; set; }
         public virtual DbSet<Appointment> Appointments { get; set; }
         public virtual DbSet<Availability> Availabilities { get; set; }

@@ -118,45 +118,10 @@ namespace NettlyManagement
                 return false;
             }
 
-            // You can add more validation rules as needed
+           
 
             return true;
         }
     }
 }   
-
-
-    /*
-        private void BtTnSave_Click(object sender, EventArgs e)
-        {
-            if (isEditMode)
-            {
-                //edit code
-                var id = int.Parse(LbId.Text);
-                var userProfile = _dbEntities.UserProfiles.FirstOrDefault(UsPro => UsPro.UserProfileID == id);
-                userProfile.FirstName = TbFName.Text;
-                userProfile.LastName = TbLName.Text;
-                userProfile.ContactNumber = TbMNum.Text;
-                userProfile.Email = TbEmail.Text;
-                userProfile.Address = TbAddress.Text;
-
-                _dbEntities.SaveChanges();
-            }
-            else
-            {
-                // add code
-                var newUser = new UserProfile
-                {
-                    FirstName = TbFName.Text,
-                    LastName = TbLName.Text,
-                    ContactNumber = TbMNum.Text,
-                    Email = TbEmail.Text,
-                    Address = TbAddress.Text
-
-                };
-                _dbEntities.UserProfiles.Add(newUser);
-                _dbEntities.SaveChanges();
-            }
-        }
-    } */
 

@@ -62,10 +62,10 @@ namespace NettlyManagement
 
         private void BtTnSubmit_Click(object sender, EventArgs e)
         {
-            if (_roleName != "User")
-            {
-                MessageBox.Show("Please sign in with authorized credentials");
-            }
+            //if (_roleName != "User")
+            //{
+             //   MessageBox.Show("Please sign in with authorized credentials");
+           // }
 
             // Get the selected rating
             int rating = 0;
@@ -85,7 +85,7 @@ namespace NettlyManagement
             }
 
             // Get the comments
-            string comments = TbReview.Text;
+            var comments = TbReview.Text;
 
             // Insert the feedback into the database
             try
@@ -94,7 +94,7 @@ namespace NettlyManagement
                 {
                     Feedback feedback = new Feedback
                     {
-                        UserID = _userID, // Assuming you have stored the UserID of the logged-in user
+                        UserID = _userID, 
                         Comments = comments,
                         Rating = rating,
                         DateSubmitted = DateTime.Now // Current date and time
@@ -104,6 +104,7 @@ namespace NettlyManagement
                     dbEntities.SaveChanges();
 
                     MessageBox.Show("Feedback submitted successfully");
+                    this.Close();
                 }
             }
             catch (Exception ex)

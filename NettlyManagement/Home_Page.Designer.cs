@@ -29,16 +29,11 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Landing_Page));
-            this.BtTnSignIn = new System.Windows.Forms.Button();
-            this.BtTnSignUp = new System.Windows.Forms.Button();
             this.LbHeading = new System.Windows.Forms.Label();
-            this.LbSignIn = new System.Windows.Forms.Label();
-            this.LbSignUp = new System.Windows.Forms.Label();
             this.PbNettlyLogo = new System.Windows.Forms.PictureBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.bookingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addBookingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.editBookingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewBookingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.feedbackToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.giveFeedbackToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -54,64 +49,18 @@
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // BtTnSignIn
-            // 
-            this.BtTnSignIn.Font = new System.Drawing.Font("Verdana", 16F, System.Drawing.FontStyle.Bold);
-            this.BtTnSignIn.Location = new System.Drawing.Point(281, 379);
-            this.BtTnSignIn.Name = "BtTnSignIn";
-            this.BtTnSignIn.Size = new System.Drawing.Size(232, 55);
-            this.BtTnSignIn.TabIndex = 0;
-            this.BtTnSignIn.Text = "Sign In";
-            this.BtTnSignIn.UseVisualStyleBackColor = true;
-            this.BtTnSignIn.Click += new System.EventHandler(this.BtTnSignIn_Click);
-            // 
-            // BtTnSignUp
-            // 
-            this.BtTnSignUp.Font = new System.Drawing.Font("Verdana", 16F, System.Drawing.FontStyle.Bold);
-            this.BtTnSignUp.Location = new System.Drawing.Point(671, 379);
-            this.BtTnSignUp.Name = "BtTnSignUp";
-            this.BtTnSignUp.Size = new System.Drawing.Size(232, 55);
-            this.BtTnSignUp.TabIndex = 1;
-            this.BtTnSignUp.Text = "Sign Up";
-            this.BtTnSignUp.UseVisualStyleBackColor = true;
-            this.BtTnSignUp.Click += new System.EventHandler(this.BtTnSignUp_Click);
-            // 
             // LbHeading
             // 
             this.LbHeading.AutoSize = true;
             this.LbHeading.BackColor = System.Drawing.Color.Transparent;
             this.LbHeading.Font = new System.Drawing.Font("Verdana", 32F, System.Drawing.FontStyle.Bold);
             this.LbHeading.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.LbHeading.Location = new System.Drawing.Point(270, 67);
+            this.LbHeading.Location = new System.Drawing.Point(287, 140);
             this.LbHeading.MaximumSize = new System.Drawing.Size(650, 1800);
             this.LbHeading.Name = "LbHeading";
             this.LbHeading.Size = new System.Drawing.Size(580, 195);
             this.LbHeading.TabIndex = 2;
             this.LbHeading.Text = "Nettley Advanced Appointment Booking System";
-            // 
-            // LbSignIn
-            // 
-            this.LbSignIn.AutoSize = true;
-            this.LbSignIn.BackColor = System.Drawing.Color.Transparent;
-            this.LbSignIn.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Italic);
-            this.LbSignIn.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.LbSignIn.Location = new System.Drawing.Point(283, 340);
-            this.LbSignIn.Name = "LbSignIn";
-            this.LbSignIn.Size = new System.Drawing.Size(230, 20);
-            this.LbSignIn.TabIndex = 3;
-            this.LbSignIn.Text = "Already have an account?";
-            // 
-            // LbSignUp
-            // 
-            this.LbSignUp.AutoSize = true;
-            this.LbSignUp.BackColor = System.Drawing.Color.Transparent;
-            this.LbSignUp.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Italic);
-            this.LbSignUp.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.LbSignUp.Location = new System.Drawing.Point(717, 340);
-            this.LbSignUp.Name = "LbSignUp";
-            this.LbSignUp.Size = new System.Drawing.Size(150, 20);
-            this.LbSignUp.TabIndex = 4;
-            this.LbSignUp.Text = "First Time Here?";
             // 
             // PbNettlyLogo
             // 
@@ -143,7 +92,6 @@
             // 
             this.bookingsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.addBookingsToolStripMenuItem,
-            this.editBookingsToolStripMenuItem,
             this.viewBookingsToolStripMenuItem});
             this.bookingsToolStripMenuItem.Name = "bookingsToolStripMenuItem";
             this.bookingsToolStripMenuItem.Size = new System.Drawing.Size(84, 24);
@@ -152,20 +100,14 @@
             // addBookingsToolStripMenuItem
             // 
             this.addBookingsToolStripMenuItem.Name = "addBookingsToolStripMenuItem";
-            this.addBookingsToolStripMenuItem.Size = new System.Drawing.Size(189, 26);
+            this.addBookingsToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.addBookingsToolStripMenuItem.Text = "Add Bookings";
             this.addBookingsToolStripMenuItem.Click += new System.EventHandler(this.AddBookingsToolStripMenuItem_Click);
-            // 
-            // editBookingsToolStripMenuItem
-            // 
-            this.editBookingsToolStripMenuItem.Name = "editBookingsToolStripMenuItem";
-            this.editBookingsToolStripMenuItem.Size = new System.Drawing.Size(189, 26);
-            this.editBookingsToolStripMenuItem.Text = "Edit Bookings";
             // 
             // viewBookingsToolStripMenuItem
             // 
             this.viewBookingsToolStripMenuItem.Name = "viewBookingsToolStripMenuItem";
-            this.viewBookingsToolStripMenuItem.Size = new System.Drawing.Size(189, 26);
+            this.viewBookingsToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.viewBookingsToolStripMenuItem.Text = "View Bookings";
             this.viewBookingsToolStripMenuItem.Click += new System.EventHandler(this.ViewBookingsToolStripMenuItem_Click);
             // 
@@ -181,14 +123,14 @@
             // giveFeedbackToolStripMenuItem
             // 
             this.giveFeedbackToolStripMenuItem.Name = "giveFeedbackToolStripMenuItem";
-            this.giveFeedbackToolStripMenuItem.Size = new System.Drawing.Size(191, 26);
+            this.giveFeedbackToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.giveFeedbackToolStripMenuItem.Text = "Give Feedback";
             this.giveFeedbackToolStripMenuItem.Click += new System.EventHandler(this.giveFeedbackToolStripMenuItem_Click);
             // 
             // viewFeedbackToolStripMenuItem
             // 
             this.viewFeedbackToolStripMenuItem.Name = "viewFeedbackToolStripMenuItem";
-            this.viewFeedbackToolStripMenuItem.Size = new System.Drawing.Size(191, 26);
+            this.viewFeedbackToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.viewFeedbackToolStripMenuItem.Text = "View Feedback";
             this.viewFeedbackToolStripMenuItem.Click += new System.EventHandler(this.viewFeedbackToolStripMenuItem_Click);
             // 
@@ -210,14 +152,14 @@
             // adminSignUpToolStripMenuItem
             // 
             this.adminSignUpToolStripMenuItem.Name = "adminSignUpToolStripMenuItem";
-            this.adminSignUpToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.adminSignUpToolStripMenuItem.Size = new System.Drawing.Size(192, 26);
             this.adminSignUpToolStripMenuItem.Text = "Admin Sign Up";
             this.adminSignUpToolStripMenuItem.Click += new System.EventHandler(this.adminSignUpToolStripMenuItem_Click);
             // 
             // adminHomeToolStripMenuItem
             // 
             this.adminHomeToolStripMenuItem.Name = "adminHomeToolStripMenuItem";
-            this.adminHomeToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.adminHomeToolStripMenuItem.Size = new System.Drawing.Size(192, 26);
             this.adminHomeToolStripMenuItem.Text = "Admin Home";
             this.adminHomeToolStripMenuItem.Click += new System.EventHandler(this.adminHomeToolStripMenuItem_Click);
             // 
@@ -251,11 +193,7 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1244, 575);
             this.Controls.Add(this.PbNettlyLogo);
-            this.Controls.Add(this.LbSignUp);
-            this.Controls.Add(this.LbSignIn);
             this.Controls.Add(this.LbHeading);
-            this.Controls.Add(this.BtTnSignUp);
-            this.Controls.Add(this.BtTnSignIn);
             this.Controls.Add(this.menuStrip1);
             this.DoubleBuffered = true;
             this.MainMenuStrip = this.menuStrip1;
@@ -271,12 +209,7 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button BtTnSignIn;
-        private System.Windows.Forms.Button BtTnSignUp;
         private System.Windows.Forms.Label LbHeading;
-        private System.Windows.Forms.Label LbSignIn;
-        private System.Windows.Forms.Label LbSignUp;
         private System.Windows.Forms.PictureBox PbNettlyLogo;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem bookingsToolStripMenuItem;
@@ -285,7 +218,6 @@
         private System.Windows.Forms.ToolStripMenuItem administrationManagementToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem addBookingsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem editBookingsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem viewBookingsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem giveFeedbackToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem viewFeedbackToolStripMenuItem;

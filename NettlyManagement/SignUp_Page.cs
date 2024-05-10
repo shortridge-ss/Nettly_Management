@@ -30,7 +30,9 @@ namespace NettlyManagement
         {
             try
             {
-               
+                 SHA256 sha = SHA256.Create();
+
+
                 var FirstName = TbFirstName.Text;
                 var LastName = TbLastName.Text;
                 var address = TbAddress.Text;
@@ -48,20 +50,35 @@ namespace NettlyManagement
                     user.Address = address;
                     user.ContactNumber = MobileNum;
                     user.Email = Email;
-                    user.UserName = userName;
-                    user.Password = password;
                     user.UserID = userId;
                     user.UserProfileID = userProId;
                 }
-                /* var userPro = new User
-                {
-                    Username = userName,
-                    Password = password,
 
-                };*/
+                byte[] data = sha.ComputeHash(Encoding.UTF8.GetBytes(password));
+
+                //create string builder to collect byte and create string
+                StringBuilder sb = new StringBuilder();
+
+
+                //loop through each byte of hashed data and format each
+                //one as a hexadecimal string.
+                for (int i = 0; i < data.Length; i++)
+                {
+                    sb.Append(data[i].ToString("x2"));
+                }
+
+                var hashedPassword = sb.ToString();
+
+                var userPro = new User
+                {
+
+                    Username = userName,
+                    Password = hashedPassword,
+
+                };
 
                 _dbEntities.UserProfiles.Add(user);
-              //  _dbEntities.Users.Add(userPro);
+                _dbEntities.Users.Add(userPro);
                 _dbEntities.SaveChanges();
 
                 MessageBox.Show("User profile created successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -82,10 +99,10 @@ namespace NettlyManagement
 
                 MessageBox.Show($"Validation errors occurred:\n{sb.ToString()}", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show("An error occurred: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+          //catch (Exception ex)
+           // {
+            //    MessageBox.Show("An error occurred: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //}
 
 
         }

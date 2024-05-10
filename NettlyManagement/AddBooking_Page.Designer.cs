@@ -51,6 +51,7 @@
             this.BtTnBookNow = new System.Windows.Forms.Button();
             this.TbSearch = new System.Windows.Forms.TextBox();
             this.LbId = new System.Windows.Forms.Label();
+            this.LbUserId = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.PbHome)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PbSearch)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PbNettlyLogo)).BeginInit();
@@ -293,10 +294,19 @@
             this.LbId.BackColor = System.Drawing.Color.Transparent;
             this.LbId.Location = new System.Drawing.Point(835, 237);
             this.LbId.Name = "LbId";
-            this.LbId.Size = new System.Drawing.Size(10, 16);
+            this.LbId.Size = new System.Drawing.Size(0, 16);
             this.LbId.TabIndex = 44;
-            this.LbId.Text = "l";
             this.LbId.Visible = false;
+            // 
+            // LbUserId
+            // 
+            this.LbUserId.AutoSize = true;
+            this.LbUserId.BackColor = System.Drawing.Color.Transparent;
+            this.LbUserId.Location = new System.Drawing.Point(851, 292);
+            this.LbUserId.Name = "LbUserId";
+            this.LbUserId.Size = new System.Drawing.Size(0, 16);
+            this.LbUserId.TabIndex = 45;
+            this.LbUserId.Visible = false;
             // 
             // Add_Booking
             // 
@@ -305,6 +315,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1183, 616);
+            this.Controls.Add(this.LbUserId);
             this.Controls.Add(this.LbId);
             this.Controls.Add(this.PbSearch);
             this.Controls.Add(this.TbSearch);
@@ -364,5 +375,6 @@
         private System.Windows.Forms.Button BtTnBookNow;
         private System.Windows.Forms.TextBox TbSearch;
         private System.Windows.Forms.Label LbId;
+        private System.Windows.Forms.Label LbUserId;
     }
 }

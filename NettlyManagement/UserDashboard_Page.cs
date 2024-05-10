@@ -56,6 +56,7 @@ namespace NettlyManagement
             addBooking.Show();
         }
 
+
         private void User_Dashboard_Load(object sender, EventArgs e)
         {
             /*  try
@@ -95,6 +96,10 @@ namespace NettlyManagement
 
             {
                 //  int loggedInUserId = GetCurrentUserId();
+
+
+                
+
                 var appointments = _dbEntities.Appointments
                 .Select(A => new
                 {
@@ -107,6 +112,7 @@ namespace NettlyManagement
                     Uid = A.UserID
                 }).ToList();
 
+                
                 GvDashboard.DataSource = appointments;
                 GvDashboard.Columns[0].HeaderText = "Appointmant Name";
                 GvDashboard.Columns[1].HeaderText = "Appointmant Date";
@@ -172,6 +178,7 @@ namespace NettlyManagement
 
             }
 
-        }
+      
+    }
     }
 

@@ -28,8 +28,8 @@ namespace NettlyManagement
         public int UserID { get; set; }
         public string Username { get; set; }
         public string Password { get; set; }
-        public int Role { get; set; }
-        public bool Status { get; set; }
+        public Nullable<int> Role { get; set; }
+        public Nullable<bool> Status { get; set; }
         public string Email { get; set; }
         public string ContactNumber { get; set; }
     

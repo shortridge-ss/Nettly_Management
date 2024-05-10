@@ -28,12 +28,12 @@ namespace NettlyManagement
             var roles = _dbEntities.Roles.ToList();
             CbRoles.DataSource = roles;
             CbRoles.ValueMember = "RoleName";
-            CbRoles.DisplayMember = "name";
+            CbRoles.DisplayMember = "Name";
 
         }
 
 
-        private void BtTnSave_Click(object sender, EventArgs e, ICollection<Role> RoleName) 
+        private void BtTnSave_Click(object sender, EventArgs e) 
         {
             try
             {
@@ -52,7 +52,7 @@ namespace NettlyManagement
                     Username = username,
                     Password = password,
                     Status = true,
-                    Roles = RoleName
+               //     Roles = RoleName
                 };
 
                 var userProfile = new UserProfile
@@ -110,9 +110,9 @@ namespace NettlyManagement
             Close();
         }
 
-        private void BtTnSave_Click(object sender, EventArgs e)
-        {
+   //     private void BtTnSave_Click(object sender, EventArgs e)
+     //   {
 
-        }
+       // }
     }
 }

@@ -15,7 +15,7 @@ namespace NettlyManagement
     public partial class AppointmentDetail
     {
         public int AppointmentDetailID { get; set; }
-        public Nullable<int> AppointmentID { get; set; }
+        public int AppointmentID { get; set; }
         public string Detail { get; set; }
     
         public virtual Appointment Appointment { get; set; }
