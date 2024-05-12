@@ -45,7 +45,7 @@
             // BtTnSignIn
             // 
             this.BtTnSignIn.Font = new System.Drawing.Font("Verdana", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtTnSignIn.Location = new System.Drawing.Point(284, 317);
+            this.BtTnSignIn.Location = new System.Drawing.Point(630, 350);
             this.BtTnSignIn.Name = "BtTnSignIn";
             this.BtTnSignIn.Size = new System.Drawing.Size(192, 47);
             this.BtTnSignIn.TabIndex = 0;
@@ -56,11 +56,12 @@
             // LbHeading
             // 
             this.LbHeading.AutoSize = true;
-            this.LbHeading.Font = new System.Drawing.Font("Verdana", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LbHeading.BackColor = System.Drawing.Color.Transparent;
+            this.LbHeading.Font = new System.Drawing.Font("Verdana", 28F, System.Drawing.FontStyle.Bold);
             this.LbHeading.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.LbHeading.Location = new System.Drawing.Point(346, 32);
+            this.LbHeading.Location = new System.Drawing.Point(607, 31);
             this.LbHeading.Name = "LbHeading";
-            this.LbHeading.Size = new System.Drawing.Size(130, 34);
+            this.LbHeading.Size = new System.Drawing.Size(215, 57);
             this.LbHeading.TabIndex = 1;
             this.LbHeading.Text = "Sign In";
             // 
@@ -68,7 +69,7 @@
             // 
             this.LbEmail.AutoSize = true;
             this.LbEmail.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LbEmail.Location = new System.Drawing.Point(213, 144);
+            this.LbEmail.Location = new System.Drawing.Point(559, 177);
             this.LbEmail.Name = "LbEmail";
             this.LbEmail.Size = new System.Drawing.Size(184, 18);
             this.LbEmail.TabIndex = 2;
@@ -78,7 +79,7 @@
             // 
             this.LbPassword.AutoSize = true;
             this.LbPassword.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LbPassword.Location = new System.Drawing.Point(213, 211);
+            this.LbPassword.Location = new System.Drawing.Point(559, 244);
             this.LbPassword.Name = "LbPassword";
             this.LbPassword.Size = new System.Drawing.Size(80, 18);
             this.LbPassword.TabIndex = 3;
@@ -89,22 +90,22 @@
             this.PbMan.BackColor = System.Drawing.Color.Transparent;
             this.PbMan.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("PbMan.BackgroundImage")));
             this.PbMan.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.PbMan.Location = new System.Drawing.Point(181, 21);
+            this.PbMan.Location = new System.Drawing.Point(339, 21);
             this.PbMan.Name = "PbMan";
-            this.PbMan.Size = new System.Drawing.Size(525, 435);
+            this.PbMan.Size = new System.Drawing.Size(825, 659);
             this.PbMan.TabIndex = 4;
             this.PbMan.TabStop = false;
             // 
             // TbEmail
             // 
-            this.TbEmail.Location = new System.Drawing.Point(216, 165);
+            this.TbEmail.Location = new System.Drawing.Point(562, 198);
             this.TbEmail.Name = "TbEmail";
             this.TbEmail.Size = new System.Drawing.Size(239, 22);
             this.TbEmail.TabIndex = 5;
             // 
             // TbPassword
             // 
-            this.TbPassword.Location = new System.Drawing.Point(216, 232);
+            this.TbPassword.Location = new System.Drawing.Point(562, 265);
             this.TbPassword.Name = "TbPassword";
             this.TbPassword.PasswordChar = '*';
             this.TbPassword.Size = new System.Drawing.Size(239, 22);
@@ -114,7 +115,7 @@
             // 
             this.lLbSingUp.AutoSize = true;
             this.lLbSingUp.Font = new System.Drawing.Font("Verdana", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lLbSingUp.Location = new System.Drawing.Point(408, 257);
+            this.lLbSingUp.Location = new System.Drawing.Point(754, 290);
             this.lLbSingUp.Name = "lLbSingUp";
             this.lLbSingUp.Size = new System.Drawing.Size(57, 16);
             this.lLbSingUp.TabIndex = 7;
@@ -125,7 +126,7 @@
             // lLbForgotPassword
             // 
             this.lLbForgotPassword.AutoSize = true;
-            this.lLbForgotPassword.Location = new System.Drawing.Point(317, 298);
+            this.lLbForgotPassword.Location = new System.Drawing.Point(663, 331);
             this.lLbForgotPassword.Name = "lLbForgotPassword";
             this.lLbForgotPassword.Size = new System.Drawing.Size(109, 16);
             this.lLbForgotPassword.TabIndex = 8;
@@ -136,7 +137,7 @@
             // 
             this.CHbRememberMe.AutoSize = true;
             this.CHbRememberMe.Font = new System.Drawing.Font("Verdana", 4.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CHbRememberMe.Location = new System.Drawing.Point(216, 257);
+            this.CHbRememberMe.Location = new System.Drawing.Point(562, 290);
             this.CHbRememberMe.Name = "CHbRememberMe";
             this.CHbRememberMe.Size = new System.Drawing.Size(87, 17);
             this.CHbRememberMe.TabIndex = 9;
@@ -149,7 +150,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(888, 509);
+            this.ClientSize = new System.Drawing.Size(1501, 745);
             this.Controls.Add(this.CHbRememberMe);
             this.Controls.Add(this.lLbForgotPassword);
             this.Controls.Add(this.lLbSingUp);

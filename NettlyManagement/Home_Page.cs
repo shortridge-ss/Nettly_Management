@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Entity.Validation;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -15,6 +16,7 @@ namespace NettlyManagement
         private Login_page _login;
         private User _user;
         public string _roleName;
+        private int _userID;
 
         public Login_page Login_page { get; }
         public User User { get; }
@@ -75,8 +77,18 @@ namespace NettlyManagement
         private void AddBookingsToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
-            var add_Booking = new Add_Booking();
-            add_Booking.Show();
+            try
+            {
+                // Validate input fields (existing validation code)
+
+                // Pass the logged-in UserId to Add_Booking form
+                var addBooking = new Add_Booking(_login, _userID);
+                addBooking.Show();
+            }
+            catch (DbEntityValidationException ex)
+            {
+                // Handle validation errors (existing validation error handling code)
+            }
         }
 
         private void ViewBookingsToolStripMenuItem_Click(object sender, EventArgs e)
@@ -88,8 +100,8 @@ namespace NettlyManagement
             }
             else
             { 
-                var viewBooking = new User_Dashboard();
-            viewBooking.Show();
+                var viewBooking = new User_Dashboard(_login, _roleName, UserID);
+             viewBooking.Show();
             }
         }
 

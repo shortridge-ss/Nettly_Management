@@ -14,9 +14,18 @@ namespace NettlyManagement
     {
         private readonly NettlyBookingDbEntities1 _dbEntities;
 
-        public User_Dashboard()
+        private int _userID;
+
+        private Login_page _login;
+
+        public string _roleName;
+
+        public User_Dashboard(Login_page login, string RoleName, int UserID)
         {
             InitializeComponent();
+            _login = login;
+            _roleName = RoleName;
+            _userID = UserID;
             _dbEntities = new NettlyBookingDbEntities1();
         }
 
@@ -52,113 +61,84 @@ namespace NettlyManagement
 
         private void BtTnBookNow_Click(object sender, EventArgs e)
         {
-            var addBooking = new Add_Booking();
+            var addBooking = new Add_Booking(_login, _userID);
             addBooking.Show();
         }
 
 
         private void User_Dashboard_Load(object sender, EventArgs e)
         {
-            /*  try
-              {
-                  // Retrieve the current user's profile based on the logged-in user's ID
-                  int loggedInUserId = GetCurrentUserId(); // You need to implement this method to get the current user's ID
-                  var userProfile = _dbEntities.UserProfiles.FirstOrDefault(u => u.UserID == loggedInUserId);
-
-                  // Display user profile data in the textboxes
-                  if (userProfile != null)
-                  {
-                      TbFirstName.Text = userProfile.FirstName;
-                      TbLastName.Text = userProfile.LastName;
-                      TbMobileNum.Text = userProfile.ContactNumber;
-                      TbEmail.Text = userProfile.Email;
-                  }
-                  else
-                  {
-                      MessageBox.Show("User profile not found.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                  }
-
-                  // Load appointments data into the DataGridView
-                  LoadAppointmentsData();
-              }
-              catch (Exception ex)
-              {
-                  MessageBox.Show("An error occurred: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-              }
-          }
-
-          private int GetCurrentUserId()
-          {
-              throw new NotImplementedException();
-          }
-          */
-            //private void LoadAppointmentsData()
-
+            try
             {
-                //  int loggedInUserId = GetCurrentUserId();
+                int loggedInUserId = GetCurrentUserId(); // Get the ID of the logged-in user
+                var userProfile = _dbEntities.UserProfiles.FirstOrDefault(u => u.UserID == loggedInUserId); // Fetch user profile
 
-
-                
-
-                var appointments = _dbEntities.Appointments
-                .Select(A => new
+                if (userProfile != null)
                 {
-                    AName = A.AppointmentName,
-                    ADate = A.AppointmentDate,
-                    Stime = A.StartTime,
-                    Etime = A.EndTime,
-                    Status = A.Status,
-                    Aid = A.AppointmentID,
-                    Uid = A.UserID
-                }).ToList();
-
-                
-                GvDashboard.DataSource = appointments;
-                GvDashboard.Columns[0].HeaderText = "Appointmant Name";
-                GvDashboard.Columns[1].HeaderText = "Appointmant Date";
-                GvDashboard.Columns[2].HeaderText = "Start Period";
-                GvDashboard.Columns[3].HeaderText = "End Period";
-                GvDashboard.Columns[5].Visible = false;
-                GvDashboard.Columns[6].Visible = false;
-
-            }
-        }
-
-
-            private void BtTnEdit_Click(object sender, EventArgs e)
-            {
-                if (GvDashboard.SelectedRows.Count > 0)
-                {
-                    // Get Id of selected row
-
-                    var id = (int)GvDashboard.SelectedRows[0].Cells["Aid"].Value;
-
-                    // Query Database for record
-
-                    var appointInfo = _dbEntities.Appointments.FirstOrDefault(A => A.AppointmentID == id);
-
-                    // Launch AddEdit window with data 
-
-                    var editEntry = new Add_Booking(appointInfo);
-                    editEntry.MdiParent = this.MdiParent;
-                    editEntry.Show();
-
+                    // Populate user information fields with user profile data
+                    TbFirstName.Text = userProfile.FirstName;
+                    TbLastName.Text = userProfile.LastName;
+                    TbMobileNum.Text = userProfile.ContactNumber;
+                    TbEmail.Text = userProfile.Email;
                 }
                 else
                 {
-                    MessageBox.Show("Please select a row to edit.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("User profile not found.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
 
+                PopulateGrid(); // Load appointments data into the DataGridView
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An error occurred: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private int GetCurrentUserId()
+        {
+            // Return the ID of the logged-in user
+            return _userID;
+
+
+
+        }
+
+
+        private void BtTnEdit_Click(object sender, EventArgs e)
+        {
+            if (GvDashboard.SelectedRows.Count > 0)
+            {
+                // Get Id of selected row
+
+                var id = (int)GvDashboard.SelectedRows[0].Cells["Aid"].Value;
+
+                // Query Database for record
+
+                var appointInfo = _dbEntities.Appointments.FirstOrDefault(A => A.AppointmentID == id);
+
+                // Launch AddEdit window with data 
+
+                var editEntry = new Add_Booking(appointInfo, _login, _userID );
+                editEntry.MdiParent = this.MdiParent;
+                editEntry.Show();
+                PopulateGrid();
+            }
+            else
+            {
+                MessageBox.Show("Please select a row to edit.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
 
+        }
 
-            private void BtTnDelete_Click(object sender, EventArgs e)
+
+        private void BtTnDelete_Click(object sender, EventArgs e)
+        {
+            if (GvDashboard.SelectedRows.Count > 0)
             {
-                if (GvDashboard.SelectedRows.Count > 0)
+                // Get Id of selected row
+                var id = (int)GvDashboard.SelectedRows[0].Cells["Aid"].Value;
+                try
                 {
-                    // Get Id of selected row
-                    var id = (int)GvDashboard.SelectedRows[0].Cells["Aid"].Value;
-
                     // Query Database for record
 
                     var appointInfo = _dbEntities.Appointments.FirstOrDefault(A => A.AppointmentID == id);
@@ -168,17 +148,53 @@ namespace NettlyManagement
                     _dbEntities.Appointments.Remove(appointInfo);
                     _dbEntities.SaveChanges();
 
-                    GvDashboard.Refresh();
-                }
-                else
-                {
-                    MessageBox.Show("Please select a row to delete.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("User deleted successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    PopulateGrid();
 
                 }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("An error occurred while deleting the user: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please select a row to delete.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             }
 
-      
+        }
+        private void PopulateGrid()
+        {
+            int loggedInUserId = GetCurrentUserId(); // Get the ID of the logged-in user
+
+             var appointments = _dbEntities.Appointments
+                .Where(a => a.UserID == loggedInUserId)
+                .Select(A => new
+               {
+                   AName = A.AppointmentName,
+                   ADate = A.AppointmentDate,
+                   Stime = A.StartTime,
+                   Etime = A.EndTime,
+                   Status = A.Status,
+                   Aid = A.AppointmentID,
+                   Uid = A.UserID
+               }).ToList();
+
+
+            GvDashboard.DataSource = appointments;
+            GvDashboard.Columns[0].HeaderText = "Appointmant Name";
+            GvDashboard.Columns[1].HeaderText = "Appointmant Date";
+            GvDashboard.Columns[2].HeaderText = "Start Period";
+            GvDashboard.Columns[3].HeaderText = "End Period";
+            GvDashboard.Columns[5].Visible = false;
+            GvDashboard.Columns[6].Visible = false;
+
+        }
     }
-    }
+}
+
+
+
 

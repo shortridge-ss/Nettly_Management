@@ -115,9 +115,9 @@
             this.LbAddress.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.LbAddress.Location = new System.Drawing.Point(43, 267);
             this.LbAddress.Name = "LbAddress";
-            this.LbAddress.Size = new System.Drawing.Size(118, 17);
+            this.LbAddress.Size = new System.Drawing.Size(167, 17);
             this.LbAddress.TabIndex = 18;
-            this.LbAddress.Text = "Enter Address";
+            this.LbAddress.Text = "Enter Home Address";
             // 
             // LbConPassword
             // 

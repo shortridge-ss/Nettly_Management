@@ -34,6 +34,14 @@ namespace NettlyManagement
             _dbEntities = new NettlyBookingDbEntities1();
         }
 
+        private void AddEdit_Window_Load(object sender, EventArgs e)
+        {
+            var roles = _dbEntities.Roles.ToList();
+            CbRoles.DataSource = roles;
+            CbRoles.ValueMember = "RoleName";
+            CbRoles.DisplayMember = "Name";
+        }
+
         private void PopulateFields(UserProfile userProfile)
         {
             LbId.Text = userProfile.UserProfileID.ToString();
@@ -69,7 +77,8 @@ namespace NettlyManagement
                         userProfile.Email = TbEmail.Text;
                         userProfile.Address = TbAddress.Text;
                         userProfile.User.Username = TbUserName.Text;
-
+                        var roleName = CbRoles.SelectedValue;
+                        
                         _dbEntities.SaveChanges();
 
                         MessageBox.Show("User information updated successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -122,6 +131,8 @@ namespace NettlyManagement
 
             return true;
         }
+
+        
     }
 }   
 
