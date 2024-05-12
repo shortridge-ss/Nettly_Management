@@ -33,6 +33,39 @@ namespace NettlyManagement
                  SHA256 sha = SHA256.Create();
 
 
+                // Validate input fields
+                if (string.IsNullOrWhiteSpace(TbFirstName.Text) ||
+                    string.IsNullOrWhiteSpace(TbLastName.Text) ||
+                    string.IsNullOrWhiteSpace(TbAddress.Text) ||
+                    string.IsNullOrWhiteSpace(TbMobileNum.Text) ||
+                    string.IsNullOrWhiteSpace(TbEmail.Text) ||
+                    string.IsNullOrWhiteSpace(TbUserName.Text) ||
+                    string.IsNullOrWhiteSpace(TbPassword.Text) ||
+                    string.IsNullOrWhiteSpace(TbConfirmPassword.Text))
+                {
+                    MessageBox.Show("All fields are required.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                // Confirm password
+                if (TbPassword.Text != TbConfirmPassword.Text)
+                {
+                    MessageBox.Show("Passwords do not match.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+
+
+
+
+                var roleName = "User"; // Change this to "Admin" if needed
+                var role = _dbEntities.Roles.FirstOrDefault(r => r.RoleName == roleName);
+                if (role == null)
+                {
+                    // Handle error: Role not found
+                }
+                var roleId = role.RoleID;
+
                 var FirstName = TbFirstName.Text;
                 var LastName = TbLastName.Text;
                 var address = TbAddress.Text;
@@ -42,6 +75,13 @@ namespace NettlyManagement
                 var password = TbPassword.Text;
                 var userId = (int)(int)LbUserID.TabIndex;
                 var userProId = (int)(int)LbUserProId.TabIndex;
+                // Validate MobileNum to ensure it contains only numbers
+                
+                if (!IsNumeric(MobileNum))
+                {
+                    MessageBox.Show("Mobile Number must contain only numeric digits.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
 
 
                 var user = new UserProfile();
@@ -74,12 +114,16 @@ namespace NettlyManagement
 
                     Username = userName,
                     Password = hashedPassword,
+                    Role = roleId,
+                    Status = true
 
                 };
+
 
                 _dbEntities.UserProfiles.Add(user);
                 _dbEntities.Users.Add(userPro);
                 _dbEntities.SaveChanges();
+
 
                 MessageBox.Show("User profile created successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
@@ -99,14 +143,22 @@ namespace NettlyManagement
 
                 MessageBox.Show($"Validation errors occurred:\n{sb.ToString()}", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-          //catch (Exception ex)
-           // {
-            //    MessageBox.Show("An error occurred: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //}
-
 
         }
+        // Helper method to check if a string contains only numeric digits
+        private bool IsNumeric(string str)
+        {
+            foreach (char c in str)
+            {
+                if (!char.IsDigit(c))
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
     }
+
 }
 
 

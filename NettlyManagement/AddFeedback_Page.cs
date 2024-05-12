@@ -30,14 +30,42 @@ namespace NettlyManagement
             _roleName = RoleName;
             _userID = UserID;
             _dbEntities = new NettlyBookingDbEntities1();
-            
+            // Call the LoadRatingOptions method when the form is loaded
+            this.Load += AddFeedback_Load;
+
         }
 
+
+        private void AddFeedback_Load(object sender, EventArgs e)
+        {
+            // Load rating options from the database and populate the CheckedListBox
+            LoadRatingOptions();
+        }
         public AddFeedback()
         {
             InitializeComponent();
             
             _dbEntities = new NettlyBookingDbEntities1 ();
+        }
+
+        private void LoadRatingOptions()
+        {
+            try
+            {
+                using (var dbEntities = new NettlyBookingDbEntities1())
+                {
+                    var ratingOptions = dbEntities.RatingOptions.ToList();
+                    foreach (var option in ratingOptions)
+                    {
+                        // Add rating options to the CheckedListBox
+                        ChLbRatingOptions.Items.Add(option.OptionName);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An error occurred while loading rating options: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void OpenLandingPage()
@@ -65,26 +93,12 @@ namespace NettlyManagement
 
         private void BtTnSubmit_Click(object sender, EventArgs e)
         {
-            //if (_roleName != "User")
-            //{
-             //   MessageBox.Show("Please sign in with authorized credentials");
-           // }
 
-            // Get the selected rating
-            int rating = 0;
-            foreach (Control control in Controls)
+            // Get the selected rating options
+            List<string> selectedOptions = new List<string>();
+            foreach (var item in ChLbRatingOptions.CheckedItems)
             {
-                if (control is Button ratingButton && ratingButton.Name.StartsWith("BtTnRating"))
-                {
-                    if (ratingButton.Text == "1" || ratingButton.Text == "2" || ratingButton.Text == "3" ||
-                        ratingButton.Text == "4" || ratingButton.Text == "5" || ratingButton.Text == "6" ||
-                        ratingButton.Text == "7" || ratingButton.Text == "8" || ratingButton.Text == "9" ||
-                        ratingButton.Text == "10")
-                    {
-                        rating = int.Parse(ratingButton.Text);
-                        break;
-                    }
-                }
+                selectedOptions.Add(item.ToString());
             }
 
             // Get the comments
@@ -99,7 +113,7 @@ namespace NettlyManagement
                     {
                         UserID = _userID, 
                         Comments = comments,
-                        Rating = rating,
+                        RatingOptionID = GetSelectedRatingOptionID(selectedOptions),
                         DateSubmitted = DateTime.Now // Current date and time
                     };
 
@@ -123,6 +137,28 @@ namespace NettlyManagement
 
                 MessageBox.Show($"Validation errors occurred:\n{sb.ToString()}", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+        }
+        private int? GetSelectedRatingOptionID(List<string> selectedOptions)
+        {
+            try
+            {
+                using (var dbEntities = new NettlyBookingDbEntities1())
+                {
+                    foreach (var optionName in selectedOptions)
+                    {
+                        var option = dbEntities.RatingOptions.FirstOrDefault(o => o.OptionName == optionName);
+                        if (option != null)
+                        {
+                            return option.RatingOptionID;
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An error occurred while retrieving the selected rating option: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            return null;
         }
     }
     }

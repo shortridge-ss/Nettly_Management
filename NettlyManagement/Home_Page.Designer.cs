@@ -43,7 +43,6 @@
             this.adminSignUpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.adminHomeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.logOutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.closeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.PbNettlyLogo)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -100,14 +99,14 @@
             // addBookingsToolStripMenuItem
             // 
             this.addBookingsToolStripMenuItem.Name = "addBookingsToolStripMenuItem";
-            this.addBookingsToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.addBookingsToolStripMenuItem.Size = new System.Drawing.Size(189, 26);
             this.addBookingsToolStripMenuItem.Text = "Add Bookings";
             this.addBookingsToolStripMenuItem.Click += new System.EventHandler(this.AddBookingsToolStripMenuItem_Click);
             // 
             // viewBookingsToolStripMenuItem
             // 
             this.viewBookingsToolStripMenuItem.Name = "viewBookingsToolStripMenuItem";
-            this.viewBookingsToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.viewBookingsToolStripMenuItem.Size = new System.Drawing.Size(189, 26);
             this.viewBookingsToolStripMenuItem.Text = "View Bookings";
             this.viewBookingsToolStripMenuItem.Click += new System.EventHandler(this.ViewBookingsToolStripMenuItem_Click);
             // 
@@ -123,14 +122,14 @@
             // giveFeedbackToolStripMenuItem
             // 
             this.giveFeedbackToolStripMenuItem.Name = "giveFeedbackToolStripMenuItem";
-            this.giveFeedbackToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.giveFeedbackToolStripMenuItem.Size = new System.Drawing.Size(191, 26);
             this.giveFeedbackToolStripMenuItem.Text = "Give Feedback";
             this.giveFeedbackToolStripMenuItem.Click += new System.EventHandler(this.giveFeedbackToolStripMenuItem_Click);
             // 
             // viewFeedbackToolStripMenuItem
             // 
             this.viewFeedbackToolStripMenuItem.Name = "viewFeedbackToolStripMenuItem";
-            this.viewFeedbackToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.viewFeedbackToolStripMenuItem.Size = new System.Drawing.Size(191, 26);
             this.viewFeedbackToolStripMenuItem.Text = "View Feedback";
             this.viewFeedbackToolStripMenuItem.Click += new System.EventHandler(this.viewFeedbackToolStripMenuItem_Click);
             // 
@@ -166,22 +165,15 @@
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.logOutToolStripMenuItem,
             this.closeToolStripMenuItem});
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
             this.exitToolStripMenuItem.Size = new System.Drawing.Size(47, 24);
             this.exitToolStripMenuItem.Text = "Exit";
             // 
-            // logOutToolStripMenuItem
-            // 
-            this.logOutToolStripMenuItem.Name = "logOutToolStripMenuItem";
-            this.logOutToolStripMenuItem.Size = new System.Drawing.Size(145, 26);
-            this.logOutToolStripMenuItem.Text = "Log Out";
-            // 
             // closeToolStripMenuItem
             // 
             this.closeToolStripMenuItem.Name = "closeToolStripMenuItem";
-            this.closeToolStripMenuItem.Size = new System.Drawing.Size(145, 26);
+            this.closeToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.closeToolStripMenuItem.Text = "Close";
             this.closeToolStripMenuItem.Click += new System.EventHandler(this.closeToolStripMenuItem_Click);
             // 
@@ -222,7 +214,6 @@
         private System.Windows.Forms.ToolStripMenuItem giveFeedbackToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem viewFeedbackToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem adminSignUpToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem logOutToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem adminHomeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem closeToolStripMenuItem;
     }

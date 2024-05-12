@@ -32,7 +32,6 @@
             this.LbHeading = new System.Windows.Forms.Label();
             this.LbSubHeading = new System.Windows.Forms.Label();
             this.BtTnBack = new System.Windows.Forms.Button();
-            this.BtTnSkip = new System.Windows.Forms.Button();
             this.BtTnCreateFeedback = new System.Windows.Forms.Button();
             this.PbSearch = new System.Windows.Forms.PictureBox();
             this.TbSearch = new System.Windows.Forms.TextBox();
@@ -84,17 +83,6 @@
             this.BtTnBack.Text = "Go Back";
             this.BtTnBack.UseVisualStyleBackColor = true;
             this.BtTnBack.Click += new System.EventHandler(this.BtTnBack_Click);
-            // 
-            // BtTnSkip
-            // 
-            this.BtTnSkip.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtTnSkip.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.BtTnSkip.Location = new System.Drawing.Point(861, 561);
-            this.BtTnSkip.Name = "BtTnSkip";
-            this.BtTnSkip.Size = new System.Drawing.Size(94, 29);
-            this.BtTnSkip.TabIndex = 20;
-            this.BtTnSkip.Text = "Skip";
-            this.BtTnSkip.UseVisualStyleBackColor = true;
             // 
             // BtTnCreateFeedback
             // 
@@ -197,7 +185,6 @@
             this.Controls.Add(this.PbSettings);
             this.Controls.Add(this.PbNavBar);
             this.Controls.Add(this.BtTnCreateFeedback);
-            this.Controls.Add(this.BtTnSkip);
             this.Controls.Add(this.BtTnBack);
             this.Controls.Add(this.LbSubHeading);
             this.Controls.Add(this.LbHeading);
@@ -220,7 +207,6 @@
         private System.Windows.Forms.Label LbHeading;
         private System.Windows.Forms.Label LbSubHeading;
         private System.Windows.Forms.Button BtTnBack;
-        private System.Windows.Forms.Button BtTnSkip;
         private System.Windows.Forms.Button BtTnCreateFeedback;
         private System.Windows.Forms.PictureBox PbSearch;
         private System.Windows.Forms.TextBox TbSearch;

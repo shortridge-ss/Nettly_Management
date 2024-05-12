@@ -19,7 +19,9 @@ namespace NettlyManagement
         public string Comments { get; set; }
         public Nullable<int> Rating { get; set; }
         public Nullable<System.DateTime> DateSubmitted { get; set; }
+        public Nullable<int> RatingOptionID { get; set; }
     
         public virtual User User { get; set; }
+        public virtual RatingOption RatingOption { get; set; }
     }
 }

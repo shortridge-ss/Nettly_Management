@@ -15,35 +15,37 @@ namespace NettlyManagement
 {
     public partial class Add_Booking : Form
     {
-        private bool isEditMode;
+        
 
-        private int _userId;
+        private int _userID;
+        private readonly NettlyBookingDbEntities1 _dbEntities;
 
         private Login_page _login;
 
         private string _roleName;
 
-        private readonly NettlyBookingDbEntities1 _dbEntities;
+        
 
-        public Add_Booking(Login_page login, int UserId)
+        public Add_Booking(Login_page login, string RoleName, int UserID)
         {
             InitializeComponent();
             LbHeading.Text = "Add Booking";
             this.Text = "Add Booking";
             isEditMode = false;
             _login = login;
-            _userId = UserId;
+            _roleName = RoleName;
+            _userID = UserID;
             _dbEntities = new NettlyBookingDbEntities1();
         }
+        private bool isEditMode;
 
-        public Add_Booking(Appointment appointInfo, Login_page login, int UserId)
+        public Add_Booking(Appointment appointInfo, Login_page login, int UserID)
         {
             InitializeComponent();
             LbHeading.Text = "Edit Appointment";
             this.Text = "Edit Booking";
             isEditMode = true;
-            _login = login;
-            _userId = UserId;
+            
 
             _dbEntities = new NettlyBookingDbEntities1();
             PopulateFields(appointInfo);
@@ -102,43 +104,46 @@ namespace NettlyManagement
             return DtP_StartTime;
         }
 
-        /*   {
-              try
-              {
-                  // Check if user is logged in
-                  if ((_roleName != "Admin" && _roleName != "User"))
-                  {
-                      MessageBox.Show("Please sign in with authorized credentials");
-                      return; // Stop execution if not logged in
-                  }
-
-                  // Validate input fields
-                  if (string.IsNullOrWhiteSpace(TbBookingName.Text))
-                  {
-                      MessageBox.Show("Please enter a booking name");
-                      return; // Stop execution if booking name is empty
-                  }
-
-                  if (McDatePicker.SelectionStart < DateTime.Now.Date)
-                  {
-                      MessageBox.Show("Appointment date cannot be in the past");
-                      return; // Stop execution if appointment date is in the past
-                  }
-
-                  if (DtP_StartTime.Value.TimeOfDay >= DtP_EndTime.Value.TimeOfDay)
-                  {
-                      MessageBox.Show("End time must be after start time");
-                      return; // Stop execution if end time is not after start time
-                  }
-        }
-              catch (Exception ex)
-              {
-                  MessageBox.Show("An error occurred while saving the appointment: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-              }
-          }*/
+        
 
         private void BtTnBookNow_Click(object sender, EventArgs e)
         {
+            try
+            {
+                // Validate input fields
+                if (string.IsNullOrWhiteSpace(TbBookingName.Text))
+                {
+                    MessageBox.Show("Please enter a booking name.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return; // Stop execution if booking name is empty
+                }
+
+                if (McDatePicker.SelectionStart < DateTime.Now.Date)
+                {
+                    MessageBox.Show("Appointment date cannot be in the past.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return; // Stop execution if appointment date is in the past
+                }
+
+                if (DtP_StartTime.Value.TimeOfDay >= DtP_EndTime.Value.TimeOfDay)
+                {
+                    MessageBox.Show("End time must be after start time.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return; // Stop execution if end time is not after start time
+                }
+
+                // Other booking logic...
+            }
+            catch (DbEntityValidationException ex)
+            {
+                StringBuilder sb = new StringBuilder();
+                foreach (var eve in ex.EntityValidationErrors)
+                {
+                    foreach (var ve in eve.ValidationErrors)
+                    {
+                        sb.AppendLine($"Property: {ve.PropertyName}, Error: {ve.ErrorMessage}");
+                    }
+                }
+
+                MessageBox.Show($"Validation errors occurred:\n{sb.ToString()}", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
             try
             {
                 var appointmentName = TbBookingName.Text;
@@ -146,7 +151,7 @@ namespace NettlyManagement
                 var StartTime = DtP_StartTime.Value.TimeOfDay;
                 var endTime = DtP_EndTime.Value.TimeOfDay;
                 var Details = TbAppDetails.Text;
-                var UserID = _userId;
+                var UserID = _userID;
 
                 {
 
@@ -194,15 +199,10 @@ namespace NettlyManagement
             {
                 try
                 {
-                    // Check if user is logged in
-                    /* if ((_roleName != "Admin" && _roleName != "User"))
-                     {
-                         MessageBox.Show("Please sign in with authorized credentials");
-                         return; // Stop execution if not logged in
-                     }*/
+                    
 
                     // Validate input fields
-                    /*  if (string.IsNullOrWhiteSpace(TbBookingName.Text))
+                      if (string.IsNullOrWhiteSpace(TbBookingName.Text))
                       {
                           MessageBox.Show("Please enter a booking name");
                           return; // Stop execution if booking name is empty
@@ -218,7 +218,7 @@ namespace NettlyManagement
                       {
                           MessageBox.Show("End time must be after start time");
                           return; // Stop execution if end time is not after start time
-                      }   */
+                      }   
 
                     // Save appointment
                     if (isEditMode)

@@ -53,7 +53,7 @@ namespace NettlyManagement
 
         public Landing_Page(Login_page login_page, string roleName, int userID) : this(login_page, roleName)
         {
-            UserID = userID;
+            _userID = userID;
         }
 
         public Landing_Page()
@@ -82,7 +82,7 @@ namespace NettlyManagement
                 // Validate input fields (existing validation code)
 
                 // Pass the logged-in UserId to Add_Booking form
-                var addBooking = new Add_Booking(_login, _userID);
+                var addBooking = new Add_Booking(_login, _roleName, _userID);
                 addBooking.Show();
             }
             catch (DbEntityValidationException ex)
@@ -100,14 +100,14 @@ namespace NettlyManagement
             }
             else
             { 
-                var viewBooking = new User_Dashboard(_login, _roleName, UserID);
+                var viewBooking = new User_Dashboard(_login, _roleName, _userID);
              viewBooking.Show();
             }
         }
 
         private void giveFeedbackToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var giveFeedback = new AddFeedback(_login, _roleName, UserID);
+            var giveFeedback = new AddFeedback(_login, _roleName, _userID);
             giveFeedback.Show();
         }
 

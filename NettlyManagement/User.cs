@@ -17,12 +17,12 @@ namespace NettlyManagement
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public User()
         {
+            this.Appointments = new HashSet<Appointment>();
             this.Availabilities = new HashSet<Availability>();
             this.Feedbacks = new HashSet<Feedback>();
             this.UserProfiles = new HashSet<UserProfile>();
             this.WaitingLists = new HashSet<WaitingList>();
             this.Roles = new HashSet<Role>();
-            this.Appointments = new HashSet<Appointment>();
         }
     
         public int UserID { get; set; }
@@ -34,6 +34,8 @@ namespace NettlyManagement
         public string ContactNumber { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Appointment> Appointments { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Availability> Availabilities { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Feedback> Feedbacks { get; set; }
@@ -43,7 +45,5 @@ namespace NettlyManagement
         public virtual ICollection<WaitingList> WaitingLists { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Role> Roles { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Appointment> Appointments { get; set; }
     }
 }

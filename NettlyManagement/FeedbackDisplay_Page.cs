@@ -53,7 +53,7 @@ namespace NettlyManagement
         private void Feedback_List_Load(object sender, EventArgs e)
         {
             var feedback = _dbEntities.Feedbacks
-                .Select( F => new { Comments = F.Comments, Ratings = F.Rating, DateSubmitted = F.DateSubmitted } )
+                .Select( F => new { Comments = F.Comments, Ratings = F.RatingOption.OptionName, DateSubmitted = F.DateSubmitted } )
                 .ToList();
             GvFeedback.DataSource = feedback;
             GvFeedback.Columns[2].HeaderText = "Date Submitted";

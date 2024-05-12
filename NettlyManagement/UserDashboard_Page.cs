@@ -27,9 +27,15 @@ namespace NettlyManagement
             _roleName = RoleName;
             _userID = UserID;
             _dbEntities = new NettlyBookingDbEntities1();
+            WireEvents();
         }
 
 
+        private void WireEvents()
+        {
+            // Attach event handlers for Entity Framework events
+            _dbEntities.Appointments.Local.CollectionChanged += (sender, args) => PopulateGrid();
+        }
 
         private void OpenLandingPage()
         {
@@ -42,6 +48,7 @@ namespace NettlyManagement
                     return;
                 }
             }
+
 
             // Landing_Page is not open, create a new instance and show it
             var homePage = new Landing_Page();
@@ -61,7 +68,7 @@ namespace NettlyManagement
 
         private void BtTnBookNow_Click(object sender, EventArgs e)
         {
-            var addBooking = new Add_Booking(_login, _userID);
+            var addBooking = new Add_Booking(_login, _roleName, _userID);
             addBooking.Show();
         }
 
@@ -175,6 +182,7 @@ namespace NettlyManagement
                {
                    AName = A.AppointmentName,
                    ADate = A.AppointmentDate,
+                   ADetails = A.Details,
                    Stime = A.StartTime,
                    Etime = A.EndTime,
                    Status = A.Status,
@@ -186,11 +194,18 @@ namespace NettlyManagement
             GvDashboard.DataSource = appointments;
             GvDashboard.Columns[0].HeaderText = "Appointmant Name";
             GvDashboard.Columns[1].HeaderText = "Appointmant Date";
-            GvDashboard.Columns[2].HeaderText = "Start Period";
-            GvDashboard.Columns[3].HeaderText = "End Period";
-            GvDashboard.Columns[5].Visible = false;
+            GvDashboard.Columns[2].HeaderText = "Appointmant Details";
+            GvDashboard.Columns[3].HeaderText = "Start Period";
+            GvDashboard.Columns[4].HeaderText = "End Period";
             GvDashboard.Columns[6].Visible = false;
+            GvDashboard.Columns[7].Visible = false;
 
+        }
+
+        private void BtTnRefresh_Click(object sender, EventArgs e)
+        {
+            // Refresh the grid
+            PopulateGrid();
         }
     }
 }

@@ -146,6 +146,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>NettlyDb.edmx</DependentUpon>
     </Compile>
+    <Compile Include="RatingOption.cs">
+      <DependentUpon>NettlyDb.tt</DependentUpon>
+    </Compile>
     <Compile Include="Role.cs">
       <DependentUpon>NettlyDb.tt</DependentUpon>
     </Compile>
@@ -173,6 +176,12 @@
     <Compile Include="AddFeedback_Page.Designer.cs">
       <DependentUpon>AddFeedback_Page.cs</DependentUpon>
     </Compile>
+    <Compile Include="sp_helpdiagramdefinition_Result.cs">
+      <DependentUpon>NettlyDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_helpdiagrams_Result.cs">
+      <DependentUpon>NettlyDb.tt</DependentUpon>
+    </Compile>
     <Compile Include="sysdiagram.cs">
       <DependentUpon>NettlyDb.tt</DependentUpon>
     </Compile>
@@ -199,6 +208,7 @@
     <Compile Include="UserProfile.cs">
       <DependentUpon>NettlyDb.tt</DependentUpon>
     </Compile>
+    <Compile Include="UserRole.cs" />
     <Compile Include="Utils.cs" />
     <Compile Include="WaitingList.cs">
       <DependentUpon>NettlyDb.tt</DependentUpon>

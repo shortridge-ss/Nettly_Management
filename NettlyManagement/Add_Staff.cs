@@ -79,31 +79,6 @@ namespace NettlyManagement
             {
                 MessageBox.Show("An error occurred: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        
-
-        /* try
-         {
-             var FirstName = TbFName.Text;
-             var LastName = TbLName.Text;
-             var ContactNumber = TbMNum.Text;
-             var Email = TbEmail.Text;
-             var Address = TbAddress.Text;
-             var Username = TbUserName.Text;
-             var Password = TbPassword.Text;
-             var roleId = (int)CbRoles.SelectedValue;
-             var userProfile = new UserProfile
-
-         }
-         {
-             Username = Username,
-             Password = Password,
-             Status = true
-         };
-         _dbEntities.UserProfiles.Add(userProfile);
-         _dbEntities.SaveChangesAsync(); 
-     }*/
-
-        //  var UserProfileId = User.Id;
     }
         private void BtTnCancel_Click(object sender, EventArgs e)
         {

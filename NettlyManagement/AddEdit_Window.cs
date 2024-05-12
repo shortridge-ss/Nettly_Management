@@ -77,8 +77,10 @@ namespace NettlyManagement
                         userProfile.Email = TbEmail.Text;
                         userProfile.Address = TbAddress.Text;
                         userProfile.User.Username = TbUserName.Text;
-                        var roleName = CbRoles.SelectedValue;
-                        
+                        var roleName = (string)CbRoles.SelectedValue; // Get selected role name
+                        var role = _dbEntities.Roles.FirstOrDefault(r => r.RoleName == roleName);
+                        userProfile.User.Roles.Clear(); // Clear existing roles
+                        userProfile.User.Roles.Add(role); // Assign new role
                         _dbEntities.SaveChanges();
 
                         MessageBox.Show("User information updated successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -86,6 +88,8 @@ namespace NettlyManagement
                     else
                     {
                         // Add code
+                        var roleName = (string)CbRoles.SelectedValue; // Get selected role name
+                        var role = _dbEntities.Roles.FirstOrDefault(r => r.RoleName == roleName);
                         var newUser = new UserProfile
                         {
                             FirstName = TbFName.Text,
@@ -95,7 +99,8 @@ namespace NettlyManagement
                             Address = TbAddress.Text,
                             User = new User // Create a new User entity
                             {
-                                Username = TbUserName.Text // Assign the Username property
+                                Username = TbUserName.Text, // Assign the Username property
+                                Roles = new List<Role> { role } // Assign roles to the use
                             }
 
                         };

@@ -55,6 +55,7 @@
             this.PbSearch = new System.Windows.Forms.PictureBox();
             this.TbSearch = new System.Windows.Forms.TextBox();
             this.GvDashboard = new System.Windows.Forms.DataGridView();
+            this.BtTnRefresh = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.PbHome)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PbNettlyLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PbSettings)).BeginInit();
@@ -349,6 +350,18 @@
             this.GvDashboard.Size = new System.Drawing.Size(733, 326);
             this.GvDashboard.TabIndex = 51;
             // 
+            // BtTnRefresh
+            // 
+            this.BtTnRefresh.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BtTnRefresh.BackgroundImage")));
+            this.BtTnRefresh.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold);
+            this.BtTnRefresh.Location = new System.Drawing.Point(1181, 373);
+            this.BtTnRefresh.Name = "BtTnRefresh";
+            this.BtTnRefresh.Size = new System.Drawing.Size(137, 37);
+            this.BtTnRefresh.TabIndex = 52;
+            this.BtTnRefresh.Text = "Refresh";
+            this.BtTnRefresh.UseVisualStyleBackColor = true;
+            this.BtTnRefresh.Click += new System.EventHandler(this.BtTnRefresh_Click);
+            // 
             // User_Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -356,6 +369,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1405, 616);
+            this.Controls.Add(this.BtTnRefresh);
             this.Controls.Add(this.GvDashboard);
             this.Controls.Add(this.PbSearch);
             this.Controls.Add(this.TbSearch);
@@ -421,5 +435,6 @@
         private System.Windows.Forms.PictureBox PbSearch;
         private System.Windows.Forms.TextBox TbSearch;
         private System.Windows.Forms.DataGridView GvDashboard;
+        private System.Windows.Forms.Button BtTnRefresh;
     }
 }
