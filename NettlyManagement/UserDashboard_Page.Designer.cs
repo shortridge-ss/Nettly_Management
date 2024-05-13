@@ -354,9 +354,9 @@
             // 
             this.BtTnRefresh.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BtTnRefresh.BackgroundImage")));
             this.BtTnRefresh.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold);
-            this.BtTnRefresh.Location = new System.Drawing.Point(1181, 373);
+            this.BtTnRefresh.Location = new System.Drawing.Point(1168, 373);
             this.BtTnRefresh.Name = "BtTnRefresh";
-            this.BtTnRefresh.Size = new System.Drawing.Size(137, 37);
+            this.BtTnRefresh.Size = new System.Drawing.Size(150, 37);
             this.BtTnRefresh.TabIndex = 52;
             this.BtTnRefresh.Text = "Refresh";
             this.BtTnRefresh.UseVisualStyleBackColor = true;

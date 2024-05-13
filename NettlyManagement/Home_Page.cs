@@ -113,7 +113,7 @@ namespace NettlyManagement
 
         private void viewFeedbackToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var DisplayFeedback = new Feedback_List();
+            var DisplayFeedback = new Feedback_List(_login, _roleName, _userID);
             DisplayFeedback.Show();
         }
 

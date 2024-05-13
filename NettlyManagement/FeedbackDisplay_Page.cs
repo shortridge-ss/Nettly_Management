@@ -12,11 +12,19 @@ namespace NettlyManagement
 {
     public partial class Feedback_List : Form
     {
+        private int _userID;
+
         private readonly NettlyBookingDbEntities1 _dbEntities;
 
-        public Feedback_List()
+        private Login_page _login;
+
+        private string _roleName;
+        public Feedback_List(Login_page login, string RoleName, int UserID)
         {
             InitializeComponent();
+            _login = login;
+            _roleName = RoleName;
+            _userID = UserID;
             _dbEntities = new NettlyBookingDbEntities1();
         }
 
@@ -46,7 +54,7 @@ namespace NettlyManagement
 
         private void BtTnCreateFeedback_Click(object sender, EventArgs e)
         {
-            var newFeedback = new AddFeedback();
+            var newFeedback = new AddFeedback(_login, _roleName, _userID);
             newFeedback.Show();
         }
 

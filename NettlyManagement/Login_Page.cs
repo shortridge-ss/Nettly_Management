@@ -82,8 +82,8 @@
                     
 
                         var role = user.Roles.FirstOrDefault();
-                        var roleName = role.RoleName;
-                        var userID = user.UserID;
+                        var roleName = role != null ? role.RoleName : "User";
+                    var userID = user.UserID;
                         Landing_Page homepage = new Landing_Page(this, roleName, userID);
                         homepage.Show();
                         Hide();

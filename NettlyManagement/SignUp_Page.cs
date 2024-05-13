@@ -12,6 +12,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Xunit.Sdk;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace NettlyManagement
 {
@@ -58,7 +59,7 @@ namespace NettlyManagement
 
 
 
-                var roleName = "User"; // Change this to "Admin" if needed
+                var roleName = "User"; 
                 var role = _dbEntities.Roles.FirstOrDefault(r => r.RoleName == roleName);
                 if (role == null)
                 {
@@ -90,7 +91,8 @@ namespace NettlyManagement
                     user.Address = address;
                     user.ContactNumber = MobileNum;
                     user.Email = Email;
-                    user.UserID = userId;
+                    user.UserName = userName;
+                    
                     user.UserProfileID = userProId;
                 }
 
@@ -115,9 +117,12 @@ namespace NettlyManagement
                     Username = userName,
                     Password = hashedPassword,
                     Role = roleId,
-                    Status = true
+                    Status = true,
+                    ContactNumber = MobileNum,
+                    Email = Email
 
-                };
+
+            };
 
 
                 _dbEntities.UserProfiles.Add(user);

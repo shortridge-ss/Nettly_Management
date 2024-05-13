@@ -33,7 +33,6 @@
             this.LbQuestion = new System.Windows.Forms.Label();
             this.LbSuggestion = new System.Windows.Forms.Label();
             this.TbReview = new System.Windows.Forms.TextBox();
-            this.BtTnSkip = new System.Windows.Forms.Button();
             this.BtTnSubmit = new System.Windows.Forms.Button();
             this.PbNavBar = new System.Windows.Forms.PictureBox();
             this.PbNettlyLogo = new System.Windows.Forms.PictureBox();
@@ -42,6 +41,7 @@
             this.PbSearch = new System.Windows.Forms.PictureBox();
             this.PbSettings = new System.Windows.Forms.PictureBox();
             this.ChLbRatingOptions = new System.Windows.Forms.CheckedListBox();
+            this.BtTnBack = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.PbNavBar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PbNettlyLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PbHome)).BeginInit();
@@ -94,17 +94,6 @@
             this.TbReview.Name = "TbReview";
             this.TbReview.Size = new System.Drawing.Size(567, 179);
             this.TbReview.TabIndex = 16;
-            // 
-            // BtTnSkip
-            // 
-            this.BtTnSkip.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtTnSkip.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.BtTnSkip.Location = new System.Drawing.Point(1304, 572);
-            this.BtTnSkip.Name = "BtTnSkip";
-            this.BtTnSkip.Size = new System.Drawing.Size(94, 29);
-            this.BtTnSkip.TabIndex = 17;
-            this.BtTnSkip.Text = "Skip";
-            this.BtTnSkip.UseVisualStyleBackColor = true;
             // 
             // BtTnSubmit
             // 
@@ -189,6 +178,18 @@
             this.ChLbRatingOptions.Size = new System.Drawing.Size(567, 174);
             this.ChLbRatingOptions.TabIndex = 53;
             // 
+            // BtTnBack
+            // 
+            this.BtTnBack.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtTnBack.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.BtTnBack.Location = new System.Drawing.Point(1304, 558);
+            this.BtTnBack.Name = "BtTnBack";
+            this.BtTnBack.Size = new System.Drawing.Size(94, 29);
+            this.BtTnBack.TabIndex = 54;
+            this.BtTnBack.Text = "Go Back";
+            this.BtTnBack.UseVisualStyleBackColor = true;
+            this.BtTnBack.Click += new System.EventHandler(this.BtTnBack_Click);
+            // 
             // AddFeedback
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -196,6 +197,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1501, 747);
+            this.Controls.Add(this.BtTnBack);
             this.Controls.Add(this.ChLbRatingOptions);
             this.Controls.Add(this.PbSettings);
             this.Controls.Add(this.PbSearch);
@@ -204,7 +206,6 @@
             this.Controls.Add(this.PbNettlyLogo);
             this.Controls.Add(this.PbNavBar);
             this.Controls.Add(this.BtTnSubmit);
-            this.Controls.Add(this.BtTnSkip);
             this.Controls.Add(this.TbReview);
             this.Controls.Add(this.LbSuggestion);
             this.Controls.Add(this.LbQuestion);
@@ -228,7 +229,6 @@
         private System.Windows.Forms.Label LbQuestion;
         private System.Windows.Forms.Label LbSuggestion;
         private System.Windows.Forms.TextBox TbReview;
-        private System.Windows.Forms.Button BtTnSkip;
         private System.Windows.Forms.Button BtTnSubmit;
         private System.Windows.Forms.PictureBox PbNavBar;
         private System.Windows.Forms.PictureBox PbNettlyLogo;
@@ -237,5 +237,6 @@
         private System.Windows.Forms.PictureBox PbSearch;
         private System.Windows.Forms.PictureBox PbSettings;
         private System.Windows.Forms.CheckedListBox ChLbRatingOptions;
+        private System.Windows.Forms.Button BtTnBack;
     }
 }

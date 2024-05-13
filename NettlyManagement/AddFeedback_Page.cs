@@ -160,6 +160,11 @@ namespace NettlyManagement
             }
             return null;
         }
+
+        private void BtTnBack_Click(object sender, EventArgs e)
+        {
+            Close();    
+        }
     }
     }
 
