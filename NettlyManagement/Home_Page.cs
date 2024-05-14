@@ -125,7 +125,7 @@ namespace NettlyManagement
             }
             else
             {
-                var adminHome = new Admin_Page();
+                var adminHome = new Admin_Page(_login, _roleName, _userID);
                 adminHome.Show();
             }
         }

@@ -15,13 +15,39 @@ namespace NettlyManagement
     {
 
         private readonly NettlyBookingDbEntities1 _dbEntities;
+        private bool isEditMode;
+        private User userToUpdate;
+        private int _userID;
 
         public AddStaff()
         {
             InitializeComponent();
             _dbEntities = new NettlyBookingDbEntities1();
+            isEditMode = false;
+            LbHeading.Text = "Add Staff";
 
         }
+        public AddStaff(User user) : this()
+        {
+            isEditMode = true;
+            userToUpdate = user;
+            LbHeading.Text = "Edit Credentials";
+            PopulateFormFields(user);
+        }
+
+        private void PopulateFormFields(User user)
+        {
+            TbFName.Text = user.UserProfiles.FirstOrDefault()?.FirstName;
+            TbLName.Text = user.UserProfiles.FirstOrDefault()?.LastName;
+            TbMNum.Text = user.UserProfiles.FirstOrDefault()?.ContactNumber;
+            TbEmail.Text = user.UserProfiles.FirstOrDefault()?.Email;
+            TbAddress.Text = user.UserProfiles.FirstOrDefault()?.Address;
+            TbUserName.Text = user.Username;
+            TbPassword.Text = user.Password;
+
+            
+        }
+
 
         private void AddStaff_Load(object sender, EventArgs e)
         {
@@ -32,62 +58,139 @@ namespace NettlyManagement
 
         }
 
-
+        private bool ValidateInput()
+        {
+            // Perform input validation here
+            // For example, check if required fields are filled, validate email format, etc.
+            // Return true if input is valid, otherwise return false
+            return true; // Placeholder, replace with actual validation logic
+        }
         private void BtTnSave_Click(object sender, EventArgs e) 
         {
+
             try
             {
-                var firstName = TbFName.Text;
-                var lastName = TbLName.Text;
-                var contactNumber = TbMNum.Text;
-                var email = TbEmail.Text;
-                var address = TbAddress.Text;
-                var username = TbUserName.Text;
-                var password = TbPassword.Text;
-                var roleName = CbRoles.SelectedValue;
-
-                // Create instances of User and UserProfile
-                var user = new User
+                if (ValidateInput())
                 {
-                    Username = username,
-                    Password = password,
-                    Status = true,
-               //     Roles = RoleName
-                };
+                    if (isEditMode)
+                    {
+                        // Update existing user
+                        userToUpdate.UserProfiles.FirstOrDefault().FirstName = TbFName.Text;
+                        userToUpdate.UserProfiles.FirstOrDefault().LastName = TbLName.Text;
+                        userToUpdate.UserProfiles.FirstOrDefault().ContactNumber = TbMNum.Text;
+                        userToUpdate.UserProfiles.FirstOrDefault().Email = TbEmail.Text;
+                        userToUpdate.UserProfiles.FirstOrDefault().Address = TbAddress.Text;
+                        userToUpdate.Username = TbUserName.Text;
+                        userToUpdate.Password = TbPassword.Text;
 
-                var userProfile = new UserProfile
-                {
-                    FirstName = firstName,
-                    LastName = lastName,
-                    ContactNumber = contactNumber,
-                    Email = email,
-                    Address = address,
-                    User = user // Establishing relationship
-                };
+                        _dbEntities.SaveChanges();
 
-                // Add both entities to the context
-                _dbEntities.Users.Add(user);
-                _dbEntities.UserProfiles.Add(userProfile);
+                        MessageBox.Show("Credentials updated successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        Close(); // Close the form
+                    }
+                    else
+                    {
+                        // Add new user
 
-                // Save changes to the database
-                 _dbEntities.SaveChanges();
+                        var firstName = TbFName.Text;
+                        var lastName = TbLName.Text;
+                        var contactNumber = TbMNum.Text;
+                        var email = TbEmail.Text;
+                        var address = TbAddress.Text;
+                        var username = TbUserName.Text;
+                        var password = TbPassword.Text;
+                        var roleName = CbRoles.SelectedValue;
 
-                MessageBox.Show("Data saved successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                Close(); // Optionally, close the form after successful operation
+                        // Create instances of User and UserProfile
+                        var user = new User
+                        {
+                            Username = username,
+                            Password = password,
+                            Status = true,
+                            //     Roles = RoleName
+                        };
+
+                        var userProfile = new UserProfile
+                        {
+                            FirstName = firstName,
+                            LastName = lastName,
+                            ContactNumber = contactNumber,
+                            Email = email,
+                            Address = address,
+                            User = user // Establishing relationship
+                        };
+
+                        // Add both entities to the context
+                        _dbEntities.Users.Add(user);
+                        _dbEntities.UserProfiles.Add(userProfile);
+
+                        // Save changes to the database
+                        _dbEntities.SaveChanges();
+
+                        MessageBox.Show("Data saved successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        Close(); // Optionally, close the form after successful operation
+                    
+
+                }
+                }
             }
             catch (Exception ex)
             {
                 MessageBox.Show("An error occurred: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-    }
-        private void BtTnCancel_Click(object sender, EventArgs e)
-        {
-            Close();
         }
 
-   //     private void BtTnSave_Click(object sender, EventArgs e)
-     //   {
-
-       // }
+        private void BtTnCancel_Click(object sender, EventArgs e)
+        {
+            Close();    
+        }
     }
-}
+
+
+        /*
+         try
+         {
+             var firstName = TbFName.Text;
+             var lastName = TbLName.Text;
+             var contactNumber = TbMNum.Text;
+             var email = TbEmail.Text;
+             var address = TbAddress.Text;
+             var username = TbUserName.Text;
+             var password = TbPassword.Text;
+             var roleName = CbRoles.SelectedValue;
+
+             // Create instances of User and UserProfile
+             var user = new User
+             {
+                 Username = username,
+                 Password = password,
+                 Status = true,
+            //     Roles = RoleName
+             };
+
+             var userProfile = new UserProfile
+             {
+                 FirstName = firstName,
+                 LastName = lastName,
+                 ContactNumber = contactNumber,
+                 Email = email,
+                 Address = address,
+                 User = user // Establishing relationship
+             };
+
+             // Add both entities to the context
+             _dbEntities.Users.Add(user);
+             _dbEntities.UserProfiles.Add(userProfile);
+
+             // Save changes to the database
+              _dbEntities.SaveChanges();
+
+             MessageBox.Show("Data saved successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+             Close(); // Optionally, close the form after successful operation
+         }
+         catch (Exception ex)
+         {
+             MessageBox.Show("An error occurred: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+         }   */
+    }
+     

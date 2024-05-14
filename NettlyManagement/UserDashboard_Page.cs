@@ -20,6 +20,8 @@ namespace NettlyManagement
 
         public string _roleName;
 
+        private List<object> originalAppointments;
+
         public User_Dashboard(Login_page login, string RoleName, int UserID)
         {
             InitializeComponent();
@@ -28,13 +30,19 @@ namespace NettlyManagement
             _userID = UserID;
             _dbEntities = new NettlyBookingDbEntities1();
             WireEvents();
+
+            PopulateGrid();
+            originalAppointments = GvDashboard.DataSource as List<object>;
         }
 
 
         private void WireEvents()
         {
-            // Attach event handlers for Entity Framework events
+            
             _dbEntities.Appointments.Local.CollectionChanged += (sender, args) => PopulateGrid();
+
+            TbSearch.TextChanged += TbSearch_TextChanged;
+
         }
 
         private void OpenLandingPage()
@@ -191,6 +199,8 @@ namespace NettlyManagement
                }).ToList();
 
 
+            originalAppointments = appointments.Cast<object>().ToList();
+
             GvDashboard.DataSource = appointments;
             GvDashboard.Columns[0].HeaderText = "Appointmant Name";
             GvDashboard.Columns[1].HeaderText = "Appointmant Date";
@@ -200,6 +210,31 @@ namespace NettlyManagement
             GvDashboard.Columns[6].Visible = false;
             GvDashboard.Columns[7].Visible = false;
 
+        }
+
+
+        private void TbSearch_TextChanged(object sender, EventArgs e)
+        {
+            // Get the search text from the search textbox
+            string searchText = TbSearch.Text.ToLower();
+
+            // Filter the original appointments data based on the search text
+            var filteredAppointments = originalAppointments.Where(appointment =>
+            {
+                // Perform case-insensitive search on each property of the appointment object
+                foreach (var property in appointment.GetType().GetProperties())
+                {
+                    var value = property.GetValue(appointment)?.ToString()?.ToLower();
+                    if (value != null && value.Contains(searchText))
+                    {
+                        return true;
+                    }
+                }
+                return false;
+            }).ToList();
+
+            // Bind the filtered data to the DataGridView
+            GvDashboard.DataSource = filteredAppointments;
         }
 
         private void BtTnRefresh_Click(object sender, EventArgs e)

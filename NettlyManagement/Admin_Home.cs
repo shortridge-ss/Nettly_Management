@@ -13,13 +13,24 @@ namespace NettlyManagement
  
 
     public partial class Admin_Page : Form
-    
-
+        
     {
         private readonly NettlyBookingDbEntities1 _dbEntities;
-        public Admin_Page()
+
+        private List<object> originalData;
+
+        private int _userID;
+
+        private Login_page _login;
+
+        public string _roleName;
+
+        public Admin_Page(Login_page login, string RoleName, int UserID)
         {
             InitializeComponent();
+            _login = login;
+            _roleName = RoleName;
+            _userID = UserID;
             _dbEntities = new NettlyBookingDbEntities1();
         }
 
@@ -47,14 +58,10 @@ namespace NettlyManagement
 
         private void Admin_Page_Load(object sender, EventArgs e)
         {
-   /*         // TODO: This line of code loads data into the 'nettlyBookingDbDataSet.Appointments' table. You can move, or remove it, as needed.
-            this.appointmentsTableAdapter.Fill(this.nettlyBookingDbDataSet.Appointments);
-            // TODO: This line of code loads data into the 'nettlyBookingDbDataSet.UserProfiles' table. You can move, or remove it, as needed.
-            this.userProfilesTableAdapter.Fill(this.nettlyBookingDbDataSet.UserProfiles);
-            // TODO: This line of code loads data into the 'nettlyBookingDbDataSet.Feedback' table. You can move, or remove it, as needed.
-            this.feedbackTableAdapter.Fill(this.nettlyBookingDbDataSet.Feedback);
-            //select * from userprofiles
-        */        var nettlyUsersProfiles = _dbEntities.UserProfiles
+
+            try
+            { 
+              var nettlyUsersProfiles = _dbEntities.UserProfiles
                     .Select( UsPro => new 
                     {
                         FirstName = UsPro.FirstName,
@@ -76,19 +83,124 @@ namespace NettlyManagement
             GvAdminPage.Columns[5].HeaderText = "User name"; // Set the header text for the Username column
             GvAdminPage.Columns[6].Visible = false;
             GvAdminPage.Columns[7].Visible = false;
+
+        originalData = nettlyUsersProfiles.Cast<object>().ToList();
+
+
+                TbSearch.TextChanged += TbSearch_TextChanged;
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An error occurred: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
         }
 
 
         private void BtTnAddEntry_Click(object sender, EventArgs e)
         {
-            var addEntry = new SignUp_Page();
-            addEntry.MdiParent = this.MdiParent;    
-            addEntry.Show();
+            /*
+            if (sender == BtTnAllUsers)
+            {
+                var addUser = new SignUp_Page();
+                addUser.MdiParent = this.MdiParent;
+                addUser.Show();
+            }
+            else if (sender == BtTnAllBookings)
+            {
+                var addBooking = new Add_Booking(_login, _roleName, _userID);
+                addBooking.MdiParent = this.MdiParent;
+                addBooking.Show();
+            }
+            else if (sender == BtTnAllCredentials)
+            {
+                var addCredential = new SignUp_Page();
+                addCredential.MdiParent = this.MdiParent;
+                addCredential.Show();
+            }
+            else if (sender == BtTnAllFeedback)
+            {
+                var addFeedback = new AddFeedback();
+                addFeedback.MdiParent = this.MdiParent;
+                addFeedback.Show();
+            }
+            */
+
+              var addEntry = new SignUp_Page();
+              addEntry.MdiParent = this.MdiParent;    
+              addEntry.Show();  
 
         }
 
         private void BtTnEditEntry_Click(object sender, EventArgs e)
         {
+
+           /* if (sender == BtTnAllUsers)
+            {
+                // Logic to edit user profile
+                if (GvAdminPage.SelectedRows.Count > 0)
+                {
+                    // Get Id of selected row
+                    var id = (int)GvAdminPage.SelectedRows[0].Cells["UpID"].Value;
+
+                    // Query Database for record
+                    var userInfo = _dbEntities.UserProfiles.FirstOrDefault(UsPro => UsPro.UserProfileID == id);
+
+                    // Launch AddEdit window with data 
+                    var editUser = new AddEdit_Window(userInfo);
+                    editUser.MdiParent = this.MdiParent;
+                    editUser.Show();
+                }
+                else
+                {
+                    MessageBox.Show("Please select a row to edit.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            else if (sender == BtTnAllBookings)
+            {
+                // Logic to edit booking
+                if (GvAdminPage.SelectedRows.Count > 0)
+                {
+                    // Get Id of selected row
+                    var id = (int)GvAdminPage.SelectedRows[0].Cells["Aid"].Value;
+
+                    // Query Database for record
+                    var bookingInfo = _dbEntities.Appointments.FirstOrDefault(Aa => Aa.AppointmentID == id);
+
+                    // Launch AddEdit window with data 
+                    var editBooking = new Add_Booking(bookingInfo, _login, _userID);
+                    editBooking.MdiParent = this.MdiParent;
+                    editBooking.Show();
+                }
+                else
+                {
+                    MessageBox.Show("Please select a row to edit.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            else if (sender == BtTnAllCredentials)
+            {
+                // Logic to edit credential
+                if (GvAdminPage.SelectedRows.Count > 0)
+                {
+                    // Get Id of selected row
+                    var id = (int)GvAdminPage.SelectedRows[0].Cells["Uid"].Value;
+
+                    // Query Database for record
+                    var credentialInfo = _dbEntities.Users.FirstOrDefault(Au => Au.UserID == id);
+
+                    // Launch AddEdit window with data 
+                    var editCredential = new AddStaff(credentialInfo);
+                    editCredential.MdiParent = this.MdiParent;
+                    editCredential.Show();
+                }
+                else
+                {
+                    MessageBox.Show("Please select a row to edit.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            } */
+
+            
             if (GvAdminPage.SelectedRows.Count > 0)
             { 
             // Get Id of selected row
@@ -109,12 +221,100 @@ namespace NettlyManagement
             else
             {
                 MessageBox.Show("Please select a row to edit.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
+            }  
 
         }
 
         private void BtTnDeleteEntry_Click(object sender, EventArgs e)
         {
+            /*
+            if (sender == BtTnAllUsers)
+            {
+                // Logic to delete user profile
+                if (GvAdminPage.SelectedRows.Count > 0)
+                {
+                    var id = (int)GvAdminPage.SelectedRows[0].Cells["UpId"].Value;
+
+                    try
+                    {
+                        var userInfo = _dbEntities.UserProfiles.FirstOrDefault(UsPro => UsPro.UserProfileID == id);
+                        _dbEntities.UserProfiles.Remove(userInfo);
+                        _dbEntities.SaveChanges();
+
+                        MessageBox.Show("User deleted successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                        // Refresh the grid
+                        PopulateGrid();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("An error occurred while deleting the user: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Please select a row to delete.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            else if (sender == BtTnAllBookings)
+            {
+                // Logic to delete booking
+                if (GvAdminPage.SelectedRows.Count > 0)
+                {
+                    var id = (int)GvAdminPage.SelectedRows[0].Cells["Aid"].Value;
+
+                    try
+                    {
+                        var bookingInfo = _dbEntities.Appointments.FirstOrDefault(Aa => Aa.AppointmentID == id);
+                        _dbEntities.Appointments.Remove(bookingInfo);
+                        _dbEntities.SaveChanges();
+
+                        MessageBox.Show("Booking deleted successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                        // Refresh the grid
+                        PopulateGrid();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("An error occurred while deleting the booking: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Please select a row to delete.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            else if (sender == BtTnAllCredentials)
+            {
+                // Logic to delete credential
+                if (GvAdminPage.SelectedRows.Count > 0)
+                {
+                    var id = (int)GvAdminPage.SelectedRows[0].Cells["Uid"].Value;
+
+                    try
+                    {
+                        var credentialInfo = _dbEntities.Users.FirstOrDefault(Au => Au.UserID == id);
+                        _dbEntities.Users.Remove(credentialInfo);
+                        _dbEntities.SaveChanges();
+
+                        MessageBox.Show("Credential deleted successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                        // Refresh the grid
+                        PopulateGrid();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("An error occurred while deleting the credential: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Please select a row to delete.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }       */
+
+
+            
             if (GvAdminPage.SelectedRows.Count > 0)
             {
                 // Get Id of selected row
@@ -142,7 +342,7 @@ namespace NettlyManagement
             else
             {
                 MessageBox.Show("Please select a row to delete.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
+            }  
         }
 
         private void BtTnRefresh_Click(object sender, EventArgs e)
@@ -348,6 +548,30 @@ namespace NettlyManagement
             {
                 MessageBox.Show("An error occurred: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void TbSearch_TextChanged(object sender, EventArgs e)
+        {
+            // Get the search text from the search textbox
+            string searchText = TbSearch.Text.ToLower();
+
+            // Filter the original data based on the search text
+            var filteredData = originalData.Where(data =>
+            {
+                // Perform case-insensitive search on each property of the data object
+                foreach (var property in data.GetType().GetProperties())
+                {
+                    var value = property.GetValue(data)?.ToString()?.ToLower();
+                    if (value != null && value.Contains(searchText))
+                    {
+                        return true;
+                    }
+                }
+                return false;
+            }).ToList();
+
+            // Bind the filtered data to the DataGridView
+            GvAdminPage.DataSource = filteredData;
         }
     }
 }

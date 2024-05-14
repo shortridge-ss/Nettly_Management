@@ -66,7 +66,7 @@
             this.TbPassword = new System.Windows.Forms.Label();
             this.CbRoles = new System.Windows.Forms.ComboBox();
             this.TbMNum = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.LbHeading = new System.Windows.Forms.Label();
             this.BtTnCancel = new System.Windows.Forms.Button();
             this.BtTnSave = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
@@ -428,15 +428,16 @@
             this.TbMNum.Size = new System.Drawing.Size(123, 24);
             this.TbMNum.TabIndex = 8;
             // 
-            // label1
+            // LbHeading
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Verdana", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(458, 64);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(281, 40);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Add New Staff";
+            this.LbHeading.AutoSize = true;
+            this.LbHeading.BackColor = System.Drawing.Color.Transparent;
+            this.LbHeading.Font = new System.Drawing.Font("Verdana", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LbHeading.Location = new System.Drawing.Point(458, 64);
+            this.LbHeading.Name = "LbHeading";
+            this.LbHeading.Size = new System.Drawing.Size(281, 40);
+            this.LbHeading.TabIndex = 2;
+            this.LbHeading.Text = "Add New Staff";
             // 
             // BtTnCancel
             // 
@@ -470,7 +471,7 @@
             this.ClientSize = new System.Drawing.Size(1236, 623);
             this.Controls.Add(this.BtTnCancel);
             this.Controls.Add(this.BtTnSave);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.LbHeading);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "AddStaff";
             this.Text = "Add Staff ";
@@ -520,7 +521,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label TbPassword;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label LbHeading;
         private System.Windows.Forms.ComboBox CbRoles;
         private System.Windows.Forms.Button BtTnCancel;
         private System.Windows.Forms.Button BtTnSave;
