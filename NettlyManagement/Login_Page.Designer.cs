@@ -71,9 +71,9 @@
             this.LbEmail.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LbEmail.Location = new System.Drawing.Point(559, 177);
             this.LbEmail.Name = "LbEmail";
-            this.LbEmail.Size = new System.Drawing.Size(184, 18);
+            this.LbEmail.Size = new System.Drawing.Size(91, 18);
             this.LbEmail.TabIndex = 2;
-            this.LbEmail.Text = "Email or Mobile Number";
+            this.LbEmail.Text = "User Name";
             // 
             // LbPassword
             // 

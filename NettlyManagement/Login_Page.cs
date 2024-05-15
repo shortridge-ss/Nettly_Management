@@ -84,7 +84,12 @@
                         var role = user.Roles.FirstOrDefault();
                         var roleName = role != null ? role.RoleName : "User";
                     var userID = user.UserID;
-                        Landing_Page homepage = new Landing_Page(this, roleName, userID);
+
+                    MessageBox.Show("Login successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+
+
+                    Landing_Page homepage = new Landing_Page(this, roleName, userID);
                         homepage.Show();
                         Hide();
                     
