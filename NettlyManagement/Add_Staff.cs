@@ -60,12 +60,48 @@ namespace NettlyManagement
 
         private bool ValidateInput()
         {
-            // Perform input validation here
-            // For example, check if required fields are filled, validate email format, etc.
-            // Return true if input is valid, otherwise return false
-            return true; // Placeholder, replace with actual validation logic
+            // Check if required fields are filled out
+            if (string.IsNullOrWhiteSpace(TbFName.Text) ||
+                string.IsNullOrWhiteSpace(TbLName.Text) ||
+                string.IsNullOrWhiteSpace(TbEmail.Text) ||
+                string.IsNullOrWhiteSpace(TbUserName.Text) ||
+                string.IsNullOrWhiteSpace(TbPassword.Text))
+            {
+                MessageBox.Show("Please fill out all required fields.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+
+            // Validate email format
+            if (!IsValidEmail(TbEmail.Text))
+            {
+                MessageBox.Show("Please enter a valid email address.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+
+            // Optionally, you can include more validation checks here...
+
+            // If all checks pass, return true
+            return true;
+
+
         }
-        private void BtTnSave_Click(object sender, EventArgs e) 
+
+
+        private bool IsValidEmail(string email)
+        {
+            try
+            {
+                var addr = new System.Net.Mail.MailAddress(email);
+                return addr.Address == email;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+
+            private void BtTnSave_Click(object sender, EventArgs e) 
         {
 
             try
@@ -146,51 +182,5 @@ namespace NettlyManagement
         }
     }
 
-
-        /*
-         try
-         {
-             var firstName = TbFName.Text;
-             var lastName = TbLName.Text;
-             var contactNumber = TbMNum.Text;
-             var email = TbEmail.Text;
-             var address = TbAddress.Text;
-             var username = TbUserName.Text;
-             var password = TbPassword.Text;
-             var roleName = CbRoles.SelectedValue;
-
-             // Create instances of User and UserProfile
-             var user = new User
-             {
-                 Username = username,
-                 Password = password,
-                 Status = true,
-            //     Roles = RoleName
-             };
-
-             var userProfile = new UserProfile
-             {
-                 FirstName = firstName,
-                 LastName = lastName,
-                 ContactNumber = contactNumber,
-                 Email = email,
-                 Address = address,
-                 User = user // Establishing relationship
-             };
-
-             // Add both entities to the context
-             _dbEntities.Users.Add(user);
-             _dbEntities.UserProfiles.Add(userProfile);
-
-             // Save changes to the database
-              _dbEntities.SaveChanges();
-
-             MessageBox.Show("Data saved successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-             Close(); // Optionally, close the form after successful operation
-         }
-         catch (Exception ex)
-         {
-             MessageBox.Show("An error occurred: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-         }   */
     }
      

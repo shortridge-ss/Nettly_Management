@@ -40,7 +40,7 @@ namespace NettlyManagement
         public Landing_Page(User user)
         {
             
-            _roleName = user.Roles.FirstOrDefault()?.RoleName; // Extract roleName from user.Roles
+            _roleName = user.Roles.FirstOrDefault()?.RoleName; 
         }
 
         public Landing_Page(Login_page login, int UserID)

@@ -20,8 +20,7 @@ namespace NettlyManagement
 
         private Login_page _login;
 
-       // public AddFeedback(int userID) // Constructor to receive the UserID
-
+       
         public string _roleName;
         public AddFeedback(Login_page login, string RoleName, int UserID)
         {
